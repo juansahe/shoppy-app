@@ -1,0 +1,84 @@
+.RegisterComponent {
+ 	background-color: #3293d4;
+	font-family: Titillium;
+}
+.title h1{
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.container .form-grup{
+	text-align: center;
+}
+
+.form-element{
+	margin-top:20px;
+}
+
+.form-element input{
+	padding-left: 8px;
+	width: 80%;
+	margin-left: 10%
+}
+
+.form-element input:active{
+	border-color: red;
+}
+
+.terms{
+	margin-top: 100px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.terms p{
+	font-size: 17px;
+	text-decoration: none;
+	color: white;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.login{
+	text-align: center;
+	padding-top: 30px;
+}
+
+.login a{
+	font-size: 17px;
+	text-decoration: none;
+	color: white;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 20px;
+}
+input:-moz-placeholder {
+  font-size: 20px;
+}
+input:-ms-input-placeholder { 
+  font-size: 20px;
+}
+
+.btnlarge{
+	position: relative !important;
+}
+
+.btnlarge a.btn{
+	border-radius: 58px 58px 58px 58px;
+	-moz-border-radius: 58px 58px 58px 58px;
+	-webkit-border-radius: 58px 58px 58px 58px;
+	border: 0px solid #000000;
+	width: 80%;
+	height: 40px;
+	margin-left: 10%;
+	color: #3293d4;
+	background-color: white;
+	text-align: center;
+	text-decoration: none;
+	position: absolute;
+	font-size: 28px;
+	padding-top: 8px;
+}

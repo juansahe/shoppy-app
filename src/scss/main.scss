@@ -30,6 +30,26 @@ $ionicons-font-path: "../assets/fonts/" !default;
 
 //Menu component
 @import "../js/layouts/menu";
+//componet start
+@import "../js/start/start";
+
+//component Register
+@import "../js/register/register";
+
+//component home
+@import "../js/home/home";
+
+//component complete propile
+@import "../js/completePropile/completePropile";
+
+//component path
+@import "../js/path/path";
+
+//component user
+@import "../js/users/users";
+
+//challenge
+@import "../js/challenge/challenge";
 
 //Menu Profile 
 /*@import "../js/profile/profile";*/

@@ -7,8 +7,14 @@ angular.module('Grimorum')
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
     $stateProvider
+      .state('start',{
+        url:"/",
+        templateUrl:"js/start/start.html",
+        controller: 'StartCtrl'
+      })
+
       .state('login', {
-        url: "/",
+        url: "/login",
         templateUrl: "js/auth/login.html",
         controller: 'LoginCtrl'
       })
@@ -18,6 +24,42 @@ angular.module('Grimorum')
         abstract: true,
         templateUrl: 'js/layouts/menu.html',
         controller: 'MenuCtrl'
+      })
+
+      .state('register', {
+        url: '/register',
+        templateUrl: 'js/register/register.html',
+        controller: 'RegisterCtrl'
+      })
+
+      .state('completepropile', {
+        url: '/completepropile',
+        templateUrl: 'js/completePropile/completePropile.html',
+        controller: 'CompletePropileCtrl'
+      })
+
+      .state('path', {
+        url: '/path',
+        templateUrl: 'js/path/path.html',
+        controller: 'PathCtrl'
+      })
+
+      .state('home', {
+        url: '/home',
+        templateUrl: 'js/home/home.html',
+        controller: 'HomeCtrl'
+      })
+
+      .state('users',{
+        url: '/user',
+        templateUrl:'js/users/users.html',
+        controller:'UsersCtrl'
+      })
+
+      .state('challenge', {
+        url:'/challenge',
+        templateUrl: 'js/challenge/challenge.html',
+        controller:'ChallengeCtrl'
       })
 
 

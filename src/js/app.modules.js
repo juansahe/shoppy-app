@@ -5,7 +5,21 @@ angular.module('Grimorum',
     'templates',
     'Grimorum.layouts',
     'Grimorum.auth',
-    'angularMoment'
+    'angularMoment',
+    'Grimorum.start',
+    'Grimorum.register',
+    'Grimorum.completePropile',
+    'Grimorum.path',
+    'Grimorum.home',
+    'Grimorum.users',
+    'Grimorum.challenge'
   ])
 angular.module('Grimorum.auth', [])
 angular.module('Grimorum.layouts', [])
+angular.module('Grimorum.start', [])
+angular.module('Grimorum.register', [])
+angular.module('Grimorum.completePropile', [])
+angular.module('Grimorum.home', [])
+angular.module('Grimorum.path', [])
+angular.module('Grimorum.users', [])
+angular.module('Grimorum.challenge', [])

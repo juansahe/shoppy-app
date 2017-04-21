@@ -10,5 +10,4 @@ angular.module('Grimorum.layouts', [])
     Session.destroy();
     $location.path('/');
   };
-
 }]);

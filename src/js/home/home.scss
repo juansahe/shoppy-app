@@ -1,0 +1,76 @@
+.HomeComponent {
+  background: while;
+	
+}
+.row{
+	position: relative;
+	display: inline;
+}
+
+.pts{
+	margin: 30px;
+}
+
+.pts .level{
+	border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	border: 5px solid #2980b9;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	background-color: #3498db;
+	position: absolute;
+	display: block;
+	
+}
+
+.pts .level label{
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+.pts .score{
+	border-radius: 20 20px 20px 20px;
+	-moz-border-radius: 20px 20px 20px 20px;
+	-webkit-border-radius: 20px 20px 20px 20px;
+	border: 5px solid #2980b9;
+	width: 40%;
+	text-align: center;
+    position: relative;
+	margin-left: 25px;
+    margin-top: 20px;
+}
+
+.pts .score label{
+	font-size: 15px;
+	font-weight: bold;
+	
+}
+
+.title{
+	text-align: center;
+}
+.title h3{
+	font-weight: bold;
+	font-family: Titillium;
+}
+
+.slide{
+	background-color: #bdc3c7;
+}
+
+.promo{
+
+}
+
+.promo .promo-mitad{
+	background-color: #bdc3c7;
+	height: 200px;
+	width: 48%
+}
+
+.nav{
+
+}

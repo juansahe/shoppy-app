@@ -1,0 +1,27 @@
+<ion-view view-title="Path">
+  <ion-content class="PathComponent" overflow-scroll="true">
+    	<div class="title" ><h4 style="margin-bottom: 0px;">El camino</h4><h1 style="margin-top: 0px; padding-top: 0px;">Shopper Miles</h1></div>
+    	<div class="row" ng-repeat="c in camino">
+    		<div class="camino">
+    			<div class="col">
+    				<div class="col-level">
+	    				<p>{{c.level}}</p>
+	    			</div>
+    			</div>
+    			<div class="col-type">
+    				{{c.type}}
+    			</div>
+    			<div class="col-msj">
+    				{{c.msj}}
+    			</div>
+    			
+    		</div>
+    	</div>
+    	
+   		<div class="">
+   			<a href="#/home" class="btn-contin register">Continuar</a>	
+   		</div>
+   		
+    
+  </ion-content>
+</ion-view>

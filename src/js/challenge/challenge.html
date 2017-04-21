@@ -1,0 +1,57 @@
+<ion-view view-title="Challenge">
+  <ion-content class="ChallengeComponent">
+    <div class="container-box">
+    	<div class="row">
+    		<div class="pts">
+    			
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="title-challenge">
+    			<h3>¡Completa desafíos y gana dinero!</h3>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="alert-challenge">
+    			<div class="icon-alert">
+    				
+    			</div>
+    			<div class="msj-alert">
+    				<p>Completa más tareas</p>
+    				<p>y sube de nivel para</p>
+    				<p>desbloquear desafíos</p>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="challenges" ng-repeat="challenge in challenges">
+    		<div class="content">
+    			<div class="level">
+    				<p>nivel {{challenge.level}}<p>
+    			</div>
+    			<div class="inf-challenge">
+    				<div class="block">
+    					
+    				</div>
+    				<div class="msj-challenge">
+    					{{challenge.challenge}}
+    				</div>
+    				<div class="gain-challenge">
+    					{{challenge.gain}}
+    				</div>
+    				<div class="complete-challenge">
+    					  <section title=".roundedTwo">
+						    <!-- .roundedTwo -->
+						    <div class="roundedTwo">
+						      <input type="checkbox" value="None" id="roundedTwo" name="check" disabled="disabled" />
+						      <label for="roundedTwo"></label>
+						    </div>
+						    <!-- end .roundedTwo -->
+						  </section>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+  </ion-content>
+</ion-view>
