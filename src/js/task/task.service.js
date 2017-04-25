@@ -1,7 +1,8 @@
-angular.module('task', [])
+class TaskService{
+	constructor($http, CONFIG){
+		this.$http = $http;
+	}
+}
 
-.service('Task', ['$http', function($http){
-  this.all = function(){
-    return $http.get('')
-  }
-}])
+
+angular.module('Grimorum.task').service('TaskService', TaskService)

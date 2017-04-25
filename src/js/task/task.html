@@ -1,5 +1,70 @@
-<ion-view view-title="TaskCtrl">
-  <ion-content class="TaskComponent">
-    <span>task</span>
-  </ion-content>
+<ion-view view-title="Task">
+  	<ion-content class="TaskComponent">
+	    <div class="container-box">
+	    	<div class="conten-pts">
+				<div class="bar-pts">
+			        <div class="conten-bar">
+			            <div class="level-circle">
+			                1
+			            </div>
+			        </div>
+			    </div>
+			    <div class="bar-cash">
+			        <div class="conten-bar">
+			            <div class="icon-circle">
+			                <i class="fa fa-database fa-2x" aria-hidden="true" style="color:#FFF; padding-top: 6px;"></i>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+	    	<div class="row">
+	    		<div class="title-challenge">
+	    			<h3>¡Gana puntos y sube de nivel!</h3>
+	    		</div>
+	    	</div>
+	    
+	    	<div class="challenges" ng-repeat="t in task" style="margin-bottom:0px;">
+	    		<div class="content" style="height: 65px;">
+	    			<div class="inf-challenge" style="height: 85%;">
+	    				<div class="block">
+	    					<i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
+	    				</div>
+	    				<div class="msj-challenge">
+	    					{{t.task}}
+	    				</div>
+	    				<div class="gain-challenge">
+	    					{{t.gain}}pt
+	    				</div>
+	    				<div class="complete-challenge">
+	    					  <section title=".roundedTwo">
+							    <!-- .roundedTwo -->
+							    <div class="roundedTwo">
+							      <input type="checkbox" value="None" id="roundedTwo" name="check" disabled="disabled" />
+							      <label for="roundedTwo"></label>
+							    </div>
+							    <!-- end .roundedTwo -->
+							  </section>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    
+  	</ion-content>
+  	<ion-footer class="bar" style="bottom:0px;">
+        <div class="conten-footer">
+            <div class="home-btn">
+                <a href="#/home"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+            </div>
+            <div class="task-btn" style="background-color: #3498db;">
+                <a href="#/task"><p style="text-align: center">Tareas</p></a>
+            </div>
+            <div class="challenge-btn">
+                <a href="#/challenge"><p>Desafíos</p></a>
+            </div>
+            <div class="profi-btn" >
+                <a href="#/user"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </ion-footer>
 </ion-view>

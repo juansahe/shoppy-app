@@ -1,6 +1,10 @@
 class RegisterCtrl{
-	constructor(RegisterService){
+	constructor(RegisterService, $scope, $location){
 		this.RegisterService = RegisterService;
+		$scope.verificar = (e)=>{
+			 $location.path('/completeprofile');	
+		}
+
 	}
 }
 

@@ -1,0 +1,47 @@
+
+/*barra de puntos y dinero*/
+.conten-pts{
+	height: 100px;
+	display: flex;
+	width: 100%;
+	text-align: center;
+}
+.conten-pts .bar-pts{
+	width: 50%;
+	padding-left: 40px;
+}
+
+.conten-pts .bar-cash{
+	width: 50%;
+}
+.conten-pts .conten-bar{
+	margin-top: 15px;
+	background-image: url('../assets/img/pts2.png');
+	width: 150px;
+	height: 70px;
+	padding-top: 15px;
+}
+
+.conten-pts .conten-bar .icon-circle{
+	margin-left: 19px;
+	 width: 40px;
+     height: 40px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #3293d4;
+}
+
+.conten-pts .conten-bar .level-circle{
+	margin-left: 19px;
+	 width: 40px;
+     height: 40px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: transparent;
+     font-size:28px;
+     color: #FFF;
+     padding-top: 8px;
+}
+/*fin de la barra de puntos y dinero*/

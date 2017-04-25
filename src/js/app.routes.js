@@ -32,8 +32,8 @@ angular.module('Grimorum')
         controller: 'RegisterCtrl'
       })
 
-      .state('completepropile', {
-        url: '/completepropile',
+      .state('completeprofile', {
+        url: '/completeprofile',
         templateUrl: 'js/completePropile/completePropile.html',
         controller: 'CompletePropileCtrl'
       })
@@ -60,6 +60,12 @@ angular.module('Grimorum')
         url:'/challenge',
         templateUrl: 'js/challenge/challenge.html',
         controller:'ChallengeCtrl'
+      })
+
+      .state('task', {
+        url:'/task',
+        templateUrl:'js/task/task.html',
+        controller: 'TaskCtrl'
       })
 
 

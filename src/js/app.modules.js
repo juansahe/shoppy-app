@@ -12,7 +12,8 @@ angular.module('Grimorum',
     'Grimorum.path',
     'Grimorum.home',
     'Grimorum.users',
-    'Grimorum.challenge'
+    'Grimorum.challenge',
+    'Grimorum.task'
   ])
 angular.module('Grimorum.auth', [])
 angular.module('Grimorum.layouts', [])
@@ -23,3 +24,4 @@ angular.module('Grimorum.home', [])
 angular.module('Grimorum.path', [])
 angular.module('Grimorum.users', [])
 angular.module('Grimorum.challenge', [])
+angular.module('Grimorum.task', [])
