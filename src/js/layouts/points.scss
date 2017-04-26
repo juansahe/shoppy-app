@@ -30,6 +30,7 @@
      -webkit-border-radius: 50%;
      border-radius: 50%;
      background: #3293d4;
+     float: left;
 }
 
 .conten-pts .conten-bar .level-circle{
@@ -43,5 +44,19 @@
      font-size:28px;
      color: #FFF;
      padding-top: 8px;
+     float: left;
 }
+
+.conten-pts .conten-bar .user-cash{
+	float: left;
+	width: 55px;
+	text-align: center;
+	padding-top: 10px;
+	font-weight: bold;
+}
+.conten.pts .conten-bar .mypts{
+	float: left;
+	width: 10px;
+}
+
 /*fin de la barra de puntos y dinero*/

@@ -21,24 +21,21 @@
  *Number fonts
  */
 @font-face {
-    font-family: 'OpenSansRegular';
-    src: url('../assets/fonts/OpenSansRegular/OpenSansRegular.eot');
-    src: url('../assets/fonts/OpenSansRegular/OpenSansRegular.eot') format('embedded-opentype'),
-         url('../assets/fonts/OpenSansRegular/OpenSansRegular.woff2') format('woff2'),
-         url('../assets/fonts/OpenSansRegular/OpenSansRegular.woff') format('woff'),
-         url('../assets/fonts/OpenSansRegular/OpenSansRegular.ttf') format('truetype'),
-         url('../assets/fonts/OpenSansRegular/OpenSansRegular.svg#Consolas') format('svg');
+    font-family: 'Titillium';
+    src: url('../assets/fonts/Titillium/TTitillium-Regular.otf');
+    src: url('../assets/fonts/Titillium/Titillium-Regular.otf') format('opentype'),
+         url('../assets/fonts/Titillium/Titillium-Bold.otf') format('opentype'),
+         url('../assets/fonts/Titillium/Titillium-RegularItalic.otf') format('opentype'),
+         url('../assets/fonts/Titillium/Titillium-BoldItalic.ttf') format('opentype'),
+         url('../assets/fonts/Titillium/Titillium-SemiboldItalic') format('opentype');
 }
 
-$font-family-sans-serif:          "Helvetica Neue", "Roboto", "Segoe UI", sans-serif !default;
 
-$font-family-base: 'OpenSansRegular' !default;
+$font-family-base: 'Titillium' !default;
 /*.num {*/
   /*font-family: "Consolas";*/
 /*}*/
-.ionic-font {
-  font-family: $font-family-sans-serif;
-}
+
 /*
  *Material icons
  */

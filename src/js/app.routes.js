@@ -67,6 +67,10 @@ angular.module('Grimorum')
         templateUrl:'js/task/task.html',
         controller: 'TaskCtrl'
       })
+      .state('points',{
+        templateUrl:'js/layouts/points.html',
+        abstract: true
+      })
 
 
     // if none of the above states are matched, use this as the fallback
