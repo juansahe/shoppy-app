@@ -19,7 +19,7 @@ class CompletePropileCtrl{
 	modal($scope, $ionicPopup, $location){
 
       // Custom popup
-      const template = '<i style="color:#3293d4; font-size: 10em;" class="fa fa-star" aria-hidden="true"></i>';
+      const template = '<i style="color:#3293d4; font-size: 10em;" class="ion-star" aria-hidden="true"><br><h3 style="font-size:30px;">100pt</h3></i>';
 
       var myPopup = $ionicPopup.alert({
       	 title: 'Completaste tu perfil',

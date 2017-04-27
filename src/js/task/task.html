@@ -1,5 +1,5 @@
 <ion-view view-title="Task">
-  	<ion-content class="TaskComponent">
+  	<ion-content class="TaskComponent"  scrollY="true">
 	    <div class="container-box">
 	    	<div class="conten-pts">
 				<div class="bar-pts">
@@ -33,7 +33,7 @@
 	    		<div id="{{t.id}}" ng-click="hacertares(t.id)" class="content" style="height: 65px;">
 	    			<div class="inf-challenge" style="height: 85%;">
 	    				<div class="block">
-	    					<i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
+	    					<i class="ion-unlocked" style="font-size: 2em;" aria-hidden="true"></i>
 	    				</div>
 	    				<div class="msj-challenge">
 	    					{{t.task}}
@@ -60,7 +60,7 @@
   	<ion-footer class="bar" style="bottom:0px;">
         <div class="conten-footer">
             <div class="home-btn">
-                <a href="#/home"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+                <a href="#/home"><i class="ion-ios-home" aria-hidden="true"></i></a>
             </div>
             <div class="task-btn" style="background-color: #3498db;">
                 <a href="#/task"><p style="text-align: center">Tareas</p></a>
@@ -69,7 +69,7 @@
                 <a href="#/challenge"><p>Desafíos</p></a>
             </div>
             <div class="profi-btn" >
-                <a href="#/user"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+                <a href="#/user"><i class="ion-person" aria-hidden="true"></i></a>
             </div>
         </div>
     </ion-footer>
