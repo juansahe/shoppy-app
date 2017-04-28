@@ -1,14 +1,14 @@
 <ion-view view-title="Task">
-  	<ion-content class="TaskComponent"  scrollY="true">
+  	<ion-content class="TaskComponent" style="margin-bottom: 50px;" scrollY="true">
 	    <div class="container-box">
-	    	<div class="conten-pts">
+	    	<div class="conten-pts" ng-controller="PuntosCtrl">
 				<div class="bar-pts">
 			        <div class="conten-bar">
 			            <div class="level-circle"><!--nivel de usuario-->
-			                1
+			               {{user.nivel}}
 			            </div>
 			            <div class="mypts" style="padding-top: 10px; width: 105px;">
-                           100pt 
+                           {{user.puntos}}pt 
                         </div>
 			        </div>
 			    </div>
@@ -18,7 +18,7 @@
 			                <i class="fa fa-database fa-2x" aria-hidden="true" style="color:#FFF; padding-top: 6px;"></i>
 			            </div>
 			            <div class="user-cash">
-                            $0
+                            ${{user.dinero}}
                         </div>
 			        </div>
 			    </div>

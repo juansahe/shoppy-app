@@ -69,7 +69,8 @@ angular.module('Grimorum')
       })
       .state('points',{
         templateUrl:'js/layouts/points.html',
-        abstract: true
+        abstract: true,
+        controller:'puntosCtrl'
       })
 
 

@@ -1,11 +1,11 @@
 <ion-view view-title="User">
-    <ion-content class="UsersComponent"  scrollY="true">
+    <ion-content class="UsersComponent" ng-controller="PuntosCtrl" scrollY="true" style="margin-bottom: 50px;">
         <div class="profile">
         	<div class="img-profile">
         		<img src="./assets/img/User.png" alt="">
         	</div>
         	<div class="username">
-        		<h3>Luisa Robayo</h3>
+        		<h3>{{user.name}}</h3>
         	</div>
         </div>
         <div class="conten">
@@ -13,10 +13,10 @@
         		<div class="bar-pts">
                     <div class="conten-bar">
                         <div class="level-circle">
-                            1
+                            {{user.nivel}}
                         </div>
                         <div class="mypts" style="padding-top: 10px; width: 105px;">
-                           100pt 
+                           {{user.puntos}}pt 
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                             <i class="fa fa-database fa-2x" aria-hidden="true" style="color:#FFF; padding-top: 6px;"></i>
                         </div>
                         <div class="user-cash">
-                            $0
+                            ${{user.dinero}}
                         </div>
                     </div>
                 </div>
