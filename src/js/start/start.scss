@@ -1,55 +1,43 @@
 .Start-Cover{
-	background-color: #3293d4;
+	background: rgba(41,128,185,1);
+	background: -moz-linear-gradient(top, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 6%, rgba(41,128,185,1) 15%, rgba(41,128,185,1) 22%, rgba(41,128,185,1) 35%, rgba(52,152,219,1) 66%, rgba(52,152,219,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(41,128,185,1)), color-stop(6%, rgba(41,128,185,1)), color-stop(15%, rgba(41,128,185,1)), color-stop(22%, rgba(41,128,185,1)), color-stop(35%, rgba(41,128,185,1)), color-stop(66%, rgba(52,152,219,1)), color-stop(100%, rgba(52,152,219,1)));
+	background: -webkit-linear-gradient(top, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 6%, rgba(41,128,185,1) 15%, rgba(41,128,185,1) 22%, rgba(41,128,185,1) 35%, rgba(52,152,219,1) 66%, rgba(52,152,219,1) 100%);
+	background: -o-linear-gradient(top, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 6%, rgba(41,128,185,1) 15%, rgba(41,128,185,1) 22%, rgba(41,128,185,1) 35%, rgba(52,152,219,1) 66%, rgba(52,152,219,1) 100%);
+	background: -ms-linear-gradient(top, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 6%, rgba(41,128,185,1) 15%, rgba(41,128,185,1) 22%, rgba(41,128,185,1) 35%, rgba(52,152,219,1) 66%, rgba(52,152,219,1) 100%);
+	background: linear-gradient(to bottom, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 6%, rgba(41,128,185,1) 15%, rgba(41,128,185,1) 22%, rgba(41,128,185,1) 35%, rgba(52,152,219,1) 66%, rgba(52,152,219,1) 100%);
 	font-family: Titillium;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 12%;
+}
+#logo{
+	width: 100%;
+	height: auto;
 }
 
-.title h1{
-  margin-top: 30px;
-  color: white;
-  text-align: center;
-  font-weight: bold;
+#botones{
+	margin-bottom: 10%;
+	margin-left: 10%;
+	margin-right: 10%;
+	position: absolute;
+	bottom: 0%;
+	width: 80%;
 }
-
-.btnlarge{
-	position: relative;
-	margin-bottom: 60px;
-}
-
-.btnlarge a.btn{
+.button{
+	font-weight: bold;
+	font-size: 7vw;
+	border: none;
 	border-radius: 58px 58px 58px 58px;
 	-moz-border-radius: 58px 58px 58px 58px;
 	-webkit-border-radius: 58px 58px 58px 58px;
-	border: 0px solid #000000;
-	width: 80%;
-	height: 40px;
-	margin-left: 10%;
-	color: #3293d4;
-	background-color: white;
-	text-align: center;
-	text-decoration: none;
-	font-size: 28px;
-	padding-top: 8px;
-	margin-bottom: 50px;
 }
 
-.btnlarge a:over{
-	color: white;
-	background-color: #2ecc71;
-}
-
-.btnlarge a.register {
+.btnreg{
 	color: white !important;
 	background-color: #2ecc71 !important;
 }
-
-.popup-head, .popup-title  {
-	background: #3293d4;
-	color: #FFF;
-}
-
-
-.img-popup{
-	width: 100px;
-	fill: rgb(178, 178, 80) !important;
-	stroke:#b52808;
+.btning{
+	color: #3293d4 !important;
+	background-color: white !important;
 }
