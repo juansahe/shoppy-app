@@ -9,25 +9,56 @@
                     </div>
                 </div>
 	    	</div>
+            <section class="tareas" ng-repeat="tarea in task">
+                <div class="listat">
+                    <div class="row tareaContent degradadoGris">
+                        <div class="texto col col-50">
+                            <p>{{tarea.task}}</p>
+                        </div>
+                        <div class="btnPregunta">
+                            ?
+                        </div>
+                        <div class="puntos">
+                            {{tarea.px}}px
+                        </div>
+                        <div class="puntos" style="color:#269B55">
+                            {{tarea.sm}}sm
+                        </div>
+                        <div class="completado">
+                            <div class="capa1">
+                                <div class="capa2">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="description degradadoblueX">
+                        <div class="col col-25">
+                            
+                        </div>
+                        <div class="col col-75">
+                            
+                        </div>
+                    </div>  
+                </div>
+                
+            </section>
             
-            <div class="tareaContent degradadoGris">
-               
-            </div>
         </div>   
 	    
   	</ion-content>
-  	<ion-footer class="bar" style="bottom:0px;">
+  	<ion-footer class="" style="bottom:0px;">
         <div class="conten-footer">
-            <div class="home-btn">
+            <div class="home-btn degradadoGris">
                 <a href="#/home"><i class="ion-ios-home" aria-hidden="true"></i></a>
             </div>
-            <div class="task-btn" style="background-color: #3498db;">
+            <div class="task-btn" style="height: 50px; margin-top: 0px; background-color: #2980B9; ">
                 <a href="#/task"><p style="text-align: center">Tareas</p></a>
             </div>
-            <div class="challenge-btn">
+            <div class="challenge-btn degradadoGris">
                 <a href="#/challenge"><p>Desafíos</p></a>
             </div>
-            <div class="profi-btn" >
+            <div class="profi-btn degradadoGris" >
                 <a href="#/user"><i class="ion-person" aria-hidden="true"></i></a>
             </div>
         </div>
