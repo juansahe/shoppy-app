@@ -18,6 +18,7 @@
     float: right;
 }
 
+
 .btnPregunta{
   background-color: white;
   width: 25;
@@ -42,6 +43,7 @@
   background: -ms-linear-gradient(left, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
   background: linear-gradient(to right, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95a5a6', endColorstr='#bdc3c7', GradientType=1 );
+
 }
 
 .degradadoblueX{
@@ -53,6 +55,7 @@
   background: -ms-linear-gradient(left, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 28%, rgba(52,152,219,1) 69%, rgba(52,152,219,1) 100%);
   background: linear-gradient(to right, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 28%, rgba(52,152,219,1) 69%, rgba(52,152,219,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2980b9', endColorstr='#3498db', GradientType=1 );
+  color: #FFF !important;
 }
 /*
  *Number fonts
