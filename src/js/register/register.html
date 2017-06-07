@@ -1,7 +1,10 @@
 <ion-view view-title="Register" hide-nav-bar="true">
   <ion-content class="RegisterComponent"  scrollY="true">
     <div class="title">
-    	<h1>Shopper Miles</h1>
+    	<img src="./assets/img/logoblue.png" />
+    </div>
+    <div  class="titleregistro">
+        <img src="./assets/img/reg-02.png"/>
     </div>
     <div class="container">
     	<div class="form-grup">
@@ -9,19 +12,24 @@
     			<div class="form-element">
     				<input type="text" placeholder="Nombre" ng-model="user.name">
     			</div>
+                <div class="form-element">
+                    <input type="date" placeholder="Fecha de nacimiento" ng-model="user.date">
+                </div>
     			<div class="form-element">
     				<input type="email" placeholder="Correo electronico" ng-model="user.mail">
     			</div>
     			<div class="form-element">
     				<input type="password" placeholder="Contraseña" ng-model="user.password">
     			</div>
-    			<div class="form-element">
-    				<input type="text" placeholder="Fecha de nacimiento" ng-model="user.date">
-    			</div>
+               
     		</form>
     	</div>
     	<div class="terms">
-    		<p>Regístrandote aceptas</p> <p>los términos de privacidad de master shopper</p>
+        <div class="btnTerm">
+            
+        </div>
+
+    		<p>Aceoto los términos de privacidad y servicio de Shopper Miles</p>
     	</div>
         <div class="btnlarge">
             <a ng-click="verificar()" class="btn">Continuar</a>

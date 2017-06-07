@@ -1,60 +1,17 @@
 <ion-view view-title="Task">
   	<ion-content class="TaskComponent" style="margin-bottom: 50px;" scrollY="true">
 	    <div class="container-box">
-	    	<div class="conten-pts" ng-controller="PuntosCtrl">
-				<div class="bar-pts">
-			        <div class="conten-bar">
-			            <div class="level-circle"><!--nivel de usuario-->
-			               {{user.nivel}}
-			            </div>
-			            <div class="mypts" style="padding-top: 10px; width: 105px;">
-                           {{user.puntos}}pt 
-                        </div>
-			        </div>
-			    </div>
-			    <div class="bar-cash">
-			        <div class="conten-bar">
-			            <div class="icon-circle">
-			                <i class="fa fa-database fa-2x" aria-hidden="true" style="color:#FFF; padding-top: 6px;"></i>
-			            </div>
-			            <div class="user-cash">
-                            ${{user.dinero}}
-                        </div>
-			        </div>
-			    </div>
-			</div>
+	    	
 	    	<div class="row">
-	    		<div class="title-challenge">
-	    			<h3>¡Gana puntos y sube de nivel!</h3>
-	    		</div>
+                <div class="col">
+                    <div class="title-tarea">
+                        <h3>Haz tus tareas y sube de nivel</h3>
+                    </div>
+                </div>
 	    	</div>
-	    
-	    	<div class="challenges" ng-repeat="t in task" style="margin-bottom:0px;">
-	    		<div id="{{t.id}}" ng-click="hacertares(t.id)" class="content" style="height: 65px;">
-	    			<div class="inf-challenge" style="height: 85%;">
-	    				<div class="block">
-	    					<i class="ion-unlocked" style="font-size: 2em;" aria-hidden="true"></i>
-	    				</div>
-	    				<div class="msj-challenge">
-	    					{{t.task}}
-	    				</div>
-	    				<div class="gain-challenge">
-	    					{{t.gain}}pt
-	    				</div>
-	    				<div class="complete-challenge">
-	    					  <section title=".roundedTwo">
-							    <!-- .roundedTwo -->
-							    <div class="roundedTwo">
-							      <input type="checkbox"  class="roundedTwo" disabled="disabled"/>
-							      <label for="roundedTwo"></label>
-							    </div>
-							    <!-- end .roundedTwo -->
-							  </section>
-	    				</div>
-	    			</div>
-	    		</div>
-	    	</div>
-	    </div>
+            <div class="row">
+                
+            </div>
 	    
   	</ion-content>
   	<ion-footer class="bar" style="bottom:0px;">
