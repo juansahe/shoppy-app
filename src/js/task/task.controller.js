@@ -5,38 +5,23 @@ class TaskCtrl{
 		$scope.task = [{
 			id:'1',
 			level:'1',
-			task:'Completa tu perfil',
-			gain:'100',
+			task:'Registro básico',
+			px:'200',
+			sm:'20',
 			complete:true
 		},{
 			id:'2',
 			level:'1',
-			task:'tomate una foto para tu perfil',
-			gain:'20',
+			task:'Completa tu perfil',
+			px:'200',
+			sm:'20',
 			complete:false
 		},{
 			id:'3',
 			level:'1',
-			task:'Sube tu factura de compra (De 1 a 5 productos por factura)',
-			gain:'20',
-			complete:false
-		},{
-			id:'4',
-			level:'1',
-			task:'Sube tu factura de compra (De 5 a 15 productos por factura)',
-			gain:'60',
-			complete:false
-		},{
-			id:'5',
-			level:'1',
-			task:'Sube tu factura de compra (De 16 o más productos por factura)',
-			gain:'100',
-			complete:false
-		},{
-			id:'6',
-			level:'1',
-			task:'Califica el producto que mas consumes',
-			gain:'50',
+			task:'Pregunta rapida',
+			px:'100',
+			sm:'10',
 			complete:false
 		}
 		];
