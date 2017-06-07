@@ -1,23 +1,20 @@
 <ion-view view-title="CompletePropile" hide-nav-bar="true" >
-  <ion-content class="" scrollY="true">
-    		<div class="head">
-    			<h5 style="margin-top: 10px;">Para compartirte</h5>
-    			<h5>una mejor experiencia</h5>
-    		</div>
+
+  <ion-content class="" padding>
+
     		<div class="row">
     			<div class="text">
-    				<h2>Selecciona 3 productos</h2>
-    				<h2>que compres</h2>
-    				<h2>recurrentemente</h2>
+    				<h2>Selecciona 3 productos <br> que compres <br> recurrentemente</h2>
     			</div>
     		</div>
+
     		<div class="row">
     			<div class="products" ng-repeat="producto in productos">
     				<div class="product" id="{{producto}}"  ng-click="select(producto)" >
     					<a  href="">{{producto}}</a>
     				</div>
-    				
     			</div>
     		</div>
+
   </ion-content>
 </ion-view>
