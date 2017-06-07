@@ -6,7 +6,7 @@ class CompletePropileCtrl{
 		$scope.products=[];
 		$scope.select = (id)=>{
 			if($scope.contar<3){
-				document.getElementById(id).style.background="#3293d4";
+				var midiv=document.getElementById(id).className += " seleccionado";
 				$scope.contar++;
 				$scope.products.push(id);
 				if($scope.contar===3){
