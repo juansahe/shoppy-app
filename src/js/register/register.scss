@@ -34,14 +34,6 @@
 	text-align: center;
 	font-size: 20px;
 	color: white;
-	background: rgba(149,165,166,1);
-	background: -moz-linear-gradient(left, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
-	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,165,166,1)), color-stop(0%, rgba(149,165,166,1)), color-stop(32%, rgba(149,165,166,1)), color-stop(100%, rgba(189,195,199,1)));
-	background: -webkit-linear-gradient(left, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
-	background: -o-linear-gradient(left, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
-	background: -ms-linear-gradient(left, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
-	background: linear-gradient(to right, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95a5a6', endColorstr='#bdc3c7', GradientType=1 );
 }
 input::-webkit-input-placeholder {
   color: white;
