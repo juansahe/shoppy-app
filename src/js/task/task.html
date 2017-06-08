@@ -9,6 +9,7 @@
                     </div>
                 </div>
 	    	</div>
+
             <section class="tareas" ng-repeat="tarea in task">
                 <div class="listat">
                     <div class="row tareaContent degradadoGris">
@@ -32,21 +33,47 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="description degradadoblueX">
-                        <div class="col col-25">
-                            
-                        </div>
-                        <div class="col col-75">
-                            
-                        </div>
+
+                    fff
                     </div>  
                 </div>
                 
             </section>
             
-        </div>   
+        </div>
+
+
+
+        <div ng-repeat="group in groups">
+          <ion-item class="item-stable degradadoGris"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+
+            &nbsp;
+            Group {{group.name}}
+
+          </ion-item>
+          <ion-item class="item-accordion degradadoblueX" ng-show="isGroupShown(group)">
+            123456
+          </ion-item>
+          <br>
+        </div>
 	    
   	</ion-content>
+
+
+
+
+
+
+
+
+
+
+
   	<ion-footer class="" style="bottom:0px;">
         <div class="conten-footer">
             <div class="home-btn degradadoGris">

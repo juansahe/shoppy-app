@@ -33,17 +33,17 @@
 	font-weight: bold;
 }
 
-label{
+.item-input{
 	text-align: center;
 	border-radius: 30px;
 	margin: auto;
 }
-label i{
+.item-input i{
 	font-size: 35px;
 	color: white !important;
 }
 
-input{
+.inputGris{
 	width: 80%;
 	text-align: center;
 	color: white !important;
@@ -60,11 +60,6 @@ input{
 	color: white;
 }
 
-#fondo{
-	position: absolute;
-    width: 100vw;
-    height: 30vh;
-}
 .popup-body{
 	text-align: center;
 }
@@ -73,6 +68,47 @@ input{
 }
 .ion-star{
 	border-radius: 10%;
+}
+
+.popup-container{
+	background-color: #3989be !important;
+	//opacity: 0.8;
+}
+
+.popup{
+    background-color: #2ecc71 !important;
+    border-radius: 25px !important;
+}
+.win{
+	font-size: 30px !important;
+	font-weight: bold !important;
+	color: white !important;
+}
+.pt_xp{
+	color: #3989be;
+	font-size: 30px !important;
+	font-weight: bold !important;
+}
+.popup-head{
+	padding-top: 30px;
+	border-bottom: 0 !important;
+}
+#star{
+	color: white;
+	font-size: 10em;
+}
+#cerrar{
+	background-color: red !important;
+	color: #269b55 !important;
+}
+
+.ion-close-round{
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	color: #269b55;
+	font-size: 30px;
+	cursor: pointer;
 }
 
 /*.CompletePropileComponent {
