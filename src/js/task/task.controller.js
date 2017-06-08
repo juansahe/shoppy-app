@@ -26,6 +26,8 @@ class TaskCtrl{
 		}
 		];
 
+		
+
 		this.mark_task($scope.task);
 
 		$scope.hacertares = (id)=>{

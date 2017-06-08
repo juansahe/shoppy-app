@@ -1,11 +1,12 @@
 .row .col .title-tarea h3{
 	text-align: center;
+	font-weight: bold;
+	font-size: 26px;
 }
 
 .tareaContent{
 	width: 100%;
 	height: 70px;
-	position: absolute;
 	background-color: #000;
 }
 .tareas .listat{
@@ -61,6 +62,7 @@
 }
 
 .tareas .description{
+	display: block;
 	border-radius: 0px 0px 25px 25px;
 	-moz-border-radius: 0px 0px 25px 25px;
 	-webkit-border-radius: 0px 0px 25px 25px;
@@ -68,8 +70,14 @@
 	width: 90%;
 	margin-left: 5%;
 	margin-right: 5%;
-	height: 160px;
-}
-.listat .description{
+	height: 60px;
 	padding-top: 80px;
+	display: none;
+	overflow: hidden;
+
 }
+
+
+
+
+
