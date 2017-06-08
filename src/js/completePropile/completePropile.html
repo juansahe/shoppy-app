@@ -11,13 +11,13 @@
 <br><br>
   <label class="item item-input degradadoGris">
       <i class = "icon icon ion-search"></i>
-      <input type="text" placeholder="Búsqueda">
+      <input type="text" placeholder="Búsqueda" ng-model="busqueda">
   </label>
   <br><br> 
 
 
 
-  <div class="lista" ng-repeat="producto in productos" ng-click="select(producto)" id="{{producto}}">
+  <div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="{{producto}}">
      <div class="product" >
          <p class="text">{{producto}}</p>
      </div>

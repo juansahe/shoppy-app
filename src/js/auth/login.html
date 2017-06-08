@@ -1,12 +1,35 @@
 <ion-view view-title="Grimorum" hide-nav-bar="true">
 
-  <ion-content class="Login-cover" overflow-scroll="true">
-    <div class="Login-logoContent slide-in">
-    <img src="http://www.grimorum.com.co/uploads/7/8/6/5/78659530/logo-de-inicio-02_2.png " alt="">
-      <h1 style="color:#ee6a25">Grimorum </h1>
-    </div>
-    <div class="Login-footer">
-  hola
-    </div>
+  <ion-content class="" overflow-scroll="">
+
+<div class="title">
+	<img src="./assets/img/logoblue.png" />
+</div>
+<div  class="titleregistro">
+    <img src="./assets/img/reg-02.png"/>
+</div>	
+
+
+	<div class="form-element">
+		<input class="degradadoGris" type="text" placeholder="Usuario" ng-model="user.user">
+	</div>
+	<div class="form-element">
+		<input class="degradadoGris" type="password" placeholder="Contraseña" ng-model="user.password">
+	</div>
+
+    <button class="button button-positive" ng-click="showAlert()">
+      Alert
+    </button>
+
   </ion-content>
+	<div id="botones">
+		<a href="" class="button button-block btncontinuar degradadoblueX">
+		Ingresar
+		</a>
+
+	<div class="login">
+	    <a href="#/register"><p>No tienes una cuenta? Regístrate aquí</p></a>
+	</div>
+	</div>
+    
 </ion-view>

@@ -1,7 +1,7 @@
 class CompletePropileCtrl{
 	constructor(CompletePropileService, $scope, $location, $ionicPopup){
 		this.CompletePropileService = CompletePropileService;
-		$scope.productos=['Cerveza', 'Pan', 'Cereal', 'Carne', 'Leche', 'Huevos', 'Chocolate', 'Jabón', 'Detergente', 'Gaseosa', 'Pollo', 'Fruta', "Pavo"];
+		$scope.productos=['Cerveza', 'Pan', 'Cereal', 'Carne', 'Leche', 'Huevos', 'Chocolate', 'Jabón', 'Detergente', 'Gaseosa', 'Pollo', 'Fruta', "Pavo", "fff", "ffSDSDFf"];
 		$scope.contar=0;
 		$scope.products=[];
 		$scope.select = (id)=>{
