@@ -1,20 +1,28 @@
 <ion-view view-title="CompletePropile" hide-nav-bar="true" >
-
-  <ion-content class="" padding>
-
-    		<div class="row">
-    			<div class="text">
+<img src="./assets/img/head.png" id="fondo">
+  <ion-content class="content">
+    		<div class="row head">
     				<h2>Selecciona 3 productos <br> que compres <br> recurrentemente</h2>
-    			</div>
     		</div>
 
-    		<div class="row">
-    			<div class="products" ng-repeat="producto in productos">
-    				<div class="product" id="{{producto}}"  ng-click="select(producto)" >
-    					<a  href="">{{producto}}</a>
-    				</div>
-    			</div>
-    		</div>
+
+
+
+<br><br>
+  <label class="item item-input degradadoGris">
+      <i class = "icon icon ion-search"></i>
+      <input type="text" placeholder="Búsqueda" ng-model="busqueda">
+  </label>
+  <br><br> 
+
+
+
+  <div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="{{producto}}">
+     <div class="product" >
+         <p class="text">{{producto}}</p>
+     </div>
+  </div>
+
 
   </ion-content>
 </ion-view>

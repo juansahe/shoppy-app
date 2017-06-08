@@ -1,4 +1,81 @@
-.CompletePropileComponent {
+.content{
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 12%;
+}
+.lista{
+	width: 28%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+	float: left;
+	height: 80px;
+	background-color: #3293d4;
+	text-align: center;
+	padding-top: 32px;
+	border-radius: 15px;
+	color: white !important;
+}
+.product{
+	
+	color: white;
+	border-radius: 15px;
+	height: auto;
+	text-align: center;
+	vertical-align: middle;
+
+}
+.seleccionado{
+	background-color: #2ECC71;
+}
+
+.text{
+	font-size: 23px;
+	font-weight: bold;
+}
+
+label{
+	text-align: center;
+	border-radius: 30px;
+	margin: auto;
+}
+label i{
+	font-size: 35px;
+	color: white !important;
+}
+
+input{
+	width: 80%;
+	text-align: center;
+	color: white !important;
+	font-size: x-large !important;
+	margin-top: 0vh !important;
+	margin-bottom: 0vh !important;
+}
+
+.head h2{
+	margin: auto;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+}
+
+#fondo{
+	position: absolute;
+    width: 100vw;
+    height: 30vh;
+}
+.popup-body{
+	text-align: center;
+}
+.popup-buttons{
+	color: #bdc3c7;
+}
+.ion-star{
+	border-radius: 10%;
+}
+
+/*.CompletePropileComponent {
   
 }
 .head{
@@ -55,4 +132,4 @@
 }
 .popup-buttons{
 	color: #bdc3c7;
-}
+}*/
