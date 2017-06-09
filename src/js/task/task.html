@@ -1,75 +1,57 @@
 <ion-view view-title="Task">
+<img src="./assets/img/head.png" id="fondoHead">
   	<ion-content class="TaskComponent" style="margin-bottom: 50px;" scrollY="true">
 	    <div class="container-box">
-	    	
-	    	<div class="row">
-                <div class="col">
-                    <div class="title-tarea">
-                        <h3>Haz tus tareas y sube de nivel</h3>
-                    </div>
-                </div>
-	    	</div>
-
-            <section class="tareas" ng-repeat="tarea in task">
-                <div class="listat">
-                    <div class="row tareaContent degradadoGris">
-                        <div class="texto col col-50">
-                            <p>{{tarea.task}}</p>
-                        </div>
-                        <div class="btnPregunta">
-                            ?
-                        </div>
-                        <div class="puntos">
-                            {{tarea.px}}px
-                        </div>
-                        <div class="puntos" style="color:#269B55">
-                            {{tarea.sm}}sm
-                        </div>
-                        <div class="completado">
-                            <div class="capa1">
-                                <div class="capa2">
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="description degradadoblueX">
-
-                    fff
-                    </div>  
-                </div>
-                
-            </section>
-            
+	    	<br><br><br><br><br>
+        <div class="row head">
+            <h2>Haz tus tareas y sube de nivel</h2>
+        </div>
+        <br>
         </div>
 
 
-
-        <div ng-repeat="group in groups">
-          <ion-item class="item-stable degradadoGris"
-                    ng-click="toggleGroup(group)"
-                    ng-class="{active: isGroupShown(group)}">
-
-            &nbsp;
-            Group {{group.name}}
+        <div ng-repeat="tarea in task">
+          <ion-item class="item-stable degradadoGris tareaContent row" ng-class="{active: isGroupShown(tarea)}">
+            <div class="texto col col-50">
+                <p>{{tarea.task}}</p>
+            </div>
+            <div class="btnPregunta" ng-click="toggleGroup(tarea)">
+                ?
+            </div>
+            <div class="puntos">
+                {{tarea.px}}px
+            </div>
+            <div class="puntos" style="color:#269B55">
+                {{tarea.sm}}sm
+            </div>
+            <div class="completado">
+                <div class="capa1">
+                    <div class="capa2">
+                       
+                    </div>
+                </div>
+            </div>
 
           </ion-item>
-          <ion-item class="item-accordion degradadoblueX" ng-show="isGroupShown(group)">
-            123456
+
+          <ion-item class="item-accordion degradadoblueX descripcion" ng-show="isGroupShown(tarea)">
+          <div class="row">
+            <div class="col col-33 iconDesc">
+            <center><i class = "icon ion-person"></i></center>
+                
+            </div>
+            <div class="col item-text-wrap">
+                Queremos conocerte un poco mejor. Queremos conocerte un poco mejor.
+            </div>
+           
+          </div>
+            
+
           </ion-item>
           <br>
         </div>
 	    
   	</ion-content>
-
-
-
-
-
-
-
 
 
 
