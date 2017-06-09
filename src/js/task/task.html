@@ -1,5 +1,6 @@
 <ion-view view-title="Task">
 <img src="./assets/img/head.png" id="fondoHead">
+<<<<<<< HEAD
         <div class="row head">
             <h2>Haz tus tareas y sube de nivel</h2>
         </div>
@@ -32,46 +33,87 @@
                     </div>
                 </div>
             </div>
+=======
+    <ion-content class="TaskComponent" style="margin-bottom: 50px;" scrollY="true">
+   <div class="container-box">
+    <br><br><br><br><br>
+       <div class="row head">
+           <h2>Haz tus tareas y sube de nivel</h2>
+       </div>
+       <br>
+       </div>
 
-          </ion-item>
 
-          <ion-item class="item-accordion degradadoblueX descripcion" ng-show="isGroupShown(tarea)">
-          <div class="row">
-            <div class="col col-33 iconDesc">
-            <center><i class = "icon ion-person"></i></center>
-                
-            </div>
-            <div class="col item-text-wrap">
-                Queremos conocerte un poco mejor. Queremos conocerte un poco mejor.
-            </div>
+       <div ng-repeat="tarea in task">
+         <ion-item class="item-stable degradadoGris tareaContent row" ng-class="{active: isGroupShown(tarea)}">
+           <div class="texto col col-50">
+               <p>{{tarea.task}}</p>
+           </div>
+           <div class="btnPregunta" ng-click="toggleGroup(tarea)">
+               ?
+           </div>
+           <div class="puntos">
+               {{tarea.px}}px
+           </div>
+           <div class="puntos" style="color:#269B55">
+               {{tarea.sm}}sm
+           </div>
+           <div class="completado">
+               <div class="capa1">
+                   <div class="capa2">
+                      
+                   </div>
+               </div>
+           </div>
+
+         </ion-item>
+>>>>>>> 01a50d530b0ff25716a828e948109aa245eb9434
+
+         <ion-item class="item-accordion degradadoblueX descripcion" ng-show="isGroupShown(tarea)">
+         <div class="row">
+           <div class="col col-33 iconDesc">
+           <center><i class = "icon ion-person"></i></center>
+               
+           </div>
+           <div class="col item-text-wrap">
+               Queremos conocerte un poco mejor. Queremos conocerte un poco mejor.
+           </div>
+          
+         </div>
            
-          </div>
-            
 
+<<<<<<< HEAD
           </ion-item>
         </div>
 
         
 	    
   	</ion-content>
+=======
+         </ion-item>
+         <br>
+       </div>
+   
+    </ion-content>
+>>>>>>> 01a50d530b0ff25716a828e948109aa245eb9434
 
 
 
 
-  	<ion-footer class="" style="bottom:0px;">
-        <div class="conten-footer">
-            <div class="home-btn degradadoGris">
-                <a href="#/home"><i class="ion-ios-home" aria-hidden="true"></i></a>
-            </div>
-            <div class="task-btn" style="height: 50px; margin-top: 0px; background-color: #2980B9; ">
-                <a href="#/task"><p style="text-align: center">Tareas</p></a>
-            </div>
-            <div class="challenge-btn degradadoGris">
-                <a href="#/challenge"><p>Desafíos</p></a>
-            </div>
-            <div class="profi-btn degradadoGris" >
-                <a href="#/user"><i class="ion-person" aria-hidden="true"></i></a>
-            </div>
-        </div>
-    </ion-footer>
+    <ion-footer class="" style="bottom:0px;">
+       <div class="conten-footer">
+           <div class="home-btn degradadoGris">
+               <a href="#/home"><i class="ion-ios-home" aria-hidden="true"></i></a>
+           </div>
+           <div class="task-btn" style="height: 50px; margin-top: 0px; background-color: #2980B9; ">
+               <a href="#/task"><p style="text-align: center">Tareas</p></a>
+           </div>
+           <div class="challenge-btn degradadoGris">
+               <a href="#/challenge"><p>Desafíos</p></a>
+           </div>
+           <div class="profi-btn degradadoGris" >
+               <a href="#/user"><i class="ion-person" aria-hidden="true"></i></a>
+           </div>
+       </div>
+   </ion-footer>
 </ion-view>
