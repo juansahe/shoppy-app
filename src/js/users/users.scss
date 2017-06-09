@@ -28,3 +28,34 @@
 .row2{
 	display: flex;
 }
+
+.content .item .text h3{
+
+	font-size: 20px;
+	text-align: center;
+}
+
+.content .item .text{
+	text-align: center;
+	width: 100%;
+	position: absolute;
+}
+
+.session a.cerrar{
+	text-decoration: none;
+	color: #2980B9;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+}
+.session a.eliminar{
+	text-decoration: none;
+	color: #2980B9;
+	font-size: 15px;
+	display: block;
+	margin-top: 15px;
+}
+.session{
+	margin-top: 20px;
+	text-align: center;
+}
