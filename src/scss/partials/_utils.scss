@@ -197,7 +197,9 @@ $font-family-base: 'Titillium' !default;
 }
 
 #fondoHead{
-  position: absolute;
-    width: 100vw;
-    height: 30vh;
+  width: 100vw;
+  height: 180px;
+  background-image: url("../assets/img/head.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }

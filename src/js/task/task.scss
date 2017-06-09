@@ -5,9 +5,11 @@
 }
 
 .tareaContent{
+	margin: 0;
 	width: 100%;
 	height: 70px;
 	background-color: #000;
+	margin-top: 15px;
 }
 .tareas .listat{
 	margin-bottom: 10px;
@@ -61,16 +63,11 @@
   
 }
 
-<<<<<<< HEAD
-
 .item{
 	border-style: none !important;
 }
 .descripcion{
-=======
-.tareas .description{
 	display: block;
->>>>>>> 9b3cea30ab3469eb9df36282743130a8de2dec7d
 	border-radius: 0px 0px 25px 25px;
 	-moz-border-radius: 0px 0px 25px 25px;
 	-webkit-border-radius: 0px 0px 25px 25px;
@@ -78,7 +75,6 @@
 	width: 90%;
 	margin-left: 5%;
 	margin-right: 5%;
-<<<<<<< HEAD
 }
 .iconDesc{
 	font-size: 7vw;
@@ -88,18 +84,15 @@
 	position: absolute;
 	margin: auto;
 	vertical-align: middle;
-=======
 	height: 60px;
 	padding-top: 80px;
 	display: none;
 	overflow: hidden;
-
->>>>>>> 9b3cea30ab3469eb9df36282743130a8de2dec7d
 }
 
 
 
-<<<<<<< HEAD
+
 /*
  * https://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
  */
@@ -116,7 +109,3 @@
 .list .item.item-accordion.ng-hide-remove {
   display: block !important;
 }
-=======
-
-
->>>>>>> 9b3cea30ab3469eb9df36282743130a8de2dec7d
