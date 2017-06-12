@@ -1,5 +1,6 @@
 <ion-view view-title="Home">
-    <ion-content class="HomeComponent"  scrollY="true" style="margin-bottom: 50px;">
+<img src="./assets/img/head.png" id="fondoHead">
+    <ion-content class="HomeComponent">
         <div class="container">
         	<div class="">
         		<div class="conten-pts" ng-controller="PuntosCtrl">
@@ -25,36 +26,30 @@
                     </div>
                 </div>
         	</div>
-        	<div class="row">
-        		<div class="title">
-        			<h3>¡Promociones a tu medida!</h3>
-        		</div>
-        	</div>
-        	<div class="row">
-        		<div class="slide">
-        			 <ion-slide-box show-pager="true" style="height: 200px">
-    			       <slide>
-    			           
-    			       </slide>
-    			       <slide>
-    			           
-    			       </slide>
-    			       <slide>
-    			           
-    			       </slide>
-    				</ion-slide-box>
-        		</div>
-        	</div>
-        	<div class="row">
-        		<div class="promo">
-        			<div class="promo-mitad" style="float: left;">
-        				
-        			</div>
-        			<div class="promo-mitad" style=" float: right;">
-        				
-        			</div>
-        		</div>
-        	</div>
+            <div class="row head">
+                <h2>¡Promociones a tu medida!</h2>
+            </div>
+
+
+            <div class="row slide">
+                <ion-slide-box class="slideprom">
+                  <ion-slide>
+                    <div class="box blue imgbox"><img class="imgslide" src="./assets/img/tool_alarms_bg.jpg"></div>
+                  </ion-slide>
+                  <ion-slide>
+                    <div class="box yellow"><img class="imgslide" src="./assets/img/tool_alarms_bg.jpg"></div>
+                  </ion-slide>
+                  <ion-slide>
+                    <div class="box pink"><img class="imgslide" src="./assets/img/tool_calculator_bg.jpg"></div>
+                  </ion-slide>
+                </ion-slide-box>
+
+            </div>
+
+<div class="row">
+  <div class="col col-50 contentPromo"><img class="imgPromo" src="./assets/img/tool_alarms_bg.jpg"></div>
+  <div class="col col-50 contentPromo"><img class="imgPromo" src="./assets/img/tool_alarms_bg.jpg"></div>
+</div>
         	
         </div>
         
