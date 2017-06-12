@@ -44,33 +44,53 @@ angular.module('Grimorum')
         controller: 'PathCtrl'
       })
 
-      .state('home', {
+      .state('tab.home', {
         url: '/home',
-        templateUrl: 'js/home/home.html',
-        controller: 'HomeCtrl'
+        views:{
+          'tab-home':{
+            templateUrl: 'js/home/home.html',
+            controller: 'HomeCtrl'
+          }
+        }
+        
       })
 
-      .state('users',{
+      .state('tab.users',{
         url: '/user',
-        templateUrl:'js/users/users.html',
-        controller:'UsersCtrl'
+        views:{
+          'tab-user':{
+            templateUrl:'js/users/users.html',
+            controller:'UsersCtrl'
+          }
+        }
+        
       })
 
-      .state('challenge', {
+      .state('tab.challenge', {
         url:'/challenge',
         templateUrl: 'js/challenge/challenge.html',
         controller:'ChallengeCtrl'
       })
 
-      .state('task', {
+      .state('tab.task', {
         url:'/task',
-        templateUrl:'js/task/task.html',
-        controller: 'TaskCtrl'
+        views:{
+          'tab-task':{
+            templateUrl:'js/task/task.html',
+            controller: 'TaskCtrl'
+          }
+        }
+        
       })
       .state('points',{
         templateUrl:'js/layouts/points.html',
         abstract: true,
         controller:'puntosCtrl'
+      })
+      .state('tab',{
+        url : '/tab',
+        abstract :true,
+        templateUrl:'js/layouts/tabs.html'
       })
 
 

@@ -1,91 +1,12 @@
 <ion-view view-title="Challenge">
-    <ion-content class="ChallengeComponent"  scrollY="true" style="margin-bottom: 50px;">
-        <div class="container-box">
-        	<div class="conten-pts" ng-controller="PuntosCtrl">
-                <div class="bar-pts">
-                    <div class="conten-bar">
-                        <div class="level-circle">
-                            {{user.nivel}}
-                        </div>
-                        <div class="mypts" style="padding-top: 10px; width: 105px;">
-                           {{user.puntos}}pt 
-                        </div>
-                    </div>
-                </div>
-                <div class="bar-cash">
-                    <div class="conten-bar">
-                        <div class="icon-circle">
-                            <i class="fa fa-database fa-2x" aria-hidden="true" style="color:#FFF; padding-top: 6px;"></i>
-                        </div>
-                        <div class="user-cash">
-                            ${{user.dinero}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        	<div class="row">
-        		<div class="title-challenge">
-        			<h3>¡Completa desafíos y gana dinero!</h3>
-        		</div>
-        	</div>
-        	<div class="row">
-        		<div class="alert-challenge">
-        			<div class="icon-alert">
-        				<i class="ion-alert-circled" style="font-size: 4em;" aria-hidden="true"></i>
-        			</div>
-        			<div class="msj-alert">
-        				<p>Completa más tareas</p>
-        				<p>y sube de nivel para</p>
-        				<p>desbloquear desafíos</p>
-        			</div>
-        		</div>
-        	</div>
-        	<div class="challenges" ng-repeat="challenge in challenges">
-        		<div class="content">
-        			<div class="level">
-        				<p>nivel {{challenge.level}}<p>
-        			</div>
-        			<div class="inf-challenge">
-        				<div class="block">
-        					<i class="ion-locked" style="font-size: 2em;" aria-hidden="true"></i>
-        				</div>
-        				<div class="msj-challenge">
-        					{{challenge.challenge}}
-        				</div>
-        				<div class="gain-challenge">
-        					${{challenge.gain}}
-        				</div>
-        				<div class="complete-challenge">
-        					  <section title=".roundedTwo">
-    						    <!-- .roundedTwo -->
-    						    <div class="roundedTwo">
-    						      <input type="checkbox" value="None" id="roundedTwo" name="check" disabled="disabled" />
-    						      <label for="roundedTwo"></label>
-    						    </div>
-    						    <!-- end .roundedTwo -->
-    						  </section>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        </div>
-        
-    </ion-content>
-        <div class="bar" style="bottom: 0px;">
-            <div class="conten-footer">
-                <div class="home-btn" >
-                    <a href="#/home"><i class="ion-ios-home" aria-hidden="true"></i></a>
-                </div>
-                <div class="task-btn" >
-                    <a href="#/task"><p style="text-align: center">Tareas</p></a>
-                </div>
-                <div class="challenge-btn" style="background-color: #3498db;">
-                    <a href="#/challenge"><p>Desafíos</p></a>
-                </div>
-                <div class="profi-btn" >
-                    <a href="#/user"><i class="ion-person" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div>
+   <h2>prueba</h2>
+         <ion-tabs class="tabs-positive">
+    <ion-tab icon="ion-home" ui-sref="home">
+      <ion-nav-view name="home"></ion-nav-view>
+    </ion-tab>
+    <ion-tab icon="ion-information" ui-sref="info">
+      <ion-nav-view name="info"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
 </ion-view>
 
