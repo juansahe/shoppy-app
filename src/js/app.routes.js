@@ -72,6 +72,11 @@ angular.module('Grimorum')
         abstract: true,
         controller:'puntosCtrl'
       })
+      .state('bonds',{
+        url:'/bond',
+        templateUrl:'js/bonds/bonds.html',
+        controller:'BondsCtrl'
+      })
 
 
     // if none of the above states are matched, use this as the fallback
