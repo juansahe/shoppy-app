@@ -1,14 +1,12 @@
 <ion-view view-title="Task">
-<img src="./assets/img/head.png" id="fondoHead">
-    <ion-content class="TaskComponent" style="margin-bottom: 50px;" scrollY="true">
-   <div class="container-box">
-    <br><br><br><br><br>
-       <div class="row head">
-           <h2>Haz tus tareas y sube de nivel</h2>
-       </div>
-       <br>
-       </div>
 
+<div id="fondoHead">
+<br><br><br>
+  <div class="row head">
+      <h2>Selecciona 3 productos <br> que compres <br> recurrentemente</h2>
+  </div>
+</div>
+    <ion-content class="TaskComponent" style="margin-bottom: 50px;" scrollY="true">
 
        <div ng-repeat="tarea in task">
          <ion-item class="item-stable degradadoGris tareaContent row" ng-class="{active: isGroupShown(tarea)}">
@@ -19,10 +17,10 @@
                ?
            </div>
            <div class="puntos">
-               {{tarea.px}}px
+              <span>{{tarea.px}}px</span>
            </div>
            <div class="puntos" style="color:#269B55">
-               {{tarea.sm}}sm
+               <span>{{tarea.sm}}sm</span>
            </div>
            <div class="completado">
                <div class="capa1">
@@ -37,7 +35,7 @@
          <ion-item class="item-accordion degradadoblueX descripcion" ng-show="isGroupShown(tarea)">
          <div class="row">
            <div class="col col-33 iconDesc">
-           <center><i class = "icon ion-person"></i></center>
+           <center><i class = "icon ion-person" style="font-size: 2em;"></i></center>
                
            </div>
            <div class="col item-text-wrap">
@@ -52,7 +50,14 @@
        </div>
    
     </ion-content>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 27fdbaba861f32054023e101cb438abb072d6b32
+
+<<<<<<< HEAD
+=======
 
 
-
+>>>>>>> 27fdbaba861f32054023e101cb438abb072d6b32
 </ion-view>
