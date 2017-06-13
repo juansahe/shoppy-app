@@ -87,7 +87,7 @@ angular.module('Grimorum')
         templateUrl: 'js/fastQuestion/fastQuestion.html',
         controller: 'fastQuestionCtrl'
       })
-      
+
       .state('bonds',{
         url:'/bond',
         templateUrl:'js/bonds/bonds.html',
@@ -99,6 +99,12 @@ angular.module('Grimorum')
         url : '/tab',
         abstract :true,
         templateUrl:'js/layouts/tabs.html'
+      })
+
+      .state('lookPicture',{
+        url : '/lookPicture',
+        templateUrl:'js/lookPicture/lookPicture.html',
+        controller:'lookPictureCtrl'
       })
 
 
