@@ -87,10 +87,12 @@ angular.module('Grimorum')
         abstract: true,
         controller:'puntosCtrl'
       })
+
       .state('bonds',{
         url:'/bond',
         templateUrl:'js/bonds/bonds.html',
         controller:'BondsCtrl'
+        
       .state('tab',{
         url : '/tab',
         abstract :true,
