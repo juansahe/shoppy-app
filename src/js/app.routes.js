@@ -63,13 +63,6 @@ angular.module('Grimorum')
             controller:'UsersCtrl'
           }
         }
-        
-      })
-
-      .state('tab.challenge', {
-        url:'/challenge',
-        templateUrl: 'js/challenge/challenge.html',
-        controller:'ChallengeCtrl'
       })
 
       .state('tab.task', {
@@ -88,11 +81,22 @@ angular.module('Grimorum')
         controller:'puntosCtrl'
       })
 
-      .state('fastQuestion', {
+      .state('plantillafastQuestion.fastQuestion', {
         url: '/fastQuestion',
-        templateUrl: 'js/fastQuestion/fastQuestion.html',
-        controller: 'fastQuestionCtrl'
+        views:{
+          'fastQuestion':{
+            templateUrl: 'js/fastQuestion/fastQuestion.html',
+            controller: 'fastQuestionCtrl'
+          }
+        }
+        
         })
+
+      .state('plantillafastQuestion', {
+        url : '/plantillafastQuestion',
+        abstract :true,
+        templateUrl:'js/plantillafastQuestion/plantillafastQuestion.html'
+
       .state('bonds',{
         url:'/bond',
         templateUrl:'js/bonds/bonds.html',
