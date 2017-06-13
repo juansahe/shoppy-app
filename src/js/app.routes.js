@@ -72,6 +72,11 @@ angular.module('Grimorum')
         abstract: true,
         controller:'puntosCtrl'
       })
+      .state('fastQuestion', {
+        url: '/fastQuestion',
+        templateUrl: 'js/fastQuestion/fastQuestion.html',
+        controller: 'fastQuestionCtrl'
+      })
 
 
     // if none of the above states are matched, use this as the fallback

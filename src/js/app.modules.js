@@ -15,7 +15,8 @@ angular.module('Grimorum',
     'Grimorum.users',
     'Grimorum.challenge',
     'Grimorum.task',
-    'Grimorum.pts'
+    'Grimorum.pts',
+    'Grimorum.fastQuestion'
   ])
 angular.module('Grimorum.auth', [])
 angular.module('Grimorum.layouts', [])
@@ -28,3 +29,4 @@ angular.module('Grimorum.users', [])
 angular.module('Grimorum.challenge', [])
 angular.module('Grimorum.task', [])
 angular.module('Grimorum.pts', [])
+angular.module('Grimorum.fastQuestion', [])
