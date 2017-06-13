@@ -91,6 +91,10 @@ angular.module('Grimorum')
         url: '/fastQuestion',
         templateUrl: 'js/fastQuestion/fastQuestion.html',
         controller: 'fastQuestionCtrl'
+      .state('bonds',{
+        url:'/bond',
+        templateUrl:'js/bonds/bonds.html',
+        controller:'BondsCtrl'
       .state('tab',{
         url : '/tab',
         abstract :true,
