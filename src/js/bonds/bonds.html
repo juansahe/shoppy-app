@@ -4,49 +4,9 @@
      <h2>Redime tus SM  <br> por bonos <br> increibles</h2>
  </div>
 </div>
-  <input type="text" placeholder="Tienda">
+  
     <ion-content class="BondsComponent" style="margin-bottom: 50px;margin-top: 192px;
 " scrollY="true">
-       <div ng-repeat="tarea in task">
-         <ion-item class="item-stable degradadoGris row" ng-class="{active: isGroupShown(tarea)}" style="height: 262px;">
-           <div class="col col-50">
-                <a>
-                     <img class="tienda" src="./assets/img/corral.png" style="display:block; width:100% ">
-                </a>
-           </div>
-           <div class="texto col col-25">
-               <p>Bono valido para compras de cualquier producto en tiendas fisicas Corral</p>
-           </div>
-           <div class="puntos">
-               {{tarea.px}}px
-           </div>
-           <div class="puntos" style="color:#269B55">
-               {{tarea.sm}}sm
-           </div>
-            <div class="puntos" style="color:#269B55">
-               {{tarea.sm}}sm
-           </div>
-           <div class="btnPregunta" ng-click="toggleGroup(tarea)">
-               ?
-           </div>
-         </ion-item>
-
-         <ion-item class="item-accordion degradadoblueX descripcion" ng-show="isGroupShown(tarea)">
-         <div class="row">
-           <div class="col col-33 iconDesc">
-           <center><i class = "icon ion-person"></i></center>
-               
-           </div>
-           <div class="col item-text-wrap">
-               Queremos conocerte un poco mejor. Queremos conocerte un poco mejor.
-           </div>
-          
-         </div>
-           
-
-         </ion-item>
-         <br>
-       </div>
-   
+    
     </ion-content>
 </ion-view>
