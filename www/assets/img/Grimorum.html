@@ -1,0 +1,221 @@
+
+<!-- saved from url=(0032)http://192.168.1.115:8100/#/bond -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><style>.onezone-datepicker {
+  position: relative;
+  width: 100%;
+  display: block;
+  background-color: #FBFAFA;
+  color: #3A4351;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s; }
+
+.onezone-datepicker.onezone-datepicker-show {
+  max-height: 600px;
+  border-bottom: 2px solid #ECECEC; }
+
+.onezone-datepicker-modal {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9); }
+
+.onezone-datepicker-loader {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: -10px; }
+
+.onezone-datepicker-loader svg {
+  width: 20px;
+  height: 20px; }
+
+.onezone-datepicker-button {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  color: #3A4351;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 8px 0;
+  border-bottom: 1px solid #36bcaa;
+  padding: 5px; }
+
+.onezone-datepicker-button:after {
+  position: absolute;
+  content: " ";
+  width: 0;
+  height: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 6px solid #36bcaa;
+  border-left: 6px solid transparent; }
+
+.onezone-datepicker-select-year {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  width: 25%; }
+
+.onezone-datepicker-navigation-arrow {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 24px;
+  color: #36bcaa;
+  text-align: center;
+  width: 24px;
+  padding-top: 10px;
+  line-height: 24px; }
+
+.onezone-datepicker-week {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #dddddd;
+  padding: px 0; }
+
+.onezone-datepicker-day {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  width: 26px;
+  height: 26px;
+  line-height: 22px;
+  border: 2px solid #FBFAFA; }
+
+.onezone-datepicker-current-day {
+  border: 2px solid #dddddd; }
+
+.onezone-datepicker-disable-day,
+.onezone-datepicker-different-month.onezone-datepicker-disable-day {
+  color: #dddddd; }
+
+.onezone-datepicker-different-month {
+  color: #afafaf; }
+
+.onezone-datepicker-active-day,
+.onezone-datepicker-active-day:hover {
+  border: 2px solid #36bcaa;
+  font-weight: bold; }
+
+.onezone-datepicker-selection-button {
+  color: #36bcaa;
+  font-size: 34px;
+  padding-top: 5px;
+  display: inline-block;
+  cursor: pointer;
+  width: 40px; }
+
+.onezone-datepicker-close-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+  font-size: 28px;
+  cursor: pointer;
+  color: #3A4351;
+  width: 50px;
+  text-align: right; }
+
+.onezone-datepicker-modal-content {
+  position: relative;
+  padding: 50px 5px 40px 5px; }
+
+.onezone-datepicker-modal-content .slider {
+  position: initial; }
+
+.onezone-datepicker-modal-content:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.onezone-datepicker-modal-item {
+  display: block;
+  float: left;
+  width: 25%;
+  line-height: 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer; }
+
+.onezone-datepicker-modal-item.onezone-datepicker-modal-item-active {
+  background-color: #36bcaa;
+  color: white;
+  font-weight: bold; }</style></head><body ng-app="Grimorum" animation="slide-left-right-ios7" class="grade-a platform-browser platform-android platform-android6 platform-android6_0 platform-ready">
+
+
+    
+        
+    <script>
+      // Injected Ionic Go To URL Live Reload Plugin
+      window.LiveReloadPlugin_IonicGoToUrl = (function() {
+        var GOTO_KEY = "__ionic_goto_url__";
+        var HISTORY_GO_KEY = "__ionic_history_go__";
+        var GoToUrlPlugin = function(window, host) {
+          this.window = window;
+          this.host = host;
+        }
+        GoToUrlPlugin.identifier = "__ionic_goto_url__";
+        GoToUrlPlugin.version = "1.0";
+        GoToUrlPlugin.prototype.reload = function(path) {
+          try {
+            if (path) {
+              if (path.indexOf(GOTO_KEY) === 0) {
+                this.window.document.location = path.replace(GOTO_KEY, "");
+                return true;
+              }
+              if (path.indexOf(HISTORY_GO_KEY) === 0) {
+                this.window.document.history.go( parseInt(path.replace(HISTORY_GO_KEY, ""), 10));
+                return true;
+              }
+            }
+          } catch(e) {
+            console.log(e);
+          }
+          return false;
+        };
+        return GoToUrlPlugin;
+      })();
+    </script>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Grimorum</title>
+        <!-- compiled css output -->
+        <link href="./Grimorum_files/main.min.css" rel="stylesheet">
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="./Grimorum_files/cordova.js"></script>
+
+    
+
+    
+
+        <ion-nav-view class="view-container" nav-view-transition="android"></ion-nav-view>
+
+        <!-- ionic/angularjs js -->
+        <script src="./Grimorum_files/vendor.min.js"></script>
+        <!-- your app's js -->
+        <script src="./Grimorum_files/templates.min.js"></script>
+        <script src="./Grimorum_files/bundle.min.js"></script>
+        <script src="./Grimorum_files/onezone-datepicker.min.js"></script>
+    
+<script>//<![CDATA[
+document.write('<script src="//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1"><\/script>')
+//]]></script><script src="./Grimorum_files/livereload.js"></script>
+
+
+
+</body></html>
