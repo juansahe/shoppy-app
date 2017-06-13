@@ -66,12 +66,6 @@ angular.module('Grimorum')
         
       })
 
-      .state('tab.challenge', {
-        url:'/challenge',
-        templateUrl: 'js/challenge/challenge.html',
-        controller:'ChallengeCtrl'
-      })
-
       .state('tab.task', {
         url:'/task',
         views:{
@@ -91,10 +85,12 @@ angular.module('Grimorum')
         url: '/fastQuestion',
         templateUrl: 'js/fastQuestion/fastQuestion.html',
         controller: 'fastQuestionCtrl'
+      })
       .state('bonds',{
         url:'/bond',
         templateUrl:'js/bonds/bonds.html',
         controller:'BondsCtrl'
+      })
       .state('tab',{
         url : '/tab',
         abstract :true,
