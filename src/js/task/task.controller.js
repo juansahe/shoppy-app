@@ -1,17 +1,5 @@
 class TaskCtrl{
 	constructor(TaskService, $scope, $cordovaCamera, $ionicPopup){
-
-
- $scope.groups = [];
-  for (var i=0; i<10; i++) {
-    $scope.groups[i] = {
-      name: i,
-      items: []
-    };
-    for (var j=0; j<3; j++) {
-      $scope.groups[i].items.push(i + '-' + j);
-    }
-  }
   
   /*
    * if given group is the selected group, deselect it
@@ -27,9 +15,6 @@ class TaskCtrl{
   $scope.isGroupShown = function(group) {
     return $scope.shownGroup === group;
   };
-
-
-
 
 		this.TaskService = TaskService;
 
@@ -72,6 +57,7 @@ class TaskCtrl{
 			}
 		}
 	}
+
 	mark_task(task){
 		for (var i = 0; i < task.length; i++) {
 			if(task[i].complete===true){

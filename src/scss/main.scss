@@ -48,14 +48,11 @@ $ionicons-font-path: "../assets/fonts/" !default;
 //component user
 @import "../js/users/users";
 
-//challenge
-@import "../js/challenge/challenge";
-
-//font awasome
-@import "partials/font-awasome";
 
 @import "../js/task/task";
 
 //Menu Profile 
 /*@import "../js/profile/profile";*/
 @import "../js/layouts/points";
+
+@import "../js/bonds/bonds"

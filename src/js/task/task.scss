@@ -1,3 +1,6 @@
+.TaskComponent{
+	padding-top: 160px;
+}
 .row .col .title-tarea h3{
 text-align: center;
 font-weight: bold;
@@ -5,9 +8,11 @@ font-size: 26px;
 }
 
 .tareaContent{
-width: 100%;
-height: 70px;
-background-color: #000;
+	margin: 0;
+	width: 100%;
+	height: 70px;
+	background-color: #000;
+
 }
 .tareas .listat{
 margin-bottom: 10px;
@@ -23,10 +28,13 @@ border-radius: 20px;
 background-color: #FFF;
 text-align: center;
 height: 50%;
-padding-top: 7px;
+padding-top: 4px;
 margin-top: 15px;
 font-weight: bold;
 color: #2980B9;margin-left: 5px;
+}
+.tareaContent .puntos span{
+margin: auto;
 }
 
 .tareaContent .completado{
@@ -61,47 +69,44 @@ width: 21px;
  
 }
 
-.item{
-border-style: none !important;
-}
 .descripcion{
-display: block;
-border-radius: 0px 0px 25px 25px;
--moz-border-radius: 0px 0px 25px 25px;
--webkit-border-radius: 0px 0px 25px 25px;
-border: 0px solid #000000;
-width: 90%;
-margin-left: 5%;
-margin-right: 5%;
+
+	display: block;
+	border-radius: 0px 0px 25px 25px;
+	-moz-border-radius: 0px 0px 25px 25px;
+	-webkit-border-radius: 0px 0px 25px 25px;
+	border: 0px solid #000000;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 .iconDesc{
 font-size: 7vw;
 }
 
 .icon .ion-person{
-position: absolute;
-margin: auto;
-vertical-align: middle;
-height: 60px;
-padding-top: 80px;
-display: none;
-overflow: hidden;
+
+	position: absolute;
+	margin: auto;
+	vertical-align: middle;
+	height: 60px;
+	padding-top: 80px;
+	display: none;
+	overflow: hidden;
 }
 
 
 /*
 * https://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
 */
-.list .item.item-accordion {
- line-height: 38px;
- padding-top: 0;
- padding-bottom: 0;
- transition: 0.09s all linear;
+.item-accordion {
+ //transition: 0.09s all linear;
 }
 .list .item.item-accordion.ng-hide {
  line-height: 0px;
 }
 .list .item.item-accordion.ng-hide-add,
 .list .item.item-accordion.ng-hide-remove {
- display: block !important;
+  display: block !important;
+
 }

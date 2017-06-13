@@ -13,9 +13,10 @@ angular.module('Grimorum',
     'Grimorum.path',
     'Grimorum.home',
     'Grimorum.users',
-    'Grimorum.challenge',
     'Grimorum.task',
-    'Grimorum.pts'
+    'Grimorum.pts',
+    'Grimorum.fastQuestion',
+    'Grimorum.bonds'
   ])
 angular.module('Grimorum.auth', [])
 angular.module('Grimorum.layouts', [])
@@ -25,6 +26,7 @@ angular.module('Grimorum.completePropile', [])
 angular.module('Grimorum.home', [])
 angular.module('Grimorum.path', [])
 angular.module('Grimorum.users', [])
-angular.module('Grimorum.challenge', [])
 angular.module('Grimorum.task', [])
 angular.module('Grimorum.pts', [])
+angular.module('Grimorum.fastQuestion', [])
+angular.module('Grimorum.bonds', [])

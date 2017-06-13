@@ -5,4 +5,4 @@ class BondsService{
 }
 
 
-angular.module('Grimorum.task').service('TaskService', TaskService)
+angular.module('Grimorum.bonds').service('BondsService', BondsService)
