@@ -10,28 +10,29 @@
     	<div class="form-grup">
     		<form action="">
     			<div class="form-element">
-    				<label class="item item-input degradadoGris">
+
+    				<label class="item item-input degradadoGris labelinput">
                           <i class = "icon ion-person"></i>
                           <input type="text" placeholder="Nombre" ng-model="user.nombre">
                       </label>
                       
     			</div>
                 <div class="form-element">
-                    <label class="item item-input degradadoGris">
+                    <label class="item item-input degradadoGris labelinput">
                           <i class = "icon ion-calendar"></i>
                           <input type="date" placeholder="Fecha de nacimiento" ng-model="user.fecha">
                       </label>
                 </div>
     			<div class="form-element">
-    				<label class="item item-input degradadoGris">
+    				<label class="item item-input degradadoGris labelinput">
                           <i class = "icon ion-email"></i>
                           <input type="email" placeholder="Correo electronico" ng-model="user.email">
                     </label>
     			</div>
     			<div class="form-element">
-    				<label class="item item-input degradadoGris">
+    				<label class="item item-input degradadoGris labelinput">
                           <i class = "icon ion-ios-unlocked"></i>
-                          <input type="password" placeholder="Contraseña" ng-model="user.email">
+                          <input type="password" placeholder="Contraseña" ng-model="user.password">
                     </label>
     			</div>
     		</form>
@@ -40,15 +41,15 @@
     	<div class="terms">
             
                 <div class="checkbox">
-                    <input type="checkbox" name="checkbox" id="checkbox1">
+                    <input type="checkbox" ng-model="terminos" name="checkbox" id="checkbox1">
                 </div>
             
-    		<p>Acepto los términos de privacidad y servicio de Shopper Miles</p>
+    		<p>Acepto los términos de privacidad y servicio de Shopper Miles </p>
 
         </div>
     	</div>
         <div id="botones">
-          <a href="" class="button button-block btncontinuar degradadoblueX">
+          <a href="" ng-click="save(terminos)" class="button button-block btncontinuar degradadoblueX">
             Continuar
           </a>
         </div>

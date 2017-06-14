@@ -43,15 +43,17 @@
 
 .sw .switch0 .slider0:before {
   position: absolute;
+  font-weight: bold;
   content: "Tienda";
   height: 40px;
   width: 50%;
   left: -3.5px;
   bottom: -3.5px;
-  background-color: #2196F3;
+  background-color: #2980B9;
   -webkit-transition: .4s;
   transition: .4s;
-  font-size:30px;
+  font-size:25px;
+  padding-top: 5px;
   color:#FFF;
   text-align: center;
   
@@ -68,6 +70,14 @@
 /* Rounded sliders */
 .slider0.round0 {
   border-radius: 34px;
+  display: flex;
+}
+
+.slider0.round0 .tienda{
+	width: 50%;
+	font-size: 25px;
+	 color: #BDC3C7;
+  	text-align: center;
 }
 
 .slider0.round0:before {
