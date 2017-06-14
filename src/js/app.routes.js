@@ -81,22 +81,14 @@ angular.module('Grimorum')
         controller:'puntosCtrl'
       })
 
-      .state('plantillafastQuestion.fastQuestion', {
+      .state('fastQuestion', {
         url: '/fastQuestion',
-        views:{
-          'fastQuestion':{
-            templateUrl: 'js/fastQuestion/fastQuestion.html',
-            controller: 'fastQuestionCtrl'
-          }
-        }
-        
-        })
+        templateUrl: 'js/fastQuestion/fastQuestion.html',
+        controller: 'fastQuestionCtrl'
+      })
 
-      .state('plantillafastQuestion', {
-        url : '/plantillafastQuestion',
-        abstract :true,
-        templateUrl:'js/plantillafastQuestion/plantillafastQuestion.html'
 
+      
       .state('bonds',{
         url:'/bond',
         templateUrl:'js/bonds/bonds.html',

@@ -13,19 +13,18 @@
 	font-size: 23px !important;
 	height: 55px !important;
 }
-
 #headpreg h1{
 	color: white !important;
 	font-size: 25px;
 	font-weight: bold;
 }
+#headpreg{
+	border-bottom: 0;
+}
 .miresp{
 	background-color: white;
 	color: black !important;
 }
-.btnsino .col-50 button{
-	color: white !important;
-}
-.vvv:active{
-	color: #2980b9 !important;
+.fastQuestionComponent{
+	padding-bottom: 150px;
 }

@@ -6,29 +6,81 @@ class CompletePropileCtrl{
 
 
 		this.CompletePropileService = CompletePropileService;
-		$scope.productos=['Cerveza', 'Pan', 'Cereal', 'Carne', 'Leche', 'Huevos', 'Chocolate', 'Jabón', 'Detergente', 'Gaseosa', 'Pollo', 'Fruta', "Pavo", "fff", "ffSDSDFf"];
-		$scope.contar=0;
-		$scope.products=[];
-		$scope.select = (id)=>{
-			if($scope.contar<3){
-				var midiv=document.getElementById(id).className += " seleccionado";
-				$scope.contar++;
-				$scope.products.push(id);
-				if($scope.contar===3){
+		
+		$scope.productos=[
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza1", estado:false },
+			{ id: 1, nombre:"Cerveza2", estado:false },
+			{ id: 1, nombre:"Cerveza3", estado:false },
+			{ id: 1, nombre:"Cerveza4", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false },
+			{ id: 1, nombre:"Cerveza", estado:false }
 
-		var alertPopup = $ionicPopup.alert({
-			title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()" class="ion-close-round" aria-hidden="true"></i>',
-			template: '<i id="star" class="ion-star" aria-hidden="true"><h3 class="pt_xp">100xp</h3></i>'
-		});
-			alertPopup.then(function(res) {
-				$location.path('/path');
-			console.log('Thank you for not eating my delicious ice cream cone');
-		});
+		];
 
-
+		var contador=0;
+		$scope.select = (id, n)=>{
+			$scope.productos[n].estado=!$scope.productos[n].estado;
+			if($scope.productos[n].estado){
+				contador++;
+			}else{
+				contador--;			
+			}
+			if(contador>=3){
+				var seleccionados=[];
+				for(var i=0; i<$scope.productos.length; i++){
+					if($scope.productos[i].estado){
+						//console.log($scope.productos[i].nombre);
+						seleccionados.push($scope.productos[i].id)
+					}
 				}
+
+					var alertPopup = $ionicPopup.alert({
+						title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()" class="ion-close-round" aria-hidden="true"></i>',
+						template: '<i id="star" class="ion-star" aria-hidden="true"><h3 class="pt_xp">100xp</h3></i>'
+					});
+						alertPopup.then(function(res) {
+							$location.path('/path');
+						console.log('Thank you for not eating my delicious ice cream cone');
+					});
+
+					enviarFavoritos(seleccionados);
 			}
 		}
+
+		function enviarFavoritos(seleccionados){//aqui se envia ids de productos seleccionados
+			alert(seleccionados);
+		}
+
+
 	}
 	
 }
