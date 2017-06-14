@@ -1,10 +1,6 @@
 class CompletePropileCtrl{
 	constructor(CompletePropileService, $scope, $location, $ionicPopup){
 
-
-
-
-
 		this.CompletePropileService = CompletePropileService;
 		
 		$scope.productos=[

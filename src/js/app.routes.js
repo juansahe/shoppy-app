@@ -80,27 +80,28 @@ angular.module('Grimorum')
         abstract: true,
         controller:'puntosCtrl'
       })
-
       .state('fastQuestion', {
         url: '/fastQuestion',
         templateUrl: 'js/fastQuestion/fastQuestion.html',
         controller: 'fastQuestionCtrl'
       })
-
-
       
       .state('bonds',{
         url:'/bond',
         templateUrl:'js/bonds/bonds.html',
         controller:'BondsCtrl'
-        })
 
+      })
       .state('tab',{
-
         url : '/tab',
         abstract :true,
         templateUrl:'js/layouts/tabs.html'
-      });
+      })
+      .state('lookPicture',{
+        url : '/lookPicture',
+        templateUrl:'js/lookPicture/lookPicture.html',
+        controller:'lookPictureCtrl'
+      })
 
 
     // if none of the above states are matched, use this as the fallback
