@@ -1,6 +1,7 @@
 class RegisterService{
 	constructor($http, CONFIG){
 		this.$http= $http;
+
 	}
 }
 
