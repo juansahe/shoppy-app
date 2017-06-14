@@ -1,12 +1,12 @@
 .headgray{
    width: 120%;
-   height:80%;
+   height:520px;
    padding-bottom: 60px;
    -moz-border-radius: 50%; 
    -webkit-border-radius: 50%; 
    border-radius: 50%;
    position: absolute;
-   top: -50%;
+   top: -320px;
    left: -10%;
 }
 
@@ -15,60 +15,189 @@
 	margin-top: 90px;
 }
 
-.switch {
+
+/*stilos swich*/
+
+.sw .switch0 {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 80%;
+  height: 40px;
+  margin-left:10%;
 }
 
-/* Hide default HTML checkbox */
-.switch input {display:none;}
+.sw .switch0 input {display:none;}
 
-/* The slider */
-.slider {
+.sw .switch0 .slider0 {
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #FFF;
   -webkit-transition: .4s;
   transition: .4s;
+  border:solid 4px #95A5A6;
 }
 
-.slider:before {
+.sw .switch0 .slider0:before {
   position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
+  content: "Tienda";
+  height: 40px;
+  width: 50%;
+  left: -3.5px;
+  bottom: -3.5px;
+  background-color: #2196F3;
   -webkit-transition: .4s;
   transition: .4s;
+  font-size:30px;
+  color:#FFF;
+  text-align: center;
+  
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+.sw .switch0 input:checked + .slider0:before {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+   content: "Tus Bonos";
+   left: 3px;
 }
 
 /* Rounded sliders */
-.slider.round {
+.slider0.round0 {
   border-radius: 34px;
 }
 
-.slider.round:before {
-  border-radius: 50%;
+.slider0.round0:before {
+  border-radius: 34px;
 }
+
+/*conenido de bonos*/
+
+.tiendas{
+	margin-top: 15px;
+}
+
+.tiendas .tamitem{
+	height: 140px;
+	display: flex;
+
+}
+.tiendas .tamitem .imag{
+	width: 30%;
+}
+
+.tiendas .tamitem .imag img{
+	width: 90%;
+	height: 100%;
+	background: white;
+	border-radius: 10px;
+}
+
+.tiendas .contenidotienda{
+	width: 70%;
+}
+.tiendas .contenidotienda .condicionbono{
+	position: relative;
+	width: 100%;
+}
+.tiendas .contenidotienda .condicionbono p{
+	font-size: 12px;
+	color: white;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 0px;
+}
+
+.tiendas .contenidotienda .bonos{
+	width: 100%;
+	position: relative;
+	display: flex;
+	margin-top: 5px;
+}
+
+.tiendas .contenidotienda .bonos .bono{
+	width: 30%;
+	background: white;
+	height: 25px;
+	border-radius: 20px;
+	margin-left: 3%;
+}
+
+.tiendas .contenidotienda .btnstienda{
+	width: 100%;
+	position: relative;
+	display: flex;
+	margin-top: 5px;
+}
+
+.tiendas .contenidotienda .btnstienda .descr{
+	width: 20%;
+	text-align: center;
+}
+
+.tiendas .contenidotienda .btnstienda .btncambio{
+	width: 80%;
+	position: relative;
+}
+
+.tiendas .contenidotienda .btnstienda .btncambio .btnc{
+	margin-top: 5px;
+	width: 90%;
+	background: #2ECC71;
+	border-radius: 30px;
+	height: 25px;
+	text-align: center;
+	padding-top: 3px;
+}
+.tiendas .contenidotienda .btnstienda .btncambio .btnc a{
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+.tiendas .contenidotienda .btnstienda .btncompartir{
+	width: 20%;
+	position: relative;
+}
+.tiendas .contenidotienda .btnstienda .btncompartir .comparti{
+	margin-top: 2px;
+}
+.tiendas .contenidotienda .btnstienda .btncompartir .comparti i{
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.contenidotienda .bonocosto{
+	width: 100%;
+	text-align: center;
+	padding-top: 2px;
+}
+.contenidotienda .bonocosto h2{
+	color: white;
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 2px;
+}
+
+#bonos{
+
+}
+/*
+.animate-if.ng-enter, .animate-if.ng-leave {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity:1;
+}*/

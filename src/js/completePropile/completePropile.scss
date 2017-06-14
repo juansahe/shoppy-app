@@ -63,6 +63,7 @@
 
 .popup-body{
 	text-align: center;
+
 }
 .popup-buttons{
 	color: #bdc3c7;
@@ -72,8 +73,8 @@
 }
 
 .popup-container{
-	background-color: #3989be !important;
-	//opacity: 0.8;
+	background: rgba(57, 137, 190, 0.8);
+	
 }
 
 .popup{
@@ -86,18 +87,20 @@
 	color: white !important;
 }
 .pt_xp{
-	color: #3989be;
+	color: #2980B9;
 	font-size: 30px !important;
 	font-weight: bold !important;
 }
+.pt_sm{
+	color: #269B55;
+	font-weight: bold;
+	font-size: 15px;
+}
 .popup-head{
-	padding-top: 30px;
 	border-bottom: 0 !important;
 }
-#star{
-	color: white;
-	font-size: 10em;
-}
+
+
 #cerrar{
 	background-color: red !important;
 	color: #269b55 !important;
@@ -112,8 +115,52 @@
 	cursor: pointer;
 }
 
+.contenmodal{
+	display: flex;
+	height: 100px;
+}
+.contenmodal img{
+	width: 80%;
+	margin-left: 10%;
+	height: 110%;
+	z-index: 1;
+}
 
-/*.CompletePropileComponent {
+.contentmodal i{
+	text-align: center;
+}
+
+
+.contenmodal #star_2{
+	position: absolute;
+	top:90px;
+	left: 125px;
+	z-index: 2;
+	color: #2980B9;
+	font-weight: bold;
+	font-size: 35px;
+}
+.contenmodal #star{
+	position: absolute;
+	top:110px;
+	left: 55px;
+	z-index: 2;
+	color: #269B55;
+	font-weight: bold;
+}
+
+.popup-head{
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.popup-body{
+	padding-top: 0px;
+}
+/*
+button.button{
+	display: none!important;
+}
+.CompletePropileComponent {
   
 }
 .head{

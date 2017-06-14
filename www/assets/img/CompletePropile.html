@@ -1,0 +1,225 @@
+
+<!-- saved from url=(0043)http://192.168.1.130:8100/#/completeprofile -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><style>.onezone-datepicker {
+  position: relative;
+  width: 100%;
+  display: block;
+  background-color: #FBFAFA;
+  color: #3A4351;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s; }
+
+.onezone-datepicker.onezone-datepicker-show {
+  max-height: 600px;
+  border-bottom: 2px solid #ECECEC; }
+
+.onezone-datepicker-modal {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9); }
+
+.onezone-datepicker-loader {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-left: -10px; }
+
+.onezone-datepicker-loader svg {
+  width: 20px;
+  height: 20px; }
+
+.onezone-datepicker-button {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  color: #3A4351;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 8px 0;
+  border-bottom: 1px solid #36bcaa;
+  padding: 5px; }
+
+.onezone-datepicker-button:after {
+  position: absolute;
+  content: " ";
+  width: 0;
+  height: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 6px solid #36bcaa;
+  border-left: 6px solid transparent; }
+
+.onezone-datepicker-select-year {
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  width: 25%; }
+
+.onezone-datepicker-navigation-arrow {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 24px;
+  color: #36bcaa;
+  text-align: center;
+  width: 24px;
+  padding-top: 10px;
+  line-height: 24px; }
+
+.onezone-datepicker-week {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #dddddd;
+  padding: px 0; }
+
+.onezone-datepicker-day {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  width: 26px;
+  height: 26px;
+  line-height: 22px;
+  border: 2px solid #FBFAFA; }
+
+.onezone-datepicker-current-day {
+  border: 2px solid #dddddd; }
+
+.onezone-datepicker-disable-day,
+.onezone-datepicker-different-month.onezone-datepicker-disable-day {
+  color: #dddddd; }
+
+.onezone-datepicker-different-month {
+  color: #afafaf; }
+
+.onezone-datepicker-active-day,
+.onezone-datepicker-active-day:hover {
+  border: 2px solid #36bcaa;
+  font-weight: bold; }
+
+.onezone-datepicker-selection-button {
+  color: #36bcaa;
+  font-size: 34px;
+  padding-top: 5px;
+  display: inline-block;
+  cursor: pointer;
+  width: 40px; }
+
+.onezone-datepicker-close-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+  font-size: 28px;
+  cursor: pointer;
+  color: #3A4351;
+  width: 50px;
+  text-align: right; }
+
+.onezone-datepicker-modal-content {
+  position: relative;
+  padding: 50px 5px 40px 5px; }
+
+.onezone-datepicker-modal-content .slider {
+  position: initial; }
+
+.onezone-datepicker-modal-content:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.onezone-datepicker-modal-item {
+  display: block;
+  float: left;
+  width: 25%;
+  line-height: 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer; }
+
+.onezone-datepicker-modal-item.onezone-datepicker-modal-item-active {
+  background-color: #36bcaa;
+  color: white;
+  font-weight: bold; }</style></head><body ng-app="Grimorum" animation="slide-left-right-ios7" class="grade-a platform-browser platform-android platform-android6 platform-android6_0 platform-ready popup-open">
+
+
+    
+        
+    <script>
+      // Injected Ionic Go To URL Live Reload Plugin
+      window.LiveReloadPlugin_IonicGoToUrl = (function() {
+        var GOTO_KEY = "__ionic_goto_url__";
+        var HISTORY_GO_KEY = "__ionic_history_go__";
+        var GoToUrlPlugin = function(window, host) {
+          this.window = window;
+          this.host = host;
+        }
+        GoToUrlPlugin.identifier = "__ionic_goto_url__";
+        GoToUrlPlugin.version = "1.0";
+        GoToUrlPlugin.prototype.reload = function(path) {
+          try {
+            if (path) {
+              if (path.indexOf(GOTO_KEY) === 0) {
+                this.window.document.location = path.replace(GOTO_KEY, "");
+                return true;
+              }
+              if (path.indexOf(HISTORY_GO_KEY) === 0) {
+                this.window.document.history.go( parseInt(path.replace(HISTORY_GO_KEY, ""), 10));
+                return true;
+              }
+            }
+          } catch(e) {
+            console.log(e);
+          }
+          return false;
+        };
+        return GoToUrlPlugin;
+      })();
+    </script>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>CompletePropile</title>
+        <!-- compiled css output -->
+        <link href="./CompletePropile_files/main.min.css" rel="stylesheet">
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="./CompletePropile_files/cordova.js"></script>
+
+    
+
+    
+
+        <ion-nav-view class="view-container" nav-view-transition="android" nav-view-direction="none" nav-swipe=""><ion-view view-title="CompletePropile" hide-nav-bar="true" class="pane" nav-view="active" style="transform: translate3d(0%, 0px, 0px);"><div id="fondoHead"><div class="row head"><h2>Selecciona 3 productos<br>que compres<br>recurrentemente</h2></div></div><ion-content class="content scroll-content ionic-scroll"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);"><br><br><label class="item item-input degradadoGris labelinput"><i class="icon ion-search"></i> <input type="text" placeholder="Búsqueda" ng-model="busqueda" class="inputGris ng-pristine ng-untouched ng-valid"></label><br><br><!-- ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Cerveza"><div class="product"><p class="text ng-binding">Cerveza</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Pan"><div class="product"><p class="text ng-binding">Pan</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Cereal"><div class="product"><p class="text ng-binding">Cereal</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Carne"><div class="product"><p class="text ng-binding">Carne</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista seleccionado" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Leche"><div class="product"><p class="text ng-binding">Leche</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Huevos"><div class="product"><p class="text ng-binding">Huevos</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Chocolate"><div class="product"><p class="text ng-binding">Chocolate</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista seleccionado" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Jabón"><div class="product"><p class="text ng-binding">Jabón</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista seleccionado" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Detergente"><div class="product"><p class="text ng-binding">Detergente</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Gaseosa"><div class="product"><p class="text ng-binding">Gaseosa</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Pollo"><div class="product"><p class="text ng-binding">Pollo</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Fruta"><div class="product"><p class="text ng-binding">Fruta</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="Pavo"><div class="product"><p class="text ng-binding">Pavo</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="fff"><div class="product"><p class="text ng-binding">fff</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --><div class="lista" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto)" id="ffSDSDFf"><div class="product"><p class="text ng-binding">ffSDSDFf</p></div></div><!-- end ngRepeat: producto in productos | filter: busqueda --></div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div></ion-content></ion-view></ion-nav-view>
+
+        <!-- ionic/angularjs js -->
+        <script src="./CompletePropile_files/vendor.min.js"></script>
+        <!-- your app's js -->
+        <script src="./CompletePropile_files/templates.min.js"></script>
+        <script src="./CompletePropile_files/bundle.min.js"></script>
+        <script src="./CompletePropile_files/onezone-datepicker.min.js"></script>
+    
+<script>//<![CDATA[
+document.write('<script src="//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1"><\/script>')
+//]]></script><script src="./CompletePropile_files/livereload.js"></script>
+
+
+
+<div class="backdrop visible active"></div><div class="loading-container"><div class="loading"></div></div><div class="popup-container popup-showing active" ng-class="cssClass"><div class="popup"><div class="popup-head"><h3 class="popup-title ng-binding" ng-bind-html="title"><h2 class="win">¡Ganaste!</h2> <i class="ion-close-round"></i></h3><!-- ngIf: subTitle --></div><div class="popup-body"><div class="contenmodal">
+	<img src="./CompletePropile_files/stars.png">
+	<h3 id="star">20</h3>
+	<h3 id="star_2">100</h3>
+</div></div><div class="popup-buttons" ng-show="buttons.length"><!-- ngRepeat: button in buttons --><button ng-repeat="button in buttons" ng-click="$buttonTapped(button, $event)" class="button ng-binding button-default" ng-class="button.type || &#39;button-default&#39;" ng-bind-html="button.text"></button><!-- end ngRepeat: button in buttons --></div></div></div></body></html>

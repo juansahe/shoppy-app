@@ -16,16 +16,25 @@ class CompletePropileCtrl{
 				$scope.products.push(id);
 				if($scope.contar===3){
 
-		var alertPopup = $ionicPopup.alert({
-			title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()" class="ion-close-round" aria-hidden="true"></i>',
-			template: '<i id="star" class="ion-star" aria-hidden="true"><h3 class="pt_xp">100xp</h3></i>'
-		});
-			alertPopup.then(function(res) {
-				$location.path('/path');
-			console.log('Thank you for not eating my delicious ice cream cone');
-		});
-
-
+					var alertPopup = $ionicPopup.alert({
+						title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="closeModal()" class="ion-close-round" aria-hidden="true"></i>',
+						templateUrl: 'modalpoints.html',
+						buttons: [
+					      {
+					        text: 'OK',
+					        role: 'OK',
+					        cssClass:'color:red',
+					        handler: () => {
+					          console.log('Cancel clicked');
+					        }
+					      }
+					    ]
+					});
+						alertPopup.then(function(modal) {
+							$scope.modal=modal;
+							//$location.path('/path');
+						console.log('Thank you for not eating my delicious ice cream cone');
+					});
 				}
 			}
 		}
