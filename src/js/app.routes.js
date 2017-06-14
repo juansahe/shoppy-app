@@ -63,7 +63,6 @@ angular.module('Grimorum')
             controller:'UsersCtrl'
           }
         }
-        
       })
 
       .state('tab.task', {
@@ -82,24 +81,47 @@ angular.module('Grimorum')
         controller:'puntosCtrl'
       })
 
+<<<<<<< HEAD
       .state('fastQuestion', {
         url: '/fastQuestion',
         templateUrl: 'js/fastQuestion/fastQuestion.html',
         controller: 'fastQuestionCtrl'
       })
+=======
+      .state('plantillafastQuestion.fastQuestion', {
+        url: '/fastQuestion',
+        views:{
+          'fastQuestion':{
+            templateUrl: 'js/fastQuestion/fastQuestion.html',
+            controller: 'fastQuestionCtrl'
+          }
+        }
+        
+        })
+
+      .state('plantillafastQuestion', {
+        url : '/plantillafastQuestion',
+        abstract :true,
+        templateUrl:'js/plantillafastQuestion/plantillafastQuestion.html'
+>>>>>>> 0eaee8a2d463231a9b34e983c300b871ac24dbe6
 
       .state('bonds',{
         url:'/bond',
         templateUrl:'js/bonds/bonds.html',
         controller:'BondsCtrl'
+<<<<<<< HEAD
 
       })
+=======
+        })
+>>>>>>> 0eaee8a2d463231a9b34e983c300b871ac24dbe6
 
       .state('tab',{
+
         url : '/tab',
         abstract :true,
         templateUrl:'js/layouts/tabs.html'
-      })
+      });
 
       .state('lookPicture',{
         url : '/lookPicture',
