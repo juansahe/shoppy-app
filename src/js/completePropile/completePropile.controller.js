@@ -2,48 +2,18 @@ class CompletePropileCtrl{
 	constructor(CompletePropileService, $scope, $location, $ionicPopup){
 
 		this.CompletePropileService = CompletePropileService;
-		
-		$scope.productos=[
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza1", estado:false },
-			{ id: 1, nombre:"Cerveza2", estado:false },
-			{ id: 1, nombre:"Cerveza3", estado:false },
-			{ id: 1, nombre:"Cerveza4", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false }
 
-		];
+		CompletePropileService.getProducts((result)=>{
+			$scope.productos=result;
+		}, (err)=>{
+			alert(err);
+		});
+
+		
+		
 
 		var contador=0;
-		$scope.select = (id, n)=>{
+		$scope.select = (n)=>{
 			$scope.productos[n].estado=!$scope.productos[n].estado;
 			if($scope.productos[n].estado){
 				contador++;
@@ -74,6 +44,10 @@ class CompletePropileCtrl{
 
 		function enviarFavoritos(seleccionados){//aqui se envia ids de productos seleccionados
 			alert(seleccionados);
+			CompletePropileService.postFavoritos((result)=>{
+			}, (err)=>{
+				alert(err);
+			});
 		}
 
 
