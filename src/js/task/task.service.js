@@ -4,7 +4,7 @@ class TaskService{
 		this.RegisterService = RegisterService;
 		var user = this.RegisterService.getUser();
 		var token = user.token;
-		this.getTask=(res)=>{
+		this.getTask=()=>{
 			var config = {
 				url: this.url,
 				method: "GET",

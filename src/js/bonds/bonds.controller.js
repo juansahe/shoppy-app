@@ -9,8 +9,10 @@ class BondsCtrl{
 				console.log("cambiar a tareas"+$scope.bonos);
 			}
 		}
-
+		
 	}
+
+
 }
 
 angular.module('Grimorum.bonds').controller('BondsCtrl',BondsCtrl);
