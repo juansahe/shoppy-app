@@ -46,13 +46,12 @@ angular.module('Grimorum')
 
       .state('tab.home', {
         url: '/home',
-        views:{
+        views:{ 
           'tab-home':{
             templateUrl: 'js/home/home.html',
             controller: 'HomeCtrl'
           }
         }
-        
       })
 
       .state('tab.users',{
@@ -85,7 +84,6 @@ angular.module('Grimorum')
         templateUrl: 'js/fastQuestion/fastQuestion.html',
         controller: 'fastQuestionCtrl'
       })
-
       .state('bonds',{
         url:'/bond',
         templateUrl:'js/bonds/bonds.html',
@@ -101,7 +99,7 @@ angular.module('Grimorum')
         url : '/lookPicture',
         templateUrl:'js/lookPicture/lookPicture.html',
         controller:'lookPictureCtrl'
-      })
+      });
 
 
     // if none of the above states are matched, use this as the fallback

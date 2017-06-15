@@ -16,7 +16,8 @@ angular.module('Grimorum',
     'Grimorum.task',
     'Grimorum.pts',
     'Grimorum.fastQuestion',
-    'Grimorum.bonds'
+    'Grimorum.bonds',
+    'Grimorum.lookPicture'
   ])
 angular.module('Grimorum.auth', [])
 angular.module('Grimorum.layouts', [])
@@ -30,3 +31,4 @@ angular.module('Grimorum.task', [])
 angular.module('Grimorum.pts', [])
 angular.module('Grimorum.fastQuestion', [])
 angular.module('Grimorum.bonds', [])
+angular.module('Grimorum.lookPicture', [])
