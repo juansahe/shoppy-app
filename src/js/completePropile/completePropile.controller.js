@@ -61,7 +61,7 @@ class CompletePropileCtrl{
 
 					var alertPopup = $ionicPopup.alert({
 						title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()" class="ion-close-round" aria-hidden="true"></i>',
-						template: '<i id="star" class="ion-star" aria-hidden="true"><h3 class="pt_xp">100xp</h3></i>'
+						templateUrl: 'modalpoints.html'
 					});
 						alertPopup.then(function(res) {
 							$location.path('/path');
