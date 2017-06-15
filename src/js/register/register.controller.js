@@ -7,9 +7,10 @@ class RegisterCtrl{
 			if(ter){
 				// si ya acepto los terminos
 				RegisterService.saveUser($scope.user,(result)=>{
-
+					//se registro el usuario, luego se guarda en el localStorage
+					RegisterService.setUser(result.user);
 				}, (err)=>{
-
+					//errror al registrar el usuario
 				});
 			}else{
 				//sino acepto los terminos
