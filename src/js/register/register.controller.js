@@ -6,7 +6,11 @@ class RegisterCtrl{
 		$scope.save=(ter)=>{
 			if(ter){
 				// si ya acepto los terminos
-				
+				RegisterService.saveUser($scope.user,(result)=>{
+
+				}, (err)=>{
+
+				});
 			}else{
 				//sino acepto los terminos
 			}
