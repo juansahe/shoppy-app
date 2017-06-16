@@ -1,9 +1,14 @@
 class CompletePropileService{
-	constructor($http, CONFIG){
+	constructor($http, CONFIG, RegisterService){
 		this.$http = $http;
-		var url_api="http://api/xxxxxxx";
+		var url_api="http://192.168.1.165:8000/api/v1/product/";
+
+		this.RegisterService = RegisterService;
+			var user = this.RegisterService.getUser();
+			var token=user.auth_token;
 
 		this.getProducts=(success, error)=>{
+			
 			/*var productos=[
 			{ id: 105, name:"Cerveza"},
 			{ id: 8, name:"Cerveza1"},
@@ -34,10 +39,10 @@ class CompletePropileService{
 		//success(productos);
 			$http({
 			  method: 'GET',
-			  url: "http://192.168.1.165:8000/api/v1/product/",
+			  url: url_api,
 			  headers : {
 						'Content-Type' : 'application/json',
-						Authorization: "Token b77bfb0d3938b562c19d98aa1217f1d4dae2aef8"
+						Authorization: "Token "+token
 						}
 			}).then(function successCallback(response) {
 			    success(response.data);

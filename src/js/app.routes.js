@@ -44,34 +44,23 @@ angular.module('Grimorum')
         controller: 'PathCtrl'
       })
 
-      .state('tab.home', {
+      .state('home', {
         url: '/home',
-        views:{ 
-          'tab-home':{
-            templateUrl: 'js/home/home.html',
-            controller: 'HomeCtrl'
-          }
-        }
+        templateUrl: 'js/home/home.html',
+        controller: 'HomeCtrl'
       })
 
-      .state('tab.users',{
+      .state('user',{
         url: '/user',
-        views:{
-          'tab-user':{
-            templateUrl:'js/users/users.html',
-            controller:'UsersCtrl'
-          }
-        }
+        templateUrl:'js/users/users.html',
+        controller:'UsersCtrl'
+         
       })
 
-      .state('tab.task', {
+      .state('task', {
         url:'/task',
-        views:{
-          'tab-task':{
-            templateUrl:'js/task/task.html',
-            controller: 'TaskCtrl'
-          }
-        }
+        templateUrl:'js/task/task.html',
+        controller: 'TaskCtrl'  
         
       })
       .state('points',{

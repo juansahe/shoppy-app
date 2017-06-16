@@ -1,10 +1,7 @@
 class UsersCtrl{
-	constructor(UsersService, $scope, RegisterService){
+	constructor(UsersService){
 		this.UsersService = UsersService;
-		this.RegisterService=RegisterService;
-		$scope.user=RegisterService.getUser();
-		console.log($scope.user)
-		$scope.user= "Cristian Sarmiento";
+		$scope.user.name="maria peres";
 	}
 }
 

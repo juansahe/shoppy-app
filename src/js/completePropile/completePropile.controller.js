@@ -1,5 +1,6 @@
 class CompletePropileCtrl{
 	constructor(CompletePropileService, $scope, $location, $ionicPopup){
+		
 
 		this.CompletePropileService = CompletePropileService;
 
@@ -11,6 +12,7 @@ class CompletePropileCtrl{
 		}, (err)=>{
 			console.log(err);
 		});
+
 
 
 		var contador=0;
@@ -57,7 +59,7 @@ class CompletePropileCtrl{
 					templateUrl: 'modalpoints.html'
 				});
 					alertPopup.then(function(res) {
-						$location.path('/path');
+						$location.path('/home');
 				});
 		}
 

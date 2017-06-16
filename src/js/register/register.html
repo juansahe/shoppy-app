@@ -11,26 +11,27 @@
     		<form action="">
     			<div class="form-element">
 
-    				<label class="item item-input degradadoGris labelinput">
+    				<label class="item item-input degradadoGris labelinput" id="username">
                           <i class = "icon ion-person"></i>
-                          <input type="text" placeholder="Nombre" ng-model="user.nombre">
+                          <input type="text" placeholder="Nombre" ng-model="user.username">
                       </label>
                       
     			</div>
+            <div class="form-element">
+              <label class="item item-input degradadoGris labelinput" id="email">
+                    <i class = "icon ion-email"></i>
+                    <input type="email" placeholder="Correo electronico" ng-model="user.email">
+              </label>
+          </div>
                 <div class="form-element">
-                    <label class="item item-input degradadoGris labelinput">
+                    <label class="item item-input degradadoGris labelinput" id="bornday">
                           <i class = "icon ion-calendar"></i>
-                          <input type="date" placeholder="Fecha de nacimiento" ng-model="user.fecha">
+                          <input type="date" placeholder="Fecha de nacimiento" ng-model="user.bornday">
                       </label>
                 </div>
+    		
     			<div class="form-element">
-    				<label class="item item-input degradadoGris labelinput">
-                          <i class = "icon ion-email"></i>
-                          <input type="email" placeholder="Correo electronico" ng-model="user.email">
-                    </label>
-    			</div>
-    			<div class="form-element">
-    				<label class="item item-input degradadoGris labelinput">
+    				<label class="item item-input degradadoGris labelinput" id="password">
                           <i class = "icon ion-ios-unlocked"></i>
                           <input type="password" placeholder="Contraseña" ng-model="user.password">
                     </label>
