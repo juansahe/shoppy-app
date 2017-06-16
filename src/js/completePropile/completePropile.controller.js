@@ -5,17 +5,24 @@ class CompletePropileCtrl{
 
 		CompletePropileService.getProducts((result)=>{
 			$scope.productos=result;
+			for(var i=0; i<$scope.productos.length; i++){
+				$scope.productos[i].estado=false;
+				}
 		}, (err)=>{
-			alert(err);
+			console.log(err);
 		});
 
-		
-		
 
 		var contador=0;
-		$scope.select = (n)=>{
-			$scope.productos[n].estado=!$scope.productos[n].estado;
-			if($scope.productos[n].estado){
+		$scope.select = (id)=>{
+			for(var i=0; i<$scope.productos.length; i++){//selecciona producto
+					if($scope.productos[i].id==id){
+						$scope.productos[i].estado=!$scope.productos[i].estado;
+						break;
+					}
+				}
+			
+			if($scope.productos[i].estado){
 				contador++;
 			}else{
 				contador--;			
@@ -29,25 +36,29 @@ class CompletePropileCtrl{
 					}
 				}
 
-					var alertPopup = $ionicPopup.alert({
-						title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()" class="ion-close-round" aria-hidden="true"></i>',
-						templateUrl: 'modalpoints.html'
-					});
-						alertPopup.then(function(res) {
-							$location.path('/path');
-						console.log('Thank you for not eating my delicious ice cream cone');
-					});
-
-					enviarFavoritos(seleccionados);
+				enviarFavoritos(seleccionados);
 			}
 		}
 
 		function enviarFavoritos(seleccionados){//aqui se envia ids de productos seleccionados
 			alert(seleccionados);
-			CompletePropileService.postFavoritos((result)=>{
+			mostrarPopup()
+			/*CompletePropileService.postFavoritos(seleccionados, (result)=>{
+				alert(result)
+				mostrarPopup()
 			}, (err)=>{
 				alert(err);
-			});
+			});*/
+		}
+
+		function mostrarPopup(){
+			var alertPopup = $ionicPopup.alert({
+					title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()" class="ion-close-round" aria-hidden="true"></i>',
+					templateUrl: 'modalpoints.html'
+				});
+					alertPopup.then(function(res) {
+						$location.path('/path');
+				});
 		}
 
 
@@ -55,5 +66,3 @@ class CompletePropileCtrl{
 	
 }
 angular.module('Grimorum.completePropile').controller('CompletePropileCtrl', CompletePropileCtrl);
-
- 

@@ -4,70 +4,71 @@ class CompletePropileService{
 		var url_api="http://api/xxxxxxx";
 
 		this.getProducts=(success, error)=>{
-			var productos=[
-			{ id: 1, nombre:"Pollo", estado:false },
-			{ id: 2, nombre:"Gaseosa", estado:false },
-			{ id: 3, nombre:"Huevos", estado:false },
-			{ id: 4, nombre:"Frijol", estado:false },
-			{ id: 5, nombre:"Lentejas", estado:false },
-			{ id: 6, nombre:"Jugo", estado:false },
-			{ id: 7, nombre:"Miel", estado:false },
-			{ id: 8, nombre:"Leche", estado:false },
-			{ id: 9, nombre:"Cerveza", estado:false },
-			{ id: 10, nombre:"Cerveza", estado:false },
-			{ id: 11, nombre:"Cerveza", estado:false },
-			{ id: 12, nombre:"Cerveza", estado:false },
-			{ id: 13, nombre:"Cerveza", estado:false },
-			{ id: 14, nombre:"Cerveza", estado:false },
-			{ id: 15, nombre:"Cerveza", estado:false },
-			{ id: 16, nombre:"Cerveza", estado:false },
-			{ id: 17, nombre:"Cerveza", estado:false },
-			{ id: 18, nombre:"Cerveza", estado:false },
-			{ id: 19, nombre:"Arroz", estado:false },
-			{ id: 20, nombre:"Cerveza", estado:false },
-			{ id: 21, nombre:"Cerveza", estado:false },
-			{ id: 22, nombre:"Cerveza", estado:false },
-			{ id: 23, nombre:"Cerveza", estado:false },
-			{ id: 24, nombre:"Cerveza", estado:false },
-			{ id: 25, nombre:"Cerveza", estado:false },
-			{ id: 26, nombre:"Cerveza", estado:false },
-			{ id: 27, nombre:"Cerveza", estado:false },
-			{ id: 28, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Cerveza", estado:false },
-			{ id: 1, nombre:"Arroz con pollo", estado:false }
-			];
-		success(productos);
-
-			/*$http({
-			  method: 'GET',
-			  url: url
-			}).then(function successCallback(response) {
-
-			    success(response);
-			  }, function errorCallback(response) {
-			    error(error);
-			  });*/
-		}
-		this.postFavoritos=(success, error)=>{
+			/*var productos=[
+			{ id: 105, name:"Cerveza"},
+			{ id: 8, name:"Cerveza1"},
+			{ id: 14, name:"Arbeja"},
+			{ id: 40, name:"Cerveza3"},
+			{ id: 36, name:"Empanada"},
+			{ id: 29, name:"Cerveza"},
+			{ id: 70, name:"Cerveza"},
+			{ id: 45, name:"Cerveza"},
+			{ id: 3, name:"Cerveza"},
+			{ id: 5, name:"Cerveza"},
+			{ id: 9, name:"Pan"},
+			{ id: 7, name:"Cerveza"},
+			{ id: 12, name:"Leche"},
+			{ id: 13, name:"Cerveza"},
+			{ id: 11, name:"Cerveza"},
+			{ id: 16, name:"Cerveza"},
+			{ id: 17, name:"Pollo"},
+			{ id: 18, name:"Cerveza"},
+			{ id: 28, name:"Cerveza"},
+			{ id: 20, name:"Cerveza"},
+			{ id: 21, name:"Frijol"},
+			{ id: 22, name:"Cerveza"},
+			{ id: 23, name:"Cerveza"},
+			{ id: 2, name:"Cerveza"},
+			{ id: 25, name:"Cerveza"}
+		];*/
+		//success(productos);
 			$http({
-            url: url_api,
-            method: "POST",
-            data: {application:app},
-            headers: {'Content-Type': 'application/json'}
+			  method: 'GET',
+			  url: "http://192.168.1.165:8000/api/v1/product/",
+			  headers : {
+						'Content-Type' : 'application/json',
+						Authorization: "Token b77bfb0d3938b562c19d98aa1217f1d4dae2aef8"
+						}
+			}).then(function successCallback(response) {
+			    success(response.data);
+			  }, function errorCallback(response) {
+			    error(response.data);
+			  });
+		}
+
+
+
+
+		this.postFavoritos=(seleccionados ,success, error)=>{
+			$http({
+	            url: url_api,
+	            method: "POST",
+	            data: {favoritos: seleccionados},
+	            headers : {
+						'Content-Type' : 'application/json',
+						Authorization: "Token b77bfb0d3938b562c19d98aa1217f1d4dae2aef8"
+						}
         	})
         	.success(function (data, status, headers, config) {
-                $scope.users = data.users; // assign  $scope.persons here as promise is resolved here 
+                $scope.users = data; // assign  $scope.persons here as promise is resolved here 
+                succes(data);
             })
             .error(function (data, status, headers, config) {
                 $scope.status = status + ' ' + headers;
+                succes(data);
             });
-			};  
-		}
+		};
+
 	}
 }
 
