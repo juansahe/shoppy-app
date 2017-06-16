@@ -3,7 +3,7 @@ class TaskService{
 		this.$http = $http;
 		this.RegisterService = RegisterService;
 		var user = this.RegisterService.getUser();
-		var token = user.token;
+		var token = user.auth_token;
 		this.getTask=()=>{
 			var config = {
 				url: this.url,

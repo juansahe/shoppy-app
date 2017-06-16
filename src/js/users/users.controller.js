@@ -1,6 +1,8 @@
 class UsersCtrl{
 	constructor(UsersService){
 		this.UsersService = UsersService;
+
+		$scope.user.name="maria peres";
 	}
 }
 
