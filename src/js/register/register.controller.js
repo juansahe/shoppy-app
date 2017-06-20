@@ -10,9 +10,9 @@ class RegisterCtrl{
 	       "xperience": null,
 	       "shopper_points": null
 		};
-
 		$scope.terminos=false;
 		this.RegisterService = RegisterService;
+
 		var user = JSON.parse(localStorage.getItem('user'));
 		if(user!=null){
 			console.log(user);
@@ -60,7 +60,6 @@ class RegisterCtrl{
 				$ionicLoading.show({ template: 'Debe aceptar los términos',noBackdrop: false, duration: 2000 });
 			}
 		}	
-
 		function validate(e){
 			if(e===null){
 				return false;

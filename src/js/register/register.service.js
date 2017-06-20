@@ -19,7 +19,6 @@ class RegisterService{
                 error(err);
             });
 		}
-
 		this.setUser=(user)=>{
 			window.localStorage.setItem('user', JSON.stringify(user));
 		}
