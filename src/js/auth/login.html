@@ -11,7 +11,7 @@
 
 
 	<div class="form-element">
-		<input class="degradadoGris" type="text" placeholder="Usuario" ng-model="user.user">
+		<input class="degradadoGris" type="text" placeholder="Usuario" ng-model="user.username">
 	</div>
 	<div class="form-element">
 		<input class="degradadoGris" type="password" placeholder="Contraseña" ng-model="user.password">
@@ -20,7 +20,7 @@
 
   </ion-content>
 	<div id="botones">
-		<button href="" class="button button-block btncontinuar degradadoblueX">
+		<button href="" ng-click="login()" class="button button-block btncontinuar degradadoblueX">
 			Ingresar
 		</button>
 

@@ -25,6 +25,10 @@ class RegisterService{
 		this.getUser=()=>{
 			return JSON.parse(localStorage.getItem('user'));
 		}
+		this.getToken=()=>{
+			return JSON.parse(localStorage.getItem('token'));
+		}
+		
 	}
 }
 

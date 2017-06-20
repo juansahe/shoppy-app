@@ -30,6 +30,13 @@ class UsersService{
 			}
 			return this.$http(config);
 		}
+
+
+	
+
+
+
+
 	}
 }
 
