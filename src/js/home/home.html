@@ -1,88 +1,92 @@
 <ion-view view-title="Home">
-    <div id="fondoHead" class="">
-      <!--barra de puntos-->
-        <div class="fondocontent-head ">
-          
+  <div id="fondoHead" class="">
+    <!--barra de puntos-->
+    <div class="fondocontent-head ">
 
-       <div class="puntos">
-              <div class="xp">
-                  <div class="capacirculo">
-                      <div class="capacirculo2">
-                          <div class="capacirculo3">
-                              <h2>1</h2>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="barrapuntos">
-                      <div class="barrapuntosconten">
-                          
-                      </div>
-                      <h6>0px</h6>
-                  </div>
+
+      <div class="puntos">
+        <div class="xp">
+          <div class="capacirculo">
+            <div class="capacirculo2">
+              <div class="capacirculo3">
+                <h2>1</h2>
               </div>
-              <div class="sm">            
-                  <div class="capacirculo">
-                      <div class="capacirculo2">
-                          <div class="capacirculo3">
-                             <img src="./assets/img/bolsa.png" alt="">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="barrapuntos">
-                      <div class="barrapuntosconten">
-                          
-                      </div>
-                      <h6>0sm</h6>
-                  </div>
-              </div>   
-        </div>
-
-        <div class="row head head-absolute ">
-
-            <h2>¡Promociones a tu medida!</h2>
-        </div>
-      </div>
-    </div>
-    <ion-content class="HomeComponent content-absolute">
-        <div class="container">
-            <div class="row slide">
-                <ion-slide-box class="slideprom">
-                  <ion-slide>
-                    <div class="box blue imgbox"><img class="imgslide" src="./assets/img/tool_alarms_bg.jpg"></div>
-                  </ion-slide>
-                  <ion-slide>
-                    <div class="box yellow"><img class="imgslide" src="./assets/img/tool_alarms_bg.jpg"></div>
-                  </ion-slide>
-                  <ion-slide>
-                    <div class="box pink"><img class="imgslide" src="./assets/img/tool_calculator_bg.jpg"></div>
-                  </ion-slide>
-                </ion-slide-box>
+            </div>
+          </div>
+          <div class="barrapuntos">
+            <div class="barrapuntosconten">
 
             </div>
-
-<div class="row">
-  <div class="col col-50 contentPromo"><img class="imgPromo" src="./assets/img/tool_alarms_bg.jpg"></div>
-  <div class="col col-50 contentPromo"><img class="imgPromo" src="./assets/img/tool_alarms_bg.jpg"></div>
-</div>
-        	
+            <h6>0px</h6>
+          </div>
         </div>
-        
+        <div class="sm">
+          <div class="capacirculo">
+            <div class="capacirculo2">
+              <div class="capacirculo3">
+                <img src="./assets/img/bolsa.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="barrapuntos">
+            <div class="barrapuntosconten">
+
+            </div>
+            <h6>0sm</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="row head head-absolute ">
+
+        <h2>¡Promociones a tu medida!</h2>
+
+      </div>
+    </div>
+  </div>
+  <ion-content class="HomeComponent content-absolute">
+    <div class="container">
+      <div class="row slide">
+        <ion-slide-box class="slideprom">
+
+          <ion-slide ng-repeat="promocion in promociones">
+            <div class="box blue imgbox"><img class="imgslide" ng-src="{{promocion.img}}"></div>
+          </ion-slide>
+
+
+
+        </ion-slide-box>
+
+      </div>
+
+      <div class="row">
+        <div class="col col-50 contentPromo"><img class="imgPromo" src="./assets/img/tool_alarms_bg.jpg"></div>
+        <div class="col col-50 contentPromo"><img class="imgPromo" src="./assets/img/tool_alarms_bg.jpg"></div>
+      </div>
+
+    </div>
+    
+
   </ion-content>
   <ion-footer class="" style="bottom:0px;">
-       <div class="conten-footer">
-           <a href="#/home" class="home-btn degradadoblueX" style="height: 50px; margin-top: 0px; ">
+    <div class="conten-footer">
+      <a href="#/home" class="home-btn degradadoblueX" style="height: 50px; margin-top: 0px; ">
                <i style="font-size: 35px;" class="ion-ios-home" aria-hidden="true"></i>
           </a>
-           <div class="task-btn degradadoGris" >
-               <a href="#/task"><p style="text-align: center">Tareas</p></a>
-           </div>
-           <div class="challenge-btn degradadoGris" >
-               <a href="#/bond" ><p style="padding-top: 5px; font-size:20px;">Bonos</p></a>
-           </div>
-           <a class="profi-btn degradadoGris" href="#/user" >
+      <div class="task-btn degradadoGris">
+        <a href="#/task">
+          <p style="text-align: center">Tareas</p>
+        </a>
+      </div>
+      <div class="challenge-btn degradadoGris">
+        <a href="#/bond">
+          <p style="padding-top: 5px; font-size:20px;">Bonos</p>
+        </a>
+      </div>
+      <a class="profi-btn degradadoGris" href="#/user">
                <i  class="ion-person" aria-hidden="true"></i>
            </a>
-           
-       </div>
-   </ion-footer>
+
+    </div>
+  </ion-footer>
 </ion-view>
