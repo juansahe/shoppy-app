@@ -1,8 +1,8 @@
 class UsersCtrl{
-	constructor(UsersService){
+	constructor(UsersService, $scope){
 		this.UsersService = UsersService;
 
-		$scope.user.name="maria peres";
+		$scope.user=JSON.parse(localStorage.getItem('user'));;
 	}
 }
 

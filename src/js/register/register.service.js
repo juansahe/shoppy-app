@@ -24,7 +24,7 @@ class RegisterService{
 			window.localStorage.setItem('user', JSON.stringify(user));
 		}
 		this.getUser=()=>{
-			return JSON.parse(window.localStorage.getItem('user'));
+			return JSON.parse(localStorage.getItem('user'));
 		}
 	}
 }

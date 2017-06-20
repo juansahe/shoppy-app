@@ -14,11 +14,10 @@
                 <div class="barrapuntosconten">
                     
                 </div>
-                <h6>200/1000px</h6>
+                <h6>0px</h6>
             </div>
         </div>
-        <div class="sm">
-            
+        <div class="sm">            
             <div class="capacirculo">
                 <div class="capacirculo2">
                     <div class="capacirculo3">
@@ -30,17 +29,17 @@
                 <div class="barrapuntosconten">
                     
                 </div>
-                <h6>150sm</h6>
+                <h6>0sm</h6>
             </div>
         </div>   
   </div>
 
 </div>
-    <ion-content class="UsersComponent" ng-controller="PuntosCtrl" scrollY="true" style="margin-bottom: 60px;">
-    
+    <ion-content class="UsersComponent" style="margin-bottom: 60px;">
+   
         <div class="profile">
             <div class="username">
-                <h3>{{user.name}}</h3>
+                <h3>{{user.username}}</h3>
             </div>
         	<div class="img-profile">
         		<img src="./assets/img/foto-perfil-facebook.jpg" alt="">
@@ -59,29 +58,47 @@
             </div>
         </div>
 
-        <div class="content" style="padding-top: 10px;">
-            <label class="item item-input degradadoGris">
-              <i class = "icon ion-android-calendar"></i>
-              <div class="text"><h3>Historial de la cuenta</h3></div>
-            </label>
-        </div>
-        <div class="content" style="padding-top: 10px;">
-            <label class="item item-input degradadoGris">
-              <i class = "icon ion-android-notifications-none"></i>
-              <div class="text"><h3>Notificaciones</h3></div>
-            </label>
-        </div>
-        <div class="content" style="padding-top: 10px;">
-            <label class="item item-input degradadoGris">
-              <i class = "icon ion-email"></i>
-              <div class="text"><h3>Contáctanos</h3></div>
-            </label>
-        </div>
-        <div class="session">
-            <a class="cerrar" href="" title="">Cierra Sesión</a>
-            <a class="eliminar" href="" title="">Elimina tu cuenta</a>
-        </div>
+            <div class="content" style="padding-top: 10px;">
+                <label class="item item-input degradadoGris labelinput">
+                  <i class = "icon ion-android-calendar"></i>
+                  <div class="text"><h3>Historial de la cuenta</h3></div>
+                </label>
+            </div>
+            <div class="content" style="padding-top: 10px;">
+                <label class="item item-input degradadoGris labelinput">
+                  <i class = "icon ion-android-notifications-none"></i>
+                  <div class="text"><h3>Notificaciones</h3></div>
+                </label>
+            </div>
+            <div class="content" style="padding-top: 10px;">
+                <label class="item item-input degradadoGris labelinput">
+                  <i class = "icon ion-email"></i>
+                  <div class="text"><h3>Contáctanos</h3></div>
+                </label>
+            </div>
+            <div class="session">
+                <a class="cerrar" href="" title="">Cierra Sesión</a>
+                <a class="eliminar" href="" title="">Elimina tu cuenta</a>
+            </div>
+      
+        
             
     </ion-content>
- 
+    <ion-footer class="" style="bottom:0px;">
+       <div class="conten-footer">
+           <a href="#/home" class="home-btn degradadoGris">
+               <i class="ion-ios-home" aria-hidden="true"></i>
+          </a>
+           <div class="task-btn degradadoGris" >
+               <a href="#/task"><p style="text-align: center">Tareas</p></a>
+           </div>
+           <div class="challenge-btn degradadoGris" >
+               <a href="#/bond" ><p style="padding-top: 5px; font-size:20px;">Bonos</p></a>
+           </div>
+           <a class="profi-btn degradadoblueX" href="#/user" style="height: 50px; margin-top: 0px; ">
+               <i style="font-size: 35px;" class="ion-person" aria-hidden="true"></i>
+           </a>
+           
+       </div>
+   </ion-footer>
 </ion-view>

@@ -13,9 +13,11 @@ class RegisterCtrl{
 
 		$scope.terminos=false;
 		this.RegisterService = RegisterService;
-		/*if(this.RegisterService.getUser()!=null){
-			location.path('/home');
-		}*/
+		var user = JSON.parse(localStorage.getItem('user'));
+		if(user!=null){
+			console.log(user);
+			$location.path('/home');
+		}
 
 		$scope.save=(ter)=>{
 			if(ter){
