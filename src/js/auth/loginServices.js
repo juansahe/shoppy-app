@@ -21,11 +21,7 @@ class LoginService {
       });
     }
 
-
     this.getUser = (success, error) => {
-
-		 
-
 		var config = {
         url: this.url_api + "users/1",
         method: "GET",

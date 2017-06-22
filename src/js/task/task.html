@@ -36,7 +36,7 @@
     </div>   
   </div><br><br>
   <div class="row head">
-      <h2>Selecciona 3 productos <br> que compres <br> recurrentemente</h2>
+      <h2>Completa tus tareas</h2>
   </div>
 </div>
     <ion-content class="TaskComponent" style="margin-bottom: 50px;" scrollY="true">
@@ -44,16 +44,16 @@
        <div ng-repeat="tarea in task">
          <ion-item class="item-stable degradadoGris tareaContent row" ng-class="{active: isGroupShown(tarea)}">
            <div class="texto col col-50">
-               <p>{{tarea.task}}</p>
+               <p>{{tarea.name}}</p>
            </div>
            <div class="btnPregunta" ng-click="toggleGroup(tarea)">
                ?
            </div>
            <div class="puntos">
-              <span>{{tarea.px}}px</span>
+              <span>{{tarea.point_exp}}px</span>
            </div>
            <div class="puntos" style="color:#269B55">
-               <span>{{tarea.sm}}sm</span>
+               <span>{{tarea.SM}}sm</span>
            </div>
            <div class="completado">
                <div class="capa1">

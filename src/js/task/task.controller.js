@@ -18,7 +18,16 @@ class TaskCtrl{
 
 		this.TaskService = TaskService;
 
-		$scope.task = [{
+		TaskService.getTask((result) => {
+			console.log(result);
+      $scope.task = result;
+    }, (err) => {
+      console.log(err);
+    });
+
+
+		$scope.task = [
+			{
 			id:'1',
 			level:'1',
 			task:'Registro básico',
