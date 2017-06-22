@@ -1,15 +1,10 @@
 class HomeService {
-  constructor($http, CONFIG, RegisterService) {
+  constructor($http, CONFIG, Session) {
     this.$http = $http;
-	var url_api = "http://192.168.1.165:8000/api/v1/";
-
-	this.RegisterService = RegisterService;
+    var url_api = CONFIG.API_URL;
+    var token = Session.getToken();
 
     this.getPromotions = (success, error) => {
-
-	var user = this.RegisterService.getUser();
-	var token = user.auth_token;
-
       $http({
         method: 'GET',
         url: url_api + "promotion/",

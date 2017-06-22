@@ -1,19 +1,11 @@
 class TaskService {
-  constructor($http, CONFIG, RegisterService) {
+  constructor($http, CONFIG, Session) {
     this.$http = $http;
 
-    var url_api = "http://192.168.1.165:8000/api/v1/";
-
-    this.RegisterService = RegisterService;
-    var user = this.RegisterService.getUser();
-
-    var token = user.aut_token;
+    var url_api = CONFIG.API_URL;
+    var token = Session.getToken();
 
     this.getTask = (success, error) => {
-
-      var user = this.RegisterService.getToken();
-      var token = user.token;
-
       $http({
         method: 'GET',
         url: url_api + "task/",
@@ -27,10 +19,6 @@ class TaskService {
         error(response.data);
       });
     }
-
-
-
-
   }
 }
 

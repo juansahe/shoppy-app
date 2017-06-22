@@ -1,15 +1,12 @@
 class CompletePropileService {
-  constructor($http, CONFIG, RegisterService) {
+  constructor($http, CONFIG, Session) {
     this.$http = $http;
-    var url_api = "http://192.168.1.165:8000/api/v1/";
 
-    this.RegisterService = RegisterService;
+    var url_api = CONFIG.API_URL;
+    var token = Session.getToken();
 
 
     this.getProducts = (success, error) => {
-
-      var user = this.RegisterService.getToken();
-      var token = user.token;
 
       $http({
         method: 'GET',

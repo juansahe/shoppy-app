@@ -1,28 +1,45 @@
 class LoginService {
-
-  constructor($http, CONFIG, RegisterService) {
+  constructor($http, CONFIG, RegisterService, Session) {
     this.$http = $http;
-    this.url_api = "http://192.168.1.165:8000/api/v1/";
 
-    this.loginUser = (user, success, error) => {
+    var url_api = CONFIG.API_URL;
+
+    this.requestToken = (user, callback, error) => {
       var config = {
-        url: this.url_api+"token/",
+        url: url_api + "token/",
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
         },
         data: user
       };
-      this.$http(config).then(function (res) {
-        console.log(res);
-        success(res.data);
-      }, function (err) {
-        error(err);
-      });
+      this.$http(config).then(callback, error);
     }
 
+    this.login = function (token, callback) {
+      var config = {
+        method: 'GET',
+        url: url_api + 'users/1/',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Token ' + token
+        }
+      };
+
+      return $http(config).then(function (response) {
+
+        Session.create(token, response.data);
+        callback(response)
+      }, this.handleError);
+
+    };
+
+    this.handleError = function (res) {
+      console.warn(res);
+    };
+
     this.getUser = (success, error) => {
-		var config = {
+      var config = {
         url: this.url_api + "users/1",
         method: "GET",
         headers: {
@@ -36,7 +53,6 @@ class LoginService {
       }, function (err) {
         error(err);
       });
-
 
       /*$http({
         method: 'GET',

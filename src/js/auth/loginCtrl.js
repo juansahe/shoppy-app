@@ -1,29 +1,43 @@
 class LoginCtrl {
 
-  constructor(LoginService, RegisterService, $ionicPopup, $scope, $location) {
+  constructor(LoginService, Session, RegisterService, $ionicPopup, $scope, $location, $ionicLoading) {
     this.LoginService = LoginService;
     $scope.user = {};
 
-    $scope.login = () => {
-      this.LoginService.loginUser($scope.user, (result) => {
-        //console.log(result);
-        //var user = JSON.parse(localStorage.setItem('user', ));
-        window.localStorage.setItem('token', angular.toJson(result));
+    $scope.login = function (user) {
+      if (typeof user == 'undefined' || typeof user.username == 'undefined' || typeof user.password == 'undefined') {
+        console.log('Check credentials');
+        showMsg("Por favor llene los datos");
+        return;
+      }
+      LoginService.requestToken(user, successLogin, errorLogin);
+    };
 
-        this.LoginService.getUser((result) => {
-          window.localStorage.setItem('user', angular.toJson(result));
-
-        }, (err) => {
-          console.log(err)
-        });
-
-        console.log(window.localStorage);
+    /* handle success login */
+    function successLogin(response) {
+      //get user data, create a session and redirect to home
+      LoginService.login(response.data.token, function (response) {
         $location.path('/home');
-        //se registro el usuario, luego se guarda en el localStorage
-        //$location.path('/completeprofile');
-      }, (err) => {
-        console.log(err)
       });
+
+    };
+
+    /* handle errors on login */
+    function errorLogin(response) {
+      showMsg(response.data.non_field_errors[0]);
+      /* $scope.user.password = '';
+
+       if (response.data.error == 'Inactive') {
+         showMsg('User inactive');
+       } else if (response.data.error == 'invalid_credentials') {
+         showMsg('Invalid Credentials');
+       } else {
+         showMsg('Error login');
+       }*/
+    };
+
+    function showMsg(msg) {
+      $ionicLoading.show({ template: msg, noBackdrop: false, duration: 2000 });
     }
 
 
