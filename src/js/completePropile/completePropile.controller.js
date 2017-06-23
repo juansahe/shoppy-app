@@ -49,7 +49,7 @@ class CompletePropileCtrl {
       for (var i = 0; i < seleccionados.length; i++) {
         var favorito = {
           "product": seleccionados[i],
-          "user": 23
+          "user": 1
         }
         CompletePropileService.postFavoritos(favorito, (result) => {
           //alert(result)

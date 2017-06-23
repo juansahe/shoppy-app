@@ -22,12 +22,7 @@ class CompletePropileService {
       });
     }
 
-
-
-
-    this.postFavoritos = (seleccionados, success, error) => {
-      var user = this.RegisterService.getToken();
-      var token = user.token;
+    this.postFavoritos = (favorito, success, error) => {
       var config = {
         url: url_api + "favorite/",
         method: "POST",
@@ -35,7 +30,7 @@ class CompletePropileService {
           'Content-Type': 'application/json',
           Authorization: "Token " + token
         },
-        data: seleccionados
+        data: favorito
       };
       this.$http(config).then(function (res) {
         //console.log(res);

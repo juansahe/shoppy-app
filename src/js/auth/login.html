@@ -2,31 +2,51 @@
 
   <ion-content class="" overflow-scroll="">
 
-<div class="title">
-	<img src="./assets/img/logoblue.png" />
-</div>
-<div  class="titleregistro">
-    <img src="./assets/img/reg-02.png"/>
-</div>	
+    <div class="title">
+      <img src="./assets/img/logoblue.png" />
+    </div>
+    <div class="titleregistro">
+      <img src="./assets/img/reg-02.png" />
+    </div>
 
 
-	<div class="form-element">
-		<input class="degradadoGris" type="text" placeholder="Usuario" ng-model="user.username">
-	</div>
-	<div class="form-element">
-		<input class="degradadoGris" type="password" placeholder="Contraseña" ng-model="user.password">
-	</div>
+    <div class="form-element">
+      <input class="degradadoGris" type="text" placeholder="Usuario" ng-model="user.username">
+    </div>
+    <div class="form-element">
+      <input class="degradadoGris" type="password" placeholder="Contraseña" ng-model="user.password">
+    </div>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+    <div class="row">
+      <div class="col col-100">
+        <button href="" ng-click="login(user)" class="button button-block btncontinuar degradadoblueX">
+			Ingresar
+		</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-100">
+        <div class="login">
+          <a href="#/register">
+            <p>No tienes una cuenta? Regístrate aquí</p>
+          </a>
+        </div>
+      </div>
+    </div>
 
 
   </ion-content>
-	<div id="botones">
-		<button href="" ng-click="login(user)" class="button button-block btncontinuar degradadoblueX">
-			Ingresar
-		</button>
 
-		<div class="login">
-		    <a href="#/register"><p>No tienes una cuenta? Regístrate aquí</p></a>
-		</div>
-	</div>
-    
 </ion-view>
