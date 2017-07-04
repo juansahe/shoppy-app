@@ -66,9 +66,7 @@
 	text-align: center;
 
 }
-.popup-buttons{
-	color: #bdc3c7;
-}
+
 .ion-star{
 	border-radius: 10%;
 }
@@ -134,17 +132,36 @@
 
 .contenmodal #star_2{
 	position: absolute;
-	top:90px;
-	left: 125px;
+	top:74px;
+	left: 118px;
 	z-index: 2;
 	color: #2980B9;
 	font-weight: bold;
 	font-size: 35px;
 }
+
+.contenmodal p.px{
+	position: absolute;
+	top:107px;
+	left: 179px;
+	z-index: 2;
+	color: #2980B9;
+	font-weight: bold;
+
+}
 .contenmodal #star{
 	position: absolute;
 	top:110px;
-	left: 55px;
+	left: 49px;
+	z-index: 2;
+	color: #269B55;
+	font-weight: bold;
+}
+
+.contenmodal p.sm{
+	position: absolute;
+	top:135px;
+	left: 77px;
 	z-index: 2;
 	color: #269B55;
 	font-weight: bold;
