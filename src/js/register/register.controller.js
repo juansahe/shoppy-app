@@ -39,7 +39,12 @@ class RegisterCtrl {
                   this.RegisterService.setUser(result);
                   $location.path('/completeprofile');
                 }, (err) => {
-					alert(JSON.stringify(err.data).toString())
+                  console.log(err);
+					          $ionicLoading.show({
+                      template: "Error "+err.data.username.toString(),
+                      noBackdrop: false,
+                      duration: 2000
+                    });
                   //error al registrar el usuario
                 });
               } else {
