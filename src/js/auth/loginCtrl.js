@@ -5,6 +5,7 @@ class LoginCtrl {
     $scope.user = {};
 
     $scope.login = function (user) {
+      console.log("sirve el boton");
       if (typeof user == 'undefined' || typeof user.username == 'undefined' || typeof user.password == 'undefined') {
         console.log('Check credentials');
         showMsg("Por favor llene los datos");
@@ -12,7 +13,6 @@ class LoginCtrl {
       }
       LoginService.requestToken(user, successLogin, errorLogin);
     };
-
     /* handle success login */
     function successLogin(response) {
       // alert(response.data.token)
