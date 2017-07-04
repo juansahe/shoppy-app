@@ -16,11 +16,17 @@
 	height: auto;
 }
 
-
+#botones{
+	margin-bottom: 10%;
+	margin-left: 10%;
+	margin-right: 10%;
+	position: absolute;
+	bottom: 0%;
+	width: 80%;
+}
 .button{
 	padding-top: 5px;
-	font-weight: bold;
-	font-size: 30px;
+	font-size: 25px;
 	border: none;
 	border-radius: 58px 58px 58px 58px;
 	-moz-border-radius: 58px 58px 58px 58px;

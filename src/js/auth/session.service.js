@@ -1,6 +1,6 @@
 class Session {
 
-  constructor(CONFIG) {
+  constructor(CONFIG, $location) {
 
     this.token = null;
     this.user = null;
@@ -8,12 +8,6 @@ class Session {
     this.create = function (token, user) {
       window.localStorage.setItem('token', angular.toJson(token));
       window.localStorage.setItem('user', angular.toJson(user));
-    };
-
-    //destroy session from local storage 
-    this._destroyLc = function () {
-      window.localStorage.removeItem('token');
-      window.localStorage.removeItem('user');
     };
 
     //get token from memory or localStorage
@@ -25,6 +19,20 @@ class Session {
       return token;
     };
 
+    this.destroyLc = function () {
+      this.token = null;
+      this.user = null;
+      this._destroyLc();
+    };
+
+    this._destroyLc = function () {
+      window.localStorage.removeItem('token');
+      window.localStorage.removeItem('user');
+      $location.path('/');
+    };
+
+
+
     //get user from memory or localStorage
     this.getUser = function () {
       var user = this.user;
@@ -33,6 +41,10 @@ class Session {
       }
       return user;
     };
+
+    this.isAuthenticated = function () {
+      return (this.getToken() != null);
+    }
 
   }
 

@@ -16,10 +16,12 @@ class LoginService {
       this.$http(config).then(callback, error);
     }
 
-    this.login = function (token, callback) {
+    this.login = function (data, callback) {
+      var token =data.token;
+      var userId=data.id;
       var config = {
         method: 'GET',
-        url: url_api + 'users/1/',
+        url: url_api + 'users/'+userId+'/',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Token ' + token

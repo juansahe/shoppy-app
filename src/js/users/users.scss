@@ -1,6 +1,4 @@
-.UsersComponent{
-	
-}
+
 
 .img-profile{
 	text-align: center;
@@ -58,4 +56,9 @@
 .session{
 	margin-top: 20px;
 	text-align: center;
+}
+
+.icoUser::before{
+	font-size: 38px !important;
+	margin: 0;
 }

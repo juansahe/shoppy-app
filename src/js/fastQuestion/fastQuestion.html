@@ -1,73 +1,83 @@
 <ion-view view-title="fastQuestion">
-	<ion-header-bar class="bar bar-light degradadoblueX" id="headpreg">
-		<h1 class="title"><i style="color:#fff;font-size: 25px;margin-left: 10px; position: absolute;" class="icon ion-close-round"></i>  Pregunta rápida</h1>
-	</ion-header-bar>
+  <ion-header-bar class="bar bar-light degradadoblueX" id="headpreg">
+    <h1 class="title"><i style="color:#fff;font-size: 25px;margin-left: 10px; position: absolute;" class="icon ion-close-round"></i> Pregunta
+      rápida
+    </h1>
+  </ion-header-bar>
 
-	<ion-content class="fastQuestionComponent degradadoblueX">
+  <ion-content class="fastQuestionComponent degradadoblueX">
 
-		<div class="row degradadogris">
-		  <div class="col col-80 col-offset-10 text-center preg">¿En que universidad obtuviste tu título profesional?</div>
-		</div>
-		<label class="item item-input">
+    <div class="row degradadogris">
+      <div class="col col-80 col-offset-10 text-center preg">¿En que universidad obtuviste tu título profesional?</div>
+    </div>
+    <label class="item item-input">
 			<input type="text" placeholder="Escribe tu respuesta" class="inputrespuesta text-center">
 		</label>
 
-		<div class="row degradadogris">
-		  <div class="col col-80 col-offset-10 text-center preg">¿Vives con tus padres?</div>
-		</div>
-		<div class="row miresp">
-			<div class="col col-80 col-offset-10 text-center">
-				<div class="row btnsino">
-					<div class="col col-35 text-center">
-						<button class="button button-block degradadogris" ng-class="{degradadoblueX: seleccionadosi}" id="btntoogle" ng-click="seleccionar(true)">Si</button>
-					</div>
-					<div class="col col-35 col-offset-20 text-center">
-						<button class="button button-block degradadogris" ng-class="{degradadoblueX: seleccionadono}" ng-click="seleccionar(false)">No</button>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="row degradadogris">
+      <div class="col col-80 col-offset-10 text-center preg">¿Vives con tus padres?</div>
+    </div>
+    <div class="row miresp">
+      <div class="col col-80 col-offset-10 text-center">
+        <div class="row btnsino">
+          <div class="col col-35 text-center">
+            <button class="button button-block degradadogris" ng-class="{degradadoblueX: seleccionadosi}" id="btntoogle" ng-click="seleccionar(true)">Si</button>
+          </div>
+          <div class="col col-35 col-offset-20 text-center">
+            <button class="button button-block degradadogris" ng-class="{degradadoblueX: seleccionadono}" ng-click="seleccionar(false)">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-		<div class="row degradadogris">
-		  <div class="col col-80 col-offset-10 text-center preg">¿Cual es tu género?</div>
-		</div>
-		
+    <div class="row degradadogris">
+      <div class="col col-80 col-offset-10 text-center preg">¿Cual es tu género?</div>
+    </div>
 
-				<ion-list>
-					<ion-radio ng-model="choice" ng-value="'A'">Masculino</ion-radio>
-					<ion-radio ng-model="choice" ng-value="'B'">Femenino</ion-radio>
-				</ion-list>
-	
 
-		<div class="row degradadogris">
-		  <div class="col col-80 col-offset-10 text-center preg">¿Cuál es tu estrato socio-económico?</div>
-		</div>
-		<label class="item item-input">
+    <ion-list>
+      <ion-radio ng-model="choice" ng-value="'A'">Masculino</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'B'">Femenino</ion-radio>
+    </ion-list>
+
+
+    <div class="row degradadogris">
+      <div class="col col-80 col-offset-10 text-center preg">¿Cuál es tu estrato socio-económico?</div>
+    </div>
+    <label class="item item-input">
 			<input type="number" placeholder="Escribe tu respuesta" class="inputrespuesta text-center">
 		</label>
-		<div class="list">
+    <div class="list">
 
-</div>
+    </div>
 
-		<div class="row degradadoblueX btnsfooter">
-			<div class="col">
-				<div class="row">
-					<div class="col col-80 col-offset-10 text-center preg">
-						<button class="button button-block btnreg">
+    <div class="row degradadoblueX btnsfooter">
+      <div class="col">
+        <div class="row">
+          <div class="col col-80 col-offset-10 text-center preg">
+            <button class="button button-block btnreg">
 						Enviar
 						</button>
-					</div>
-				</div>
-				<br>
-				<div class="row">
-					<div class="col col-80 col-offset-10 text-center">
-						<a href="/" class="dudareclamo"><p>¿Tienes alguna duda o reclamo de esta tarea?</p></a>
-					</div>
-				</div>
-			</div>
-		</div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col col-80 col-offset-10 text-center">
+            <a href="/" class="dudareclamo">
+              <p>¿Tienes alguna duda o reclamo de esta tarea?</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	</ion-content>
+  </ion-content>
+
+  <ion-footer class="">
+    <div class="conten-footer">
+
+    </div>
+  </ion-footer>
 
 
 </ion-view>

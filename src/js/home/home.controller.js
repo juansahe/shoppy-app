@@ -4,6 +4,7 @@ class HomeCtrl {
 
     HomeService.getPromotions((result) => {
       $scope.promociones = result;
+      console.log($scope.promociones)
     }, (err) => {
       console.log(err);
     });

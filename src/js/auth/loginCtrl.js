@@ -15,15 +15,24 @@ class LoginCtrl {
 
     /* handle success login */
     function successLogin(response) {
+      // alert(response.data.token)
+      // alert(response.data.id)
       //get user data, create a session and redirect to home
-      LoginService.login(response.data.token, function (response) {
+      LoginService.login(response.data, function (response) {
         $location.path('/home');
+        $scope.user = null;
       });
+
+
+
+
 
     };
 
     /* handle errors on login */
     function errorLogin(response) {
+      //alert(response);
+      alert(response.status);
       showMsg(response.data.non_field_errors[0]);
       /* $scope.user.password = '';
 
@@ -37,7 +46,11 @@ class LoginCtrl {
     };
 
     function showMsg(msg) {
-      $ionicLoading.show({ template: msg, noBackdrop: false, duration: 2000 });
+      $ionicLoading.show({
+        template: msg,
+        noBackdrop: false,
+        duration: 2000
+      });
     }
 
 

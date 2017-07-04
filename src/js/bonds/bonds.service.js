@@ -1,37 +1,61 @@
-class BondsService{
-	constructor($http, CONFIG,RegisterService){
-		this.url="";
-		this.$http = $http;
-		this.RegisterService = RegisterService;
-		var user = this.RegisterService.getUser();
-		var token = user.token;
-		this.getBonds=()=>{
-			var config={
-				url: this.url,
-				method: "GET",
-				headers : {
-					Authorization: "Token " + token
-				}
-			}
-			return $http(config);
-		}
+class BondsService {
+  constructor($http, CONFIG, Session) {
 
-		this.postBono=(bono, success, error)=>{
-			var config={
-				url:"urlbono",
-				method: 'POST',
-				headers : {
-					Authorization: "Token"+token
-				},
-				data: bono
-			}
-			this.$http(config).then((res)=>{
-				success(res);
-			}, (err)=>{
-				error(err);
-			});
-		}
-	}
+    var url_api = CONFIG.API_URL;
+    var token = Session.getToken();
+
+    this.$http = $http;
+
+    this.getBonds = (success, error) => {
+      var config = {
+        url: url_api + "bond/",
+        method: "GET",
+        headers: {
+          Authorization: "Token " + token
+        }
+      };
+      this.$http(config).then(function (res) {
+        //console.log(res);
+        success(res.data);
+      }, function (err) {
+        error(err);
+      });
+
+    }
+
+    this.getProviders = (success, error) => {
+      var config = {
+        url: url_api + "provider/",
+        method: "GET",
+        headers: {
+          Authorization: "Token " + token
+        }
+      };
+      this.$http(config).then(function (res) {
+        // console.log(res);
+        success(res.data);
+      }, function (err) {
+        error(err);
+      });
+
+    }
+
+    this.postBono = (bono, success, error) => {
+      var config = {
+        url: "urlbono",
+        method: 'POST',
+        headers: {
+          Authorization: "Token" + token
+        },
+        data: bono
+      }
+      this.$http(config).then((res) => {
+        success(res);
+      }, (err) => {
+        error(err);
+      });
+    }
+  }
 
 }
 

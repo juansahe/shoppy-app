@@ -5,6 +5,9 @@
     "dependencies": {
         "babel-preset-es2015": "^6.22.0",
         "cordova-android": "^6.2.3",
+        "cordova-plugin-android-permissions": "^1.0.0",
+        "cordova-plugin-whitelist": "git+https://github.com/apache/cordova-plugin-whitelist.git",
+        "express": "^4.15.3",
         "gulp": "^3.8.10",
         "gulp-angular-filesort": "^1.0.4",
         "gulp-babel": "^6.1.2",
@@ -49,6 +52,10 @@
     "cordova": {
         "platforms": [
             "android"
-        ]
+        ],
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-android-permissions": {}
+        }
     }
 }

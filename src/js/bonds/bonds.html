@@ -1,48 +1,48 @@
 <ion-view view-title="Bond">
-<div class="degradadogris headgray">
-  
-</div>
+  <div class="degradadogris headgray">
+
+  </div>
   <!--barra de puntos-->
   <div class="puntos">
     <div class="xp">
-        <div class="capacirculo">
-            <div class="capacirculo2">
-                <div class="capacirculo3">
-                    <h2>1</h2>
-                </div>
-            </div>
+      <div class="capacirculo">
+        <div class="capacirculo2">
+          <div class="capacirculo3">
+            <h2>1</h2>
+          </div>
         </div>
-        <div class="barrapuntos">
-            <div class="barrapuntosconten">
-                
-            </div>
-            <h6>200px</h6>
+      </div>
+      <div class="barrapuntos">
+        <div class="barrapuntosconten">
+
         </div>
+        <h6>200px</h6>
+      </div>
     </div>
     <div class="sm">
-        
-        <div class="capacirculo">
-            <div class="capacirculo2">
-                <div class="capacirculo3">
-                   <img src="./assets/img/bolsa.png" alt="">
-                </div>
-            </div>
+
+      <div class="capacirculo">
+        <div class="capacirculo2">
+          <div class="capacirculo3">
+            <img src="./assets/img/bolsa.png" alt="">
+          </div>
         </div>
-        <div class="barrapuntos">
-            <div class="barrapuntosconten">
-                
-            </div>
-            <h6>150sm</h6>
+      </div>
+      <div class="barrapuntos">
+        <div class="barrapuntosconten">
+
         </div>
-    </div>   
+        <h6>150sm</h6>
+      </div>
+    </div>
   </div>
   <ion-content class="BondsComponent" style="margin-bottom: 50px;" scrollY="true">
-        <div class="row head titulobond">
-            <h2>Redime tus SM <br> por bonos increíbles </h2>
-        </div>
-        <!--swich tiendas/bonos-->
-        <div class="sw">
-          <label class="switch0" ng-click="btnbonos()">
+    <div class="row head titulobond">
+      <h2>Redime tus SM <br> por bonos increíbles </h2>
+    </div>
+    <!--swich tiendas/bonos-->
+    <div class="sw">
+      <label class="switch0" ng-click="btnbonos()">
             <input type="checkbox" ng-model="bonos" ng-init="bonos=false">
             <div class="slider0 round0">
                 <div class="tienda">
@@ -53,99 +53,102 @@
                 </div>
             </div>
           </label>
-        </div>
+    </div>
 
-        <!--container tienda-->
-        <div ng-if="!bonos" class="tiendas animate-if" id="tiendas">
-          <ion-item class="degradadoGris tamitem">
-            <div class="imag">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Logo_Jumbo_Cencosud.png" alt="jumbo">
+    <!--container tienda-->
+    <div ng-if="!bonos" class="tiendas animate-if" id="tiendas">
+      <ion-item class="degradadoGris tamitem" ng-repeat="tienda in bonds">
+        <div class="imag">
+          <img ng-src="{{tienda.img}}" alt="">
+        </div>
+        <div class="contenidotienda">
+          <div class="condicionbono">
+            <p>Bono valido para compras de cualquier producto en tiendas físicas {{tienda.name}}</p>
+          </div>
+          <div class="bonos">
+            <div class="bono text-center">
+              <p>{{tienda.value1}}</p>
             </div>
-            <div class="contenidotienda">
-              <div class="condicionbono">
-                <p>Bono valido para compras de cualquier producto</p>
-                  <p>en tiendas físicas Jumbo </p>
-              </div>
-              <div class="bonos">
-                  <div class="bono">
-                    
-                  </div>
-                  <div class="bono">
-                    
-                  </div>
-                  <div class="bono">
-                    
-                  </div>
-              </div>
-              <div class="btnstienda">
-                <div class="descr">
-                    <div class="btnPregunta" style="margin-top: 5px; text-align: center; margin-left: 10px;" >
-                      ?
-                    </div>
-                </div>
-                <div class="btncambio">
-                    <div class="btnc">
-                       <a href="" title="">Cámbialo por:</a>
-                    </div>
-                </div>
-                <div class="btncompartir">
-                  <div class="comparti">
-                    <i class="icon ion-ios-upload-outline"></i>
-                  </div>
-                </div>
+            <div class="bono text-center">
+              <p>{{tienda.value2}}</p>
+            </div>
+            <div class="bono text-center">
+              <p>{{tienda.value3}}</p>
+            </div>
+          </div>
+          <div class="btnstienda">
+            <div class="descr">
+              <div class="btnPregunta" style="margin-top: 5px; text-align: center; margin-left: 10px;">
+                ?
               </div>
             </div>
-          </ion-item>
+            <div class="btncambio">
+              <div class="btnc">
+                <a href="" title="">Cámbialo por:</a>
+              </div>
+            </div>
+            <div class="btncompartir">
+              <div class="comparti">
+                <i class="icon ion-ios-upload-outline"></i>
+              </div>
+            </div>
+          </div>
         </div>
+      </ion-item>
 
-        <!--Container tus bonos-->
-        <div ng-if="bonos" class="tiendas animate-if" id="bonos">
-           <ion-item class="degradadoblueX tamitem">
-              <div class="imag">
-                  <img src="https://static03.ofertia.com.co/comercios/KTronix/profile-15748.v12.png" alt="jumbo">
-              </div>
-              <div class="contenidotienda">
-                  <div class="condicionbono">
-                    <p>Bono valido para compras de cualquier producto</p>
-                      <p>en la tienda online de Ktronix</p>
-                  </div>
-                  <div class="bonocosto">
-                    <h2>$50.000</h2>
-                  </div>
-                  <div class="btnstienda">
-                <div class="descr">
-                    <div class="btnPregunta" style="margin-top: 5px; text-align: center; margin-left: 10px;" >
-                      ?
-                    </div>
-                </div>
-                <div class="btncambio">
-                    <div class="btnc">
-                       <a href="" title="">Código</a>
-                    </div>
-                </div>
-               
-              </div>
-              </div>
-           </ion-item>
+    </div>
+
+    <!--Container tus bonos-->
+    <div ng-if="bonos" class="tiendas animate-if" id="bonos">
+      <ion-item class="degradadoblueX tamitem" ng-repeat="bono in bonds">
+        <div class="imag">
+          <img ng-src="{{bono.img}}" alt="">
         </div>
+        <div class="contenidotienda">
+          <div class="condicionbono">
+            <p>{{bono.description}}</p>
+          </div>
+          <div class="bonocosto">
+            <h2>${{bono.value}}</h2>
+          </div>
+          <div class="btnstienda">
+            <div class="descr">
+              <div class="btnPregunta" style="margin-top: 5px; text-align: center; margin-left: 10px;">
+                ?
+              </div>
+            </div>
+            <div class="btncambio">
+              <div class="btnc">
+                <a href="" title="">Código</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </ion-item>
+    </div>
   </ion-content>
   <ion-footer class="" style="bottom:0px;">
-       <div class="conten-footer">
-           <a href="#/home" class="home-btn degradadoGris">
+    <div class="conten-footer">
+      <a href="#/home" class="home-btn degradadoGris">
                <i class="ion-ios-home" aria-hidden="true"></i>
           </a>
-           <div class="task-btn degradadoGris" >
-               <a href="#/task"><p style="text-align: center">Tareas</p></a>
-           </div>
-           <div class="challenge-btn degradadoblueX" style="height: 50px; margin-top: 0px; ">
-               <a href="#/challenge" ><p style="padding-top: 5px; font-size:20px;">Bonos</p></a>
-           </div>
-           <a href="#/user" class="profi-btn degradadoGris"> 
+      <div class="task-btn degradadoGris">
+        <a href="#/task">
+          <p style="text-align: center">Tareas</p>
+        </a>
+      </div>
+      <div class="challenge-btn degradadoblueX" style="height: 50px; margin-top: 0px; ">
+        <a href="#/challenge">
+          <p style="padding-top: 5px; font-size:20px;">Bonos</p>
+        </a>
+      </div>
+      <a href="#/user" class="profi-btn degradadoGris"> 
                <i class="ion-person" aria-hidden="true"></i>
            </a>
-           
-       </div>
 
-   </ion-footer>
+    </div>
+
+  </ion-footer>
 
 </ion-view>

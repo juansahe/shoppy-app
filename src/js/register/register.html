@@ -1,61 +1,63 @@
 <ion-view view-title="Register" hide-nav-bar="true">
-  <ion-content class="RegisterComponent"  scrollY="true">
+  <ion-content class="RegisterComponent" scrollY="true">
     <div class="title">
-    	<img src="./assets/img/logoblue.png" />
+      <img src="./assets/img/logoblue.png" />
     </div>
-    <div  class="titleregistro">
-        <img src="./assets/img/reg-02.png"/>
+    <div class="titleregistro">
+      <img src="./assets/img/reg-02.png" />
     </div>
     <div class="container">
-    	<div class="form-grup">
-    		<form action="">
-    			<div class="form-element">
+      <div class="form-grup">
+        <form action="">
+          <div class="form-element">
 
-    				<label class="item item-input degradadoGris labelinput" id="username">
-                          <i class = "icon ion-person"></i>
-                          <input type="text" placeholder="Nombre" ng-model="user.username">
-                      </label>
-                      
-    			</div>
-            <div class="form-element">
-              <label class="item item-input degradadoGris labelinput" id="email">
+            <label class="item item-input degradadoGris labelinput" id="username">
+                <i class = "icon ion-person"></i>
+                <input type="text" placeholder="Nombre" ng-model="user.username">
+            </label>
+
+          </div>
+          <div class="form-element">
+            <label class="item item-input degradadoGris labelinput" id="email">
                     <i class = "icon ion-email"></i>
                     <input type="email" placeholder="Correo electronico" ng-model="user.email">
               </label>
           </div>
-                <div class="form-element">
-                    <label class="item item-input degradadoGris labelinput" id="bornday">
+          <div class="form-element">
+            <label class="item item-input degradadoGris labelinput" id="bornday">
                           <i class = "icon ion-calendar"></i>
                           <input type="date" placeholder="Fecha de nacimiento" ng-model="user.bornday">
                       </label>
-                </div>
-    		
-    			<div class="form-element">
-    				<label class="item item-input degradadoGris labelinput" id="password">
+          </div>
+
+          <div class="form-element">
+            <label class="item item-input degradadoGris labelinput" id="password">
                           <i class = "icon ion-ios-unlocked"></i>
                           <input type="password" placeholder="Contraseña" ng-model="user.password">
                     </label>
-    			</div>
-    		</form>
-    	</div>
-        
-    	<div class="terms">
-            
-                <div class="checkbox">
-                    <input type="checkbox" ng-model="terminos" name="checkbox" id="checkbox1">
-                </div>
-            
-    		<p>Acepto los términos de privacidad y servicio de Shopper Miles </p>
+          </div>
+        </form>
+      </div>
 
+      <div class="terms">
+
+        <div class="checkbox">
+          <input type="checkbox" ng-model="terminos" name="checkbox" id="checkbox1">
         </div>
-    	</div>
-        <div id="botones">
-          <a href="" ng-click="save(terminos)" class="button button-block btncontinuar degradadoblueX">
+
+        <p>Acepto los términos de privacidad y servicio de Shopper Miles </p>
+
+      </div>
+    </div>
+    <div id="botones">
+      <a href="" ng-click="save(terminos)" class="button button-block btncontinuar degradadoblueX">
             Continuar
           </a>
-        </div>
-        <div class="login">
-            <a href="#/login"><p>Ya tienes una cuenta? Ingresa aquí</p></a>
-        </div>
+    </div>
+    <div class="login">
+      <a href="#/login">
+        <p>Ya tienes una cuenta? Ingresa aquí</p>
+      </a>
+    </div>
     </div>
   </ion-content>
