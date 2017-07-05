@@ -1,7 +1,6 @@
 class CompletePropileCtrl {
   constructor(CompletePropileService, $scope, $location, $ionicPopup) {
 
-
     this.CompletePropileService = CompletePropileService;
 
     CompletePropileService.getProducts((result) => {
@@ -45,7 +44,7 @@ class CompletePropileCtrl {
     function enviarFavoritos(seleccionados) { //aqui se envia ids de productos seleccionados
       //alert(seleccionados);
       //mostrarPopup()
-	  var error;
+      var error;
       for (var i = 0; i < seleccionados.length; i++) {
         var favorito = {
           "product": seleccionados[i],
@@ -53,20 +52,20 @@ class CompletePropileCtrl {
         }
         CompletePropileService.postFavoritos(favorito, (result) => {
           //alert(result)
-		  error=false;
+          error = false;
           console.log(result);
         }, (err) => {
-			error=true;
+          error = true;
           console.log(err);
         });
       }
 
 
 
-	  if(!error){
-		  mostrarPopup();
-	  }
-      
+      if (!error) {
+        mostrarPopup();
+      }
+
 
 
 
@@ -76,9 +75,9 @@ class CompletePropileCtrl {
       var alertPopup = $ionicPopup.alert({
         title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()"  aria-hidden="true"></i>',
         templateUrl: 'modalpoints.html',
-        buttons: [
-            { text: 'Listo' }
-         ]
+        buttons: [{
+          text: 'Listo'
+        }]
       });
       alertPopup.then(function (res) {
         $location.path('/home');

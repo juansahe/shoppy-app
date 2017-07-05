@@ -11,27 +11,28 @@
         <form ng-submit="save(terminos)">
           <div class="form-element">
             <label class="item item-input degradadoGris labelinput" id="username">
-                <i class = "icon ion-person"></i>
-                <input type="text" placeholder="Nombre" ng-model="user.username">
+              <i class = "icon ion-person"></i>
+              <input type="text" placeholder="Nombre" ng-model="user.username" required>
             </label>
           </div>
           <div class="form-element">
             <label class="item item-input degradadoGris labelinput" id="email">
                     <i class = "icon ion-email"></i>
-                    <input type="email" placeholder="Correo electronico" ng-model="user.email">
+                    <input type="email" placeholder="Correo electronico" ng-model="user.email" required>
               </label>
           </div>
           <div class="form-element">
             <label class="item item-input degradadoGris labelinput" id="bornday">
               <i class = "icon ion-calendar"></i>
-              <input type="date" placeholder="Fecha de nacimiento" ng-model="user.bornday">
+              <input type="date" placeholder="Fecha de nacimiento" ng-model="user.bornday" value="2014-02-09" required>
             </label>
           </div>
+          <p>{{user.bornday | date:'yyyy-MM-dd'}}</p>
 
           <div class="form-element">
             <label class="item item-input degradadoGris labelinput" id="password">
               <i class = "icon ion-ios-unlocked"></i>
-              <input type="password" placeholder="Contraseña" ng-model="user.password">
+              <input type="password" placeholder="Contraseña" ng-model="user.password" required>
             </label>
           </div>
 
@@ -48,7 +49,7 @@
           <div id="botones">
 
 
-            <button href="" ng-click="save(terminos)" class="button button-block btncontinuar degradadoblueX">
+            <button href="" type="submit" class="button button-block btncontinuar degradadoblueX">
               Continuar
             </button>
 

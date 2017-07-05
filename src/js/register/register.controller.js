@@ -2,19 +2,7 @@ class RegisterCtrl {
   constructor(RegisterService, $scope, $location, $ionicLoading) {
 
 
-    $scope.user = {
-      "id": 20,
-      "first_name": "",
-      "last_name": "",
-      "is_staff": true,
-      "is_superuser": true,
-      "date_joined": "2017-06-08T21:58:40+0000",
-      "xperience": null,
-      "shopper_points": null
-    };
-
-
-
+    $scope.user = {};
 
     $scope.terminos = false;
     this.RegisterService = RegisterService;
@@ -33,23 +21,18 @@ class RegisterCtrl {
               if (validate($scope.user.password)) {
                 // si ya acepto los terminos
                 // console.log("entro a las validaciones");
+
+                var str=$scope.user.bornday;
+                $scope.user.bornday=null;
+                var fecha=str.getFullYear()+"-"+(str.getMonth()+1)+"-"+str.getDate();
+                $scope.user.bornday=fecha;
+
+
                 this.RegisterService.saveUser($scope.user, (result) => {
                   console.log(result)
-
-
-                  $scope.user = {
-                    "id": 20,
-                    "first_name": "",
-                    "last_name": "",
-                    "is_staff": true,
-                    "is_superuser": true,
-                    "date_joined": "2017-06-08T21:58:40+0000",
-                    "xperience": null,
-                    "shopper_points": null
-                  };
-
+                  $scope.user.id=result.id;
                   //se registro el usuario, luego se guarda en el localStorage
-                  this.RegisterService.setUser("c7ba8ea7468f592cd618e0f3537b3f07a42df20f", result);
+                  this.RegisterService.setUser(result.token, $scope.user);
                   $location.path('/completeprofile');
                 }, (err) => {
                   console.log(err);
