@@ -1,5 +1,5 @@
 class TaskCtrl {
-  constructor(TaskService, $scope, $cordovaCamera, $ionicPopup) {
+  constructor(TaskService, $scope, $cordovaCamera, $ionicPopup, $rootScope, $location) {
 
     this.TaskService = TaskService;
 
@@ -10,8 +10,28 @@ class TaskCtrl {
       console.log(err);
     });
 
-    $scope.dirigirTarea = (tipo_tarea) => {
-      alert(tipo_tarea);
+    $scope.dirigirTarea = (tipo_tarea, id) => {
+      //alert(tipo_tarea);
+      if(tipo_tarea=="bro"){
+        console.log(id);
+        for(var i=0; i<$scope.task.length; i++){
+          if($scope.task[i].id===id){
+            console.log($scope.task[i].imagen);
+            $rootScope.id=id;
+            $rootScope.imagen = $scope.task[i].imagen;
+            break;
+          }
+        }
+
+         $location.path('/lookPicture');
+
+      }else if(tipo_tarea==""){
+
+      }else if(tipo_tarea==""){
+
+      }else if(tipo_tarea==""){
+
+      }
     }
 
     /*

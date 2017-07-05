@@ -1,9 +1,9 @@
 class lookPictureCtrl{
-	constructor($scope, $interval){
+	constructor($scope, $interval, $rootScope, $location){
 
 		$scope.time = 5;
 		$scope.flag = false;
-
+		$scope.img = $rootScope.imagen;
 			var contador=$interval(function () {
 			  $scope.time--;
 			  if($scope.time<0){
@@ -20,6 +20,10 @@ class lookPictureCtrl{
 			if($scope.flag){
 				alert("mostrar popup");
 			}
+		}
+
+		$scope.cerrar = ()=>{
+			$location.path('/task');
 		}
 		    
 			

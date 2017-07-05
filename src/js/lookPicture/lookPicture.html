@@ -1,9 +1,9 @@
 <ion-view view-title="LookPicture">
 	<ion-header-bar class="bar bar-light degradadoblueX" id="headpreg">
-		<h1 class="title"><i style="color:#fff;font-size: 25px;margin-left: 10px; position: absolute;" class="icon ion-close-round"></i>  Mira la imagen</h1>
+		<h1 class="title"><i ng-click="cerrar()" style="color:#fff;font-size: 25px;margin-left: 10px; position: absolute;" class="icon ion-close-round"></i>  Mira la imagen</h1>
 	</ion-header-bar>
 	<ion-content class="degradadoblueX">
-			<img src="./assets/img/foto-perfil-facebook.jpg" id="imgpublicidad">
+			<img src="{{img}}" id="imgpublicidad">
 
 			    <div class="row">
 					<div class="col col-80 col-offset-10 text-center">
