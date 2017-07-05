@@ -35,6 +35,13 @@
             </label>
           </div>
 
+          <div class="form-element">
+            <label class="item item-input degradadoGris labelinput" id="passwordRepit">
+              <i class = "icon ion-ios-unlocked"></i>
+              <input type="password" placeholder="Repetir contraseña" ng-model="user.passwordRepit">
+            </label>
+          </div>
+
           <div class="terms">
 
             <div class="checkbox">
@@ -45,12 +52,9 @@
 
           </div>
 
-          <div id="botones">
-
-
-            <button href="" ng-click="save(terminos)" class="button button-block btncontinuar degradadoblueX">
+            <button href="" ng-click="save(terminos)" class="loginbtn button button-block btncontinuar degradadoblueX">
               Continuar
-            </button>
+        
 
           </div>
         </form>
@@ -59,10 +63,11 @@
 
     </div>
 
-    <div class="login">
-      <a href="#/login">
-        <p>Ya tienes una cuenta? Ingresa aquí</p>
-      </a>
-    </div>
-    </div>
+      <div class="login">
+        <a href="#/login">
+          <p>Ya tienes una cuenta? Ingresa aquí</p>
+        </a>
+      </div>
   </ion-content>
+
+  </ion-view>

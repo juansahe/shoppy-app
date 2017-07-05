@@ -31,35 +31,44 @@ class RegisterCtrl {
           if (validate($scope.user.email)) {
             if (validate($scope.user.bornday)) {
               if (validate($scope.user.password)) {
-                // si ya acepto los terminos
-                // console.log("entro a las validaciones");
-                this.RegisterService.saveUser($scope.user, (result) => {
-                  console.log(result)
+                if(validate($scope.user.passwordRepit) && $scope.user.password==$scope.user.passwordRepit){
+                    // si ya acepto los terminos
+                  // console.log("entro a las validaciones");
+                  this.RegisterService.saveUser($scope.user, (result) => {
+                    console.log(result)
+                    $scope.user = {
+                      "id": 20,
+                      "first_name": "",
+                      "last_name": "",
+                      "is_staff": true,
+                      "is_superuser": true,
+                      "date_joined": "2017-06-08T21:58:40+0000",
+                      "xperience": null,
+                      "shopper_points": null
+                    };
 
-
-                  $scope.user = {
-                    "id": 20,
-                    "first_name": "",
-                    "last_name": "",
-                    "is_staff": true,
-                    "is_superuser": true,
-                    "date_joined": "2017-06-08T21:58:40+0000",
-                    "xperience": null,
-                    "shopper_points": null
-                  };
-
-                  //se registro el usuario, luego se guarda en el localStorage
-                  this.RegisterService.setUser("c7ba8ea7468f592cd618e0f3537b3f07a42df20f", result);
-                  $location.path('/completeprofile');
-                }, (err) => {
-                  console.log(err);
+                    //se registro el usuario, luego se guarda en el localStorage
+                    this.RegisterService.setUser("c7ba8ea7468f592cd618e0f3537b3f07a42df20f", result);
+                    $location.path('/completeprofile');
+                  }, (err) => {
+                    console.log(err);
+                    $ionicLoading.show({
+                      template: "Error " + err.data.username,
+                      noBackdrop: false,
+                      duration: 2000
+                    });
+                    //error al registrar el usuario
+                  });
+                }else{
+                  //si la contraseña no se ingreso
+                  document.getElementById('passwordRepit').style.border = "solid 1px red";
                   $ionicLoading.show({
-                    template: "Error " + err.data.username,
+                    template: 'Las contraseñas no coinciden',
                     noBackdrop: false,
                     duration: 2000
                   });
-                  //error al registrar el usuario
-                });
+                }
+                
               } else {
                 //si la contraseña no se ingreso
                 document.getElementById('password').style.border = "solid 1px red";
