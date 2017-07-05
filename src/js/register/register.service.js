@@ -7,8 +7,10 @@ class RegisterService {
     
     
     this.saveUser = (user, success, error) => {
+      
+
       var config = {
-        url: url_api + "users/",
+        url: url_api + "register/",
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
