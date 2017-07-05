@@ -8,14 +8,12 @@
     </div>
     <div class="container">
       <div class="form-grup">
-        <form action="">
+        <form ng-submit="save(terminos)">
           <div class="form-element">
-
             <label class="item item-input degradadoGris labelinput" id="username">
                 <i class = "icon ion-person"></i>
                 <input type="text" placeholder="Nombre" ng-model="user.username">
             </label>
-
           </div>
           <div class="form-element">
             <label class="item item-input degradadoGris labelinput" id="email">
@@ -36,24 +34,31 @@
               <input type="password" placeholder="Contraseña" ng-model="user.password">
             </label>
           </div>
+
+          <div class="terms">
+
+            <div class="checkbox">
+              <input type="checkbox" ng-model="terminos" name="checkbox" id="checkbox1">
+            </div>
+
+            <p>Acepto los términos de privacidad y servicio de Shopper Miles </p>
+
+          </div>
+
+          <div id="botones">
+
+
+            <button href="" ng-click="save(terminos)" class="button button-block btncontinuar degradadoblueX">
+              Continuar
+            </button>
+
+          </div>
         </form>
       </div>
 
-      <div class="terms">
 
-        <div class="checkbox">
-          <input type="checkbox" ng-model="terminos" name="checkbox" id="checkbox1">
-        </div>
-
-        <p>Acepto los términos de privacidad y servicio de Shopper Miles </p>
-
-      </div>
     </div>
-    <div id="botones">
-      <a href="" ng-click="save(terminos)" class="button button-block btncontinuar degradadoblueX">
-            Continuar
-          </a>
-    </div>
+
     <div class="login">
       <a href="#/login">
         <p>Ya tienes una cuenta? Ingresa aquí</p>

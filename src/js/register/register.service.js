@@ -25,8 +25,8 @@ class RegisterService {
 
 
 
-    this.setUser = (user) => {
-      Session.create("c7ba8ea7468f592cd618e0f3537b3f07a42df20f", user)
+    this.setUser = (token, user) => {
+      Session.create(token, user)
       // window.localStorage.setItem('user', JSON.stringify(user));
     }
 

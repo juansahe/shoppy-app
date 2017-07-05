@@ -35,16 +35,29 @@ class RegisterCtrl {
                 // console.log("entro a las validaciones");
                 this.RegisterService.saveUser($scope.user, (result) => {
                   console.log(result)
+
+
+                  $scope.user = {
+                    "id": 20,
+                    "first_name": "",
+                    "last_name": "",
+                    "is_staff": true,
+                    "is_superuser": true,
+                    "date_joined": "2017-06-08T21:58:40+0000",
+                    "xperience": null,
+                    "shopper_points": null
+                  };
+
                   //se registro el usuario, luego se guarda en el localStorage
-                  this.RegisterService.setUser(result);
+                  this.RegisterService.setUser("c7ba8ea7468f592cd618e0f3537b3f07a42df20f", result);
                   $location.path('/completeprofile');
                 }, (err) => {
                   console.log(err);
-					          $ionicLoading.show({
-                      template: "Error "+err.data.username.toString(),
-                      noBackdrop: false,
-                      duration: 2000
-                    });
+                  $ionicLoading.show({
+                    template: "Error " + err.data.username,
+                    noBackdrop: false,
+                    duration: 2000
+                  });
                   //error al registrar el usuario
                 });
               } else {

@@ -125,6 +125,8 @@ i.ion-person{
 .imgSlide{
 	width: 100%;
 	height: 100%;
+	border-radius: 25px;
+	border: solid 1px gray;
 }
 .imgPromo{
 	width: 100%;
@@ -133,4 +135,8 @@ i.ion-person{
 }
 .espacioVacio{
 	height: 150px;
+}
+
+.ionslide{
+padding: 25px;
 }
