@@ -10,6 +10,10 @@ class TaskCtrl {
       console.log(err);
     });
 
+    $scope.dirigirTarea = (tipo_tarea) => {
+      alert(tipo_tarea);
+    }
+
     /*
      * if given group is the selected group, deselect it
      * else, select the given group

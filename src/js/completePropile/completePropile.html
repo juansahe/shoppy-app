@@ -13,9 +13,9 @@
   </label>
   <br><br> 
 
-  <div class="lista" ng-if="productos" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto.id)" ng-class="{degradadoblueX: !producto.estado, seleccionado: producto.estado}">
+  <div class="lista" ng-if="productos" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto.id)" ng-class="{blueX: !producto.estado, seleccionado: producto.estado}">
      <div class="product" >
-         <p class="text">{{producto.name}}</p>
+      <p class="text">{{producto.name}}</p>
      </div>
   </div>
   <div class="lista" ng-if="!productos">

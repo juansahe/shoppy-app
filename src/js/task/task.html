@@ -43,7 +43,7 @@
 
        <div ng-repeat="tarea in task">
          <ion-item class="item-stable degradadoGris tareaContent row" ng-class="{active: isGroupShown(tarea)}">
-           <div class="texto col col-50">
+           <div class="texto col col-50" ng-click="dirigirTarea(tarea.type_task)">
                <p>{{tarea.name}}</p>
            </div>
            <div class="btnPregunta" ng-click="toggleGroup(tarea)">
