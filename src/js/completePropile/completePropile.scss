@@ -74,14 +74,12 @@
 .popup-buttons {
   color: #bdc3c7;
 }
+
 .ion-star{
 	border-radius: 10%;
 
 }
 
-.ion-star {
-  border-radius: 10%;
-}
 
 .popup-container {
   background: rgba(57, 137, 190, 0.8);
@@ -162,15 +160,6 @@
   color: #269B55;
   font-weight: bold;
 }
-.contenmodal #star_2{
-	position: absolute;
-	top:74px;
-	left: 118px;
-	z-index: 2;
-	color: #2980B9;
-	font-weight: bold;
-	font-size: 35px;
-}
 
 .contenmodal p.px{
 	position: absolute;
@@ -180,14 +169,6 @@
 	color: #2980B9;
 	font-weight: bold;
 
-}
-.contenmodal #star{
-	position: absolute;
-	top:110px;
-	left: 49px;
-	z-index: 2;
-	color: #269B55;
-	font-weight: bold;
 }
 
 .contenmodal p.sm{

@@ -19,30 +19,45 @@ class RegisterCtrl {
           if (validate($scope.user.email)) {
             if (validate($scope.user.bornday)) {
               if (validate($scope.user.password)) {
-                // si ya acepto los terminos
                 // console.log("entro a las validaciones");
 
-                var str=$scope.user.bornday;
-                $scope.user.bornday=null;
-                var fecha=str.getFullYear()+"-"+(str.getMonth()+1)+"-"+str.getDate();
-                $scope.user.bornday=fecha;
 
 
-                this.RegisterService.saveUser($scope.user, (result) => {
-                  console.log(result)
-                  $scope.user.id=result.id;
-                  //se registro el usuario, luego se guarda en el localStorage
-                  this.RegisterService.setUser(result.token, $scope.user);
-                  $location.path('/completeprofile');
-                }, (err) => {
-                  console.log(err);
+                if (validate($scope.user.passwordRepit) && $scope.user.password == $scope.user.passwordRepit) {
+                  // si ya acepto los terminos
+                  // console.log("entro a las validaciones");
+
+                  var str = $scope.user.bornday;
+                  $scope.user.bornday = null;
+                  var fecha = str.getFullYear() + "-" + (str.getMonth() + 1) + "-" + str.getDate();
+                  $scope.user.bornday = fecha;
+
+                  this.RegisterService.saveUser($scope.user, (result) => {
+                    console.log(result)
+                    
+                    //se registro el usuario, luego se guarda en el localStorage
+                    this.RegisterService.setUser(result.token, $scope.user);
+                    $location.path('/completeprofile');
+                  }, (err) => {
+                    console.log(err);
+                    $ionicLoading.show({
+                      template: "Error " + err.data.username,
+                      noBackdrop: false,
+                      duration: 2000
+                    });
+                    //error al registrar el usuario
+                  });
+                } else {
+                  //si la contraseña no se ingreso
+                  document.getElementById('passwordRepit').style.border = "solid 1px red";
+
                   $ionicLoading.show({
-                    template: "Error " + err.data.username,
+                    template: 'Las contraseñas no coinciden',
                     noBackdrop: false,
                     duration: 2000
                   });
-                  //error al registrar el usuario
-                });
+                }
+
               } else {
                 //si la contraseña no se ingreso
                 document.getElementById('password').style.border = "solid 1px red";
