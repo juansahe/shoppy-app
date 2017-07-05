@@ -44,12 +44,12 @@
       </div>
     </div>
   </div>
-  <ion-content style="z-index: 3;" class="HomeComponent" >
+  <ion-content style="z-index: 3;" class="HomeComponent">
 
     <div class="container">
       <div class="row espacioVacio"></div>
 
-      <ion-slide-box class="slide" ng-if="promociones" >
+      <ion-slide-box class="slide" ng-if="promociones">
 
         <ion-slide ng-repeat="promocion in promociones" class="ionslide">
           <img ng-src="{{promocion.img}}" class="imgSlide">
@@ -58,16 +58,17 @@
       </ion-slide-box>
 
       <br>
-        <div class="row" ng-repeat="promocion in promociones" >
-          <div class="col col-50 contentPromo">
-            <img class="imgPromo" src="http://ofertadescuentos.com/wp-content/uploads/2014/08/La-Comercial-Folleto-18-Agosto.jpg">
-          </div>
-          <div class="col col-50 contentPromo">
-            <img class="imgPromo" src="https://s-media-cache-ak0.pinimg.com/736x/5a/90/0c/5a900c5bc91a61b4a3c06d678c2bf3b5.jpg">
-          </div>
-        </div>
-  
       
+      <div class="row promo" ng-repeat="promocion in promociones">
+        <div class="col col-50 contentPromo">
+          <img class="imgPromo" src="http://ofertadescuentos.com/wp-content/uploads/2014/08/La-Comercial-Folleto-18-Agosto.jpg">
+        </div>
+        <div class="col col-50 contentPromo">
+          <img class="imgPromo" src="https://s-media-cache-ak0.pinimg.com/736x/5a/90/0c/5a900c5bc91a61b4a3c06d678c2bf3b5.jpg">
+        </div>
+      </div>
+
+
     </div>
 
 
@@ -88,8 +89,8 @@
         </a>
       </div>
       <a class="profi-btn degradadoGris" href="#/user">
-               <i class="ion-person" aria-hidden="true"></i>
-           </a>
+        <i class="ion-person" aria-hidden="true"></i>
+      </a>
 
     </div>
   </ion-footer>
