@@ -11,25 +11,51 @@ class TaskCtrl {
     });
 
     $scope.dirigirTarea = (tipo_tarea, id) => {
-      //alert(tipo_tarea);
-      if(tipo_tarea=="bro"){
+
+      /*switch (tipo_tarea) {
+        case "bro":
+
+          console.log(id);
+          for (var i = 0; i < $scope.task.length; i++) {
+            if ($scope.task[i].id === id) {
+              console.log($scope.task[i].imagen);
+              $rootScope.id = id;
+              $rootScope.imagen = $scope.task[i].imagen;
+              break;
+            }
+          }
+
+          $location.path('/lookPicture');
+
+          break;
+
+        case "":
+
+          break;
+
+        default:
+          break;
+      }*/
+
+
+      if (tipo_tarea == "bro") {
         console.log(id);
-        for(var i=0; i<$scope.task.length; i++){
-          if($scope.task[i].id===id){
+        for (var i = 0; i < $scope.task.length; i++) {
+          if ($scope.task[i].id === id) {
             console.log($scope.task[i].imagen);
-            $rootScope.id=id;
+            $rootScope.id = id;
             $rootScope.imagen = $scope.task[i].imagen;
             break;
           }
         }
 
-         $location.path('/lookPicture');
+        $location.path('/lookPicture');
 
-      }else if(tipo_tarea==""){
+      } else if (tipo_tarea == "") {
 
-      }else if(tipo_tarea==""){
+      } else if (tipo_tarea == "") {
 
-      }else if(tipo_tarea==""){
+      } else if (tipo_tarea == "") {
 
       }
     }

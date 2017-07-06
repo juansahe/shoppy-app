@@ -93,7 +93,7 @@
 .tiendas .tamitem{
 	height: 140px;
 	display: flex;
-
+	margin-bottom: 20px;
 }
 .tiendas .tamitem .imag{
 	width: 30%;
@@ -131,14 +131,24 @@
 
 .tiendas .contenidotienda .bonos .bono{
 	width: 30%;
-	background: white;
 	height: 25px;
 	border-radius: 20px;
 	margin-left: 3%;
-	color: #95A5A6;
 	font-size: 15px;
 	margin-top: 5px;
 	padding-top: 4px;
+}
+
+.bonoSeleccionado{
+	background: blue;
+	color: white !important;
+}
+.bonoSimple{
+	background: white;
+	color: white;
+}
+.bonoSeleccionado p{
+	color: white !important;
 }
 
 .tiendas .contenidotienda .btnstienda{

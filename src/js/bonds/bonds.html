@@ -66,13 +66,13 @@
             <p>Bono valido para compras de cualquier producto en tiendas físicas {{tienda.name}}</p>
           </div>
           <div class="bonos">
-            <div class="bono text-center">
+            <div class="bono bonoSimple text-center" ng-click="tienda.valorIntercambio=cambiarBonoValor(tienda.value1, tienda.factorConversionShopy)">
               <p>{{tienda.value1}}</p>
             </div>
-            <div class="bono text-center">
+            <div class="bono bonoSimple text-center" ng-click="tienda.valorIntercambio=cambiarBonoValor(tienda.value2, tienda.factorConversionShopy)">
               <p>{{tienda.value2}}</p>
             </div>
-            <div class="bono text-center">
+            <div class="bono bonoSeleccionado degradadoblueX text-center" ng-click="tienda.valorIntercambio=cambiarBonoValor(tienda.value3, tienda.factorConversionShopy)">
               <p>{{tienda.value3}}</p>
             </div>
           </div>
@@ -83,8 +83,8 @@
               </div>
             </div>
             <div class="btncambio">
-              <div class="btnc">
-                <a href="" title="">Cámbialo por:</a>
+              <div class="btnc" ng-click="tienda.valorIntercambio && cambiarBono(tienda.id, tienda.valorIntercambio)">
+                <a href="" title="">Cámbialo por: <span ng-if="tienda.valorIntercambio" >{{tienda.valorIntercambio+'s'}}</span></a>
               </div>
             </div>
             <div class="btncompartir">
