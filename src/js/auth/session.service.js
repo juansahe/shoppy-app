@@ -10,6 +10,10 @@ class Session {
       window.localStorage.setItem('user', angular.toJson(user));
     };
 
+    this.setUser = function (user){
+      window.localStorage.setItem('user', angular.toJson(user));
+    }
+
     //get token from memory or localStorage
     this.getToken = function () {
       var token = this.token;
@@ -31,7 +35,14 @@ class Session {
       $location.path('/');
     };
 
+    this.setTarea = function (tarea){
+      window.localStorage.setItem('tareas', angular.toJson(tarea));
+    }
 
+    this.getTareas = function(){
+        var tareas = angular.fromJson(window.localStorage.getItem('tareas'));
+        return tareas;
+    }
 
     //get user from memory or localStorage
     this.getUser = function () {

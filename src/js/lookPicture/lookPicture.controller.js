@@ -1,9 +1,11 @@
 class lookPictureCtrl{
-	constructor($scope, $interval, $rootScope, $location){
-
+	constructor($scope, $interval, $rootScope, $location, $ionicPopup, Session){
+		//console.log(CONFIG);
 		$scope.time = 5;
 		$scope.flag = false;
-		$scope.img = $rootScope.imagen;
+		console.log($rootScope.tarea);
+		$scope.ta = $rootScope.tarea;
+		$scope.img = "http://45.55.43.26:8000/media/"+$rootScope.tarea.fields.imagen;
 			var contador=$interval(function () {
 			  $scope.time--;
 			  if($scope.time<0){
@@ -15,12 +17,34 @@ class lookPictureCtrl{
 			}, 1000);
 
 
-
 		$scope.abrirpopup = ()=>{
 			if($scope.flag){
-				alert("mostrar popup");
+				//sumer xp y s y poner la tarea como realizada
+				$scope.user = Session.getUser();
+				$scope.user.shopper_points= parseInt($scope.user.shopper_points)+parseInt($scope.ta.fields.SM);
+				$scope.user.xperience = parseInt($scope.user.xperience)+parseInt($scope.ta.fields.point_exp);
+				console.log($scope.user);
+				//se guarda nuevamente el usuario en localstorage
+
+				//guardar array de tareas hechas en localstorage
+				
+				//$scope.pop();
 			}
 		}
+
+		$scope.pop=function mostrarPopup() {
+	      var alertPopup = $ionicPopup.alert({
+	        title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()"  aria-hidden="true"></i>',
+	        templateUrl: 'modalpoints.html',
+	        scope: $scope,
+	        buttons: [{
+	          text: 'Listo'
+	        }]
+	      });
+	      alertPopup.then(function (res) {
+	        $location.path('/task');
+	      });
+	    }
 
 		$scope.cerrar = ()=>{
 			$location.path('/task');

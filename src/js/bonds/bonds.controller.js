@@ -1,8 +1,11 @@
 class BondsCtrl {
-  constructor(BondsService, $scope, CONFIG) {
+  constructor(BondsService, $scope, CONFIG, Session) {
 
     $scope.SITE_ADMIN = CONFIG.url;
-
+    $scope.user = Session.getUser();
+    document.getElementById("xperience").style.width = $scope.user.xperience/1000*95+"%";
+    document.getElementById("shopper").style.width = $scope.user.shopper_points/1000*95+"%";
+    
     this.BondsService = BondsService;
 
     BondsService.getBonds((result) => {
