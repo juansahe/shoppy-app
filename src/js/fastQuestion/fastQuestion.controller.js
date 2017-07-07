@@ -1,5 +1,5 @@
 class fastQuestionCtrl{
-	constructor($scope){
+	constructor($scope, $location){
 		$scope.seleccionar = (flag)=>{
 			if(flag){
 				$scope.seleccionadosi=true;
@@ -9,6 +9,10 @@ class fastQuestionCtrl{
 				$scope.seleccionadosi=false;
 			}
 			
+		}
+
+		$scope.salir=function(){
+			$location.path('/task');
 		}
 
 	}

@@ -36,8 +36,7 @@
 
   </div>
 
-  <ion-content class="UsersComponent" style="margin-bottom: 60px;">
-
+  <ion-content>
     <div class="profile">
       <div class="username">
         <h3>{{user.username}}</h3>
@@ -63,23 +62,29 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col col-5"></div>
-      <div class="col col-90">
-        <a class="button button-full icon-left ion-android-calendar degradadoGris icoUser">Historial de la cuenta</a>
-        <a class="button button-full icon-left ion-android-notifications-none degradadoGris icoUser">Notificaciones</a>
-        <a class="button button-full icon-left ion-email degradadoGris icoUser">Contáctanos</a>
-      </div>
-      <div class="col col-5"></div>
-    </div>
+  </ion-content>
 
-    </div>
-    <div class="session">
-      <a class="cerrar" href="" title="" ng-click="cerrarSesion()">Cierra Sesión</a>
-      <a class="eliminar" href="" title="">Elimina tu cuenta</a>
-    </div>
+  <ion-content overflow-scroll="true" class="UsersComponent" style="margin-top: 400px; margin-bottom: 60px;">
 
+    <ion-scroll direction="xy">
+          <div class="row" >
+          <div class="col col-5"></div>
+          <div class="col col-90">
+            <a class="button button-full icon-left ion-android-calendar degradadoGris icoUser">Historial de la cuenta</a>
+            <a class="button button-full icon-left ion-android-notifications-none degradadoGris icoUser">Notificaciones</a>
+            <a class="button button-full icon-left ion-email degradadoGris icoUser">Contáctanos</a>
+          </div>
+          <div class="col col-5"></div>
+        </div>
 
+      
+        <div class="session">
+          <a class="cerrar" href="" title="" ng-click="cerrarSesion()">Cierra Sesión</a>
+          <a class="eliminar" href="" title="">Elimina tu cuenta</a>
+        </div>
+    <br>
+
+  </ion-scroll>
 
   </ion-content>
   <ion-footer class="foot" style="bottom:0px; position: absolute; z-index: 4">

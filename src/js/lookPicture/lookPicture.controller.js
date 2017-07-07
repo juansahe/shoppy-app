@@ -25,10 +25,18 @@ class lookPictureCtrl{
 				$scope.user.xperience = parseInt($scope.user.xperience)+parseInt($scope.ta.fields.point_exp);
 				console.log($scope.user);
 				//se guarda nuevamente el usuario en localstorage
-
+				Session.setUser($scope.user);
 				//guardar array de tareas hechas en localstorage
-				
-				//$scope.pop();
+				$scope.tareas_hechas = Session.getTareas();
+				if($scope.tareas_hechas!=null){
+					$scope.tareas_hechas.push($scope.ta.pk);
+				}else{
+					$scope.tareas_hechas=[$scope.ta.pk];
+				}
+
+				Session.setTarea($scope.tareas_hechas);
+
+				$scope.pop();
 			}
 		}
 

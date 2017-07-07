@@ -32,6 +32,7 @@ class Session {
     this._destroyLc = function () {
       window.localStorage.removeItem('token');
       window.localStorage.removeItem('user');
+      window.localStorage.removeItem('tareas');
       $location.path('/');
     };
 

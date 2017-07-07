@@ -15,7 +15,6 @@ class BondsService {
         }
       };
       this.$http(config).then(function (res) {
-        console.log(res);
         success(res.data);
       }, function (err) {
         error(err);
