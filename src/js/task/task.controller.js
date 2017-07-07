@@ -25,13 +25,11 @@ class TaskCtrl {
       }
     }
 
-    $scope.dirigirTarea = (tarea) => {
+    $scope.dirigirTarea = (tarea) =>{
       //alert(tipo_tarea);
       console.log(tarea);
       if(!tarea.hecha){
           var tipo_tarea = tarea.fields.name;
-        if(tipo_tarea=="Mira esta imagen"){
-
           for(var i=0; i<$scope.task.length; i++){
             if($scope.task[i].pk===tarea.pk){
               //console.log($scope.task[i].fields.imagen);
@@ -39,6 +37,7 @@ class TaskCtrl {
               break;
             }
           }
+        if(tipo_tarea=="Mira esta imagen"){
 
           $location.path('/lookPicture');
 
@@ -46,7 +45,9 @@ class TaskCtrl {
           $location.path('/fastQuestion');
         } else if (tipo_tarea == "") {
 
-        } 
+        } else if(tipo_tarea==""){
+
+        }
       }
       
     }
@@ -66,7 +67,7 @@ class TaskCtrl {
       return $scope.shownGroup === group;
     };
 
-    function modal($scope, $ionicPopup) {
+  /*  function modal($scope, $ionicPopup) {
       // Custom popup
       const template = '<i style="color:#3293d4; font-size: 10em;" class="ion-star" aria-hidden="true"><br><h3 style="font-size:30px;">20pt</h3></i>';
 
@@ -82,7 +83,7 @@ class TaskCtrl {
           }
         }]
       });
-    }
+    }*/
 
     // this.mark_task($scope.task);
 

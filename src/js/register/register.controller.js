@@ -1,5 +1,5 @@
 class RegisterCtrl {
-  constructor(RegisterService, $scope, $location, $ionicLoading) {
+  constructor(RegisterService, $scope, $location, $ionicLoading, Session) {
 
 
     $scope.user = {};
@@ -7,11 +7,12 @@ class RegisterCtrl {
     $scope.terminos = false;
     this.RegisterService = RegisterService;
 
-    var user = JSON.parse(localStorage.getItem('user'));
+  /*  var user = JSON.parse(localStorage.getItem('user'));
+    console.log(user);
     if (user != null) {
-      console.log(user);
+      
       $location.path('/home');
-    }
+    }*/
 
     $scope.save = (ter) => {
       if (ter) {
