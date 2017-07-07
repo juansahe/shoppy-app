@@ -14,10 +14,10 @@
             </div>
           </div>
           <div class="barrapuntos">
-            <div id="xperience" class="barrapuntosconten">
+            <div id="xperience" style="width: {{widthX}}" class="barrapuntosconten">
 
             </div>
-            <h6>{{user.xperience}}px</h6>
+            <h6>{{us.xperience}}px</h6>
           </div>
         </div>
         <div class="sm">
@@ -29,10 +29,10 @@
             </div>
           </div>
           <div class="barrapuntos">
-            <div id="shopper" class="barrapuntosconten">
+            <div id="shopper" style="width: {{widthS}}" class="barrapuntosconten">
 
             </div>
-            <h6>{{user.shopper_points}}s</h6>
+            <h6>{{us.shopper_points}}s</h6>
           </div>
         </div>
       </div>
@@ -44,9 +44,7 @@
       </div>
     </div>
   </div>
-  <ion-content>
-    <div class="row espacioVacio"></div>
-
+  <ion-content style="margin-top: 98px;">
       <ion-slide-box class="slide" ng-if="promociones">
 
         <ion-slide ng-repeat="promocion in promociones" class="ionslide">
@@ -55,7 +53,7 @@
 
       </ion-slide-box>
   </ion-content>
-  <ion-content overflow-scroll="true" style="z-index: 3;  margin-top: 380px" class="HomeComponent">
+  <ion-content overflow-scroll="true" style="z-index: 3;  margin-top: 310px" class="HomeComponent">
 
     <div class="container">
       

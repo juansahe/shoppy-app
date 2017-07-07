@@ -25,6 +25,9 @@ class lookPictureCtrl{
 				$scope.user.xperience = parseInt($scope.user.xperience)+parseInt($scope.ta.fields.point_exp);
 				console.log($scope.user);
 				//se guarda nuevamente el usuario en localstorage
+				$rootScope.us = $scope.user;
+				$rootScope.widthX = $scope.user.xperience/1000*95+"%";
+          		$rootScope.widthS = $scope.user.shopper_points/1000*95+"%";
 				Session.setUser($scope.user);
 				//guardar array de tareas hechas en localstorage
 				$scope.tareas_hechas = Session.getTareas();
@@ -33,12 +36,25 @@ class lookPictureCtrl{
 				}else{
 					$scope.tareas_hechas=[$scope.ta.pk];
 				}
+				$scope.marcarTareas();
 
 				Session.setTarea($scope.tareas_hechas);
 
 				$scope.pop();
 			}
 		}
+
+		$scope.marcarTareas = function(){
+			console.log("entro a marcar tareas");
+	      for(var i=0; i<$scope.tareas_hechas.length; i++){
+	        for(var j=0; j<$rootScope.task.length; j++){
+	          if($scope.tareas_hechas[i]==$rootScope.task[j].pk){
+	            $rootScope.task[j].hecha=true;
+	            console.log("la tarea "+$rootScope.task[j].pk+" esta hecha");
+	          }
+	        }
+	      }
+	    }
 
 		$scope.pop=function mostrarPopup() {
 	      var alertPopup = $ionicPopup.alert({

@@ -8,30 +8,30 @@
     </div>
     <div class="container">
       <div class="form-grup">
-        <form ng-submit="save(terminos)">
+        <form >
           <div class="form-element">
             <label class="item item-input degradadoGris labelinput" id="username">
               <i class = "icon ion-person"></i>
-              <input type="text" placeholder="Nombre" ng-model="user.username" required>
+              <input type="text" placeholder="Nombre" ng-model="user.username">
             </label>
           </div>
           <div class="form-element">
             <label class="item item-input degradadoGris labelinput" id="email">
                     <i class = "icon ion-email"></i>
-                    <input type="email" placeholder="Correo electronico" ng-model="user.email" required>
+                    <input type="email" placeholder="Correo electronico" ng-model="user.email" >
               </label>
           </div>
           <div class="form-element">
             <label class="item item-input degradadoGris labelinput" id="bornday">
-              <i class = "icon ion-calendar"></i>
-              <input type="date" placeholder="Fecha de nacimiento" ng-model="user.bornday" value="2014-02-09" required>
+              <i style="font-size: 27px" class = "icon ion-calendar"></i>
+              <input type="date" placeholder="Fecha de nacimiento" ng-model="user.bornday" value="2014-02-09" >
             </label>
           </div>
 
           <div class="form-element">
             <label class="item item-input degradadoGris labelinput" id="password">
               <i class = "icon ion-ios-unlocked"></i>
-              <input type="password" placeholder="Contraseña" ng-model="user.password" required>
+              <input type="password" placeholder="Contraseña" ng-model="user.password" >
             </label>
           </div>
 
@@ -52,9 +52,9 @@
 
           </div>
 
-            <button class="loginbtn button button-block btncontinuar degradadoblueX">
-              Continuar
-            </button>
+            <input ng-click="save(terminos)" type="submit" class="loginbtn button button-block btncontinuar degradadoblueX" value="Continuar" />
+             
+           
 
           </div>
         </form>

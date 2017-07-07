@@ -12,10 +12,10 @@
             </div>
         </div>
         <div class="barrapuntos">
-            <div id="xperience" class="barrapuntosconten">
+            <div id="xperience" style="width: {{widthX}}" class="barrapuntosconten">
                 
             </div>
-            <h6>{{user.xperience}}xp</h6>
+            <h6>{{us.xperience}}xp</h6>
         </div>
     </div>
     <div class="sm">
@@ -28,10 +28,10 @@
             </div>
         </div>
         <div class="barrapuntos">
-            <div id="shopper" class="barrapuntosconten">
+            <div id="shopper"  style="width: {{widthS}}" class="barrapuntosconten">
                 
             </div>
-            <h6>{{user.shopper_points}}s</h6>
+            <h6>{{us.shopper_points}}s</h6>
         </div>
     </div>   
   </div><br><br>
@@ -58,7 +58,7 @@
            <div class="completado">
                <div class="capa1">
                    <div class="capa2">
-                      <div ng-if="tarea.hecha">
+                      <div ng-show="tarea.hecha">
                         <div class="realizada">
                           <div class="realizada2">
                           

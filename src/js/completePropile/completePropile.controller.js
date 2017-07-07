@@ -53,7 +53,7 @@ class CompletePropileCtrl {
     function enviarFavoritos(seleccionados) { //aqui se envia ids de productos seleccionados
       //alert(seleccionados);
       //mostrarPopup()
-      var error=true;
+      var error=null;
       for (var i = 0; i < seleccionados.length; i++) {
         var favorito = {
           "product": seleccionados[i],

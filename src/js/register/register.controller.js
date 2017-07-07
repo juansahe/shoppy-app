@@ -15,6 +15,7 @@ class RegisterCtrl {
     }*/
 
     $scope.save = (ter) => {
+      console.log("entro a save");
       if (ter) {
         if (validate($scope.user.username)) {
           if (validate($scope.user.email)) {

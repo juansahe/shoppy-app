@@ -1,14 +1,18 @@
 class TaskCtrl {
   constructor(TaskService, $scope, $cordovaCamera, $ionicPopup, $rootScope, $location, Session) {
 
+   // $scope.$digest();
+
     this.TaskService = TaskService;
     $scope.user = Session.getUser();
-    document.getElementById("xperience").style.width = $scope.user.xperience/1000*95+"%";
-    document.getElementById("shopper").style.width = $scope.user.shopper_points/1000*95+"%";
+
+    $rootScope.us = $scope.user;
+    $rootScope.widthX = $scope.user.xperience/1000*95+"%";
+    $rootScope.widthS = $scope.user.shopper_points/1000*95+"%";
     $scope.tareasHechas=Session.getTareas();
     TaskService.getTask((result) => {
       console.log(result);
-      $scope.task = result;
+      $rootScope.task = result;
       $scope.marcarTareas();
     }, (err) => {
       console.log(err);
@@ -16,10 +20,10 @@ class TaskCtrl {
 
     $scope.marcarTareas = function(){
       for(var i=0; i<$scope.tareasHechas.length; i++){
-        for(var j=0; j<$scope.task.length; j++){
-          if($scope.tareasHechas[i]==$scope.task[j].pk){
-            $scope.task[j].hecha=true;
-            console.log("la tarea "+$scope.task[j].pk+" esta hecha");
+        for(var j=0; j<$rootScope.task.length; j++){
+          if($scope.tareasHechas[i]==$rootScope.task[j].pk){
+            $rootScope.task[j].hecha=true;
+            console.log("la tarea "+$rootScope.task[j].pk+" esta hecha");
           }
         }
       }
@@ -30,8 +34,8 @@ class TaskCtrl {
       console.log(tarea);
       if(!tarea.hecha){
           var tipo_tarea = tarea.fields.name;
-          for(var i=0; i<$scope.task.length; i++){
-            if($scope.task[i].pk===tarea.pk){
+          for(var i=0; i<$rootScope.task.length; i++){
+            if($rootScope.task[i].pk===tarea.pk){
               //console.log($scope.task[i].fields.imagen);
               $rootScope.tarea = tarea;
               break;

@@ -1,11 +1,14 @@
 class BondsCtrl {
-  constructor(BondsService, $scope, CONFIG, Session) {
+  constructor(BondsService, $scope, CONFIG, Session, $rootScope) {
 
     $scope.SITE_ADMIN = CONFIG.url;
     $scope.user = Session.getUser();
-    document.getElementById("xperience").style.width = $scope.user.xperience/1000*95+"%";
-    document.getElementById("shopper").style.width = $scope.user.shopper_points/1000*95+"%";
-    
+      $rootScope.us = $scope.user;
+
+          $rootScope.widthX = $scope.user.xperience/1000*95+"%";
+          $rootScope.widthS = $scope.user.shopper_points/1000*95+"%";
+
+      
     this.BondsService = BondsService;
     var Usuario=Session.getUser();
 
