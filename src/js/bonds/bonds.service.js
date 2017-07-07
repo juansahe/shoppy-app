@@ -22,13 +22,14 @@ class BondsService {
 
     }
 
-    this.getProviders = (success, error) => {
+    this.getmybond = (user_id, success, error) => {
       var config = {
-        url: url_api + "provider/",
-        method: "GET",
+        url: url_api + "Mybond/",
+        method: "POST",
         headers: {
           Authorization: "Token " + token
-        }
+        },
+        data: user_id
       };
       this.$http(config).then(function (res) {
         // console.log(res);
@@ -41,7 +42,7 @@ class BondsService {
 
     this.postBono = (bono, success, error) => {
       var config = {
-        url: "urlbono",
+        url: url_api+"redemptionBond/",
         method: 'POST',
         headers: {
           Authorization: "Token" + token

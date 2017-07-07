@@ -84,7 +84,7 @@
                 </div>
               </div>
               <div class="btncambio">
-                <div class="btnc" ng-click="tienda.valorIntercambio && cambiarBono(tienda.id, tienda.valorIntercambio)">
+                <div class="btnc" ng-click="tienda.valorIntercambio && cambiarBono(tienda)">
                   <a href="" title="">Cámbialo por: <span ng-if="tienda.valorIntercambio" >{{tienda.valorIntercambio+'s'}}</span></a>
                 </div>
               </div>
@@ -101,16 +101,16 @@
   
     <!--Container tus bonos-->
     <div ng-if="bonos" class="tiendas animate-if" id="bonos">
-      <ion-item class="degradadoblueX tamitem" ng-repeat="bono in bonds">
+      <ion-item class="degradadoblueX tamitem" ng-repeat="bono in mybonds">
         <div class="imag">
-          <img ng-src="{{bono.img}}" alt="">
+          <img ng-src="{{bono.fields.imagen}}" alt="{{bono.fields.imagen}}">
         </div>
         <div class="contenidotienda">
           <div class="condicionbono">
-            <p>{{bono.description}}</p>
+            <p>{{bono.fields.description}}</p>
           </div>
           <div class="bonocosto">
-            <h2>${{bono.value}}</h2>
+            <h2>${{bono.fields.value}}</h2>
           </div>
           <div class="btnstienda">
             <div class="descr">
@@ -120,7 +120,7 @@
             </div>
             <div class="btncambio">
               <div class="btnc">
-                <a href="" title="">Código</a>
+                <a href="" title="">Código: {{bono.fields.code}}</a>
               </div>
             </div>
 
