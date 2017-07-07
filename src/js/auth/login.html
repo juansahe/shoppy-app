@@ -1,0 +1,49 @@
+<ion-view view-title="Grimorum" hide-nav-bar="true">
+
+  <ion-content class="" overflow-scroll="">
+
+    <div class="title">
+      <img src="./assets/img/logoblue.png" />
+    </div>
+    <div class="titleregistro">
+      <img src="./assets/img/reg-02.png" />
+    </div>
+
+
+    <form ng-submit="login(user)">
+      <div class="form-element">
+        <input class="degradadoGris" type="text" placeholder="Usuario" ng-model="user.username">
+      </div>
+      <div class="form-element">
+        <input class="degradadoGris" type="password" placeholder="Contraseña" ng-model="user.password">
+      </div>
+
+      <div class="row">
+        <div class="col col-100">
+          <button href="" ng-click="login(user)" class="button button-block btnLogin degradadoblueX loginbtn">
+          Ingresar
+        </button>
+        </div>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="col col-100">
+        <div class="login">
+          <a href="#/register">
+            <p>No tienes una cuenta? Regístrate aquí</p>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+  </ion-content>
+
+
+
+</ion-view>

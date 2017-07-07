@@ -1,0 +1,149 @@
+.RegisterComponent {
+ 	background-color: #FFF;
+	font-family: Titillium;
+}
+.title img{
+	width: 100%;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+
+.titleregistro img{
+	 margin-top: 40px;
+	 padding-left: 10%;
+	 padding-right: 10%;
+	 width: 100%;
+}
+
+.container .form-grup{
+	text-align: center;
+}
+
+.form-element{
+	margin-top:20px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.form-element input{
+	padding-left: 8px;
+	width: 100%;
+	border-radius: 30px;
+	height: 40px;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+
+}
+.form-element input.register{
+	text-align: left;
+	margin-left: 5px;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+  font-size: 22px;
+}
+
+input.register::-webkit-input-placeholder {
+  text-align: left;
+}
+input:-moz-placeholder {
+  color: white; 
+  font-size: 22px;
+  text-align: left;
+}
+input:-ms-input-placeholder { 
+  color: white;
+  font-size: 22px; 
+}
+
+input.register:-ms-input-placeholder{
+	text-align: left;
+}
+
+.terms{
+	text-align: left;
+	margin-bottom: 10px;
+
+	margin-top: 20px;
+	margin-left: 10%;
+	margin-right: 10%;
+	display: flex;
+}
+
+.terms .btnTerm{
+	width: 35px;
+    height: 35px;
+    -moz-border-radius: 50%; 
+    -webkit-border-radius: 50%; 
+    border-radius: 50%;
+    background: #000;
+}
+
+.terms p{
+	font-size: 17px;
+	text-decoration: none;
+	color: #3498db;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	padding-top: 9px;
+}
+.login{
+	text-align: center;
+	padding-top: 30px;
+}
+
+.login a{
+	font-size: 17px;
+	text-decoration: none;
+	color: #3498db;
+}
+
+
+//----------------------------------------------------
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.checkbox input:after, .checkbox-icon:after {
+	-webkit-transition: opacity 50ms ease-in-out;
+    transition: opacity 50ms ease-in-out;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    display: table;
+    width: 25px;
+    height: 11px;
+    border: 5px solid #fff;
+    border-top: 0;
+    border-right: 0;
+    content: ' ';
+    opacity: 0;
+    border-radius: 6px;
+}
+
+.checkbox input:before, .checkbox-icon:before{
+	width: 40px;
+    height: 40px;
+    border-width: 2px;
+}
+
+.checkbox input:checked+.checkbox-icon:before, .checkbox input:checked:before {
+    background: #2ECC71;
+    border-color: #2ECC71;
+}
+
+.sombrabtn{
+	-webkit-box-shadow: 0px 18px 12px -13px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 18px 12px -13px rgba(0,0,0,0.44);
+box-shadow: 0px 18px 12px -13px rgba(0,0,0,0.44);
+}

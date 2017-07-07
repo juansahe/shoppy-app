@@ -1,0 +1,111 @@
+<ion-view view-title="User">
+  <div id="fondoHead">
+    <!--barra de puntos-->
+    <div class="puntos">
+      <div class="xp">
+        <div class="capacirculo">
+          <div class="capacirculo2">
+            <div class="capacirculo3">
+              <h2>1</h2>
+            </div>
+          </div>
+        </div>
+        <div class="barrapuntos">
+          <div id="xperience" style="width: {{widthX}}" class="barrapuntosconten">
+
+          </div>
+          <h6>{{us.xperience}}xp</h6>
+        </div>
+      </div>
+      <div class="sm">
+        <div class="capacirculo">
+          <div class="capacirculo2">
+            <div class="capacirculo3">
+              <img src="./assets/img/bolsa.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="barrapuntos">
+          <div id="shopper"  style="width: {{widthS}}" class="barrapuntosconten">
+
+          </div>
+          <h6>{{us.shopper_points}}s</h6>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <ion-content>
+    <div class="profile">
+      <div class="username">
+        <h3>{{user.username}}</h3>
+      </div>
+      <div class="img-profile">
+        <img src="./assets/img/user.jpg" alt="">
+      </div>
+    </div>
+    <div class="row" style="margin-top: 0px; padding-top: 0px;">
+      <div class="col col-50" style="margin-top: 0px; padding-top: 0px;">
+        <center>
+          <div class="btnPregunta" style="background-color: #2980B9; color: #FFF;">
+            <i class="icon ion-edit" style="font-size: 16px;"></i>
+          </div>
+        </center>
+      </div>
+      <div class="col col-50" style="margin-top: 0px; padding-top: 0px;">
+        <center>
+          <div class="btnPregunta" style="background-color: #2980B9; color: #FFF;">
+            ?
+          </div>
+        </center>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <ion-content overflow-scroll="true" class="UsersComponent" style="margin-top: 400px; margin-bottom: 60px;">
+
+    <ion-scroll direction="xy">
+          <div class="row" >
+          <div class="col col-5"></div>
+          <div class="col col-90">
+            <a class="button button-full icon-left ion-android-calendar degradadoGris icoUser">Historial de la cuenta</a>
+            <a class="button button-full icon-left ion-android-notifications-none degradadoGris icoUser">Notificaciones</a>
+            <a class="button button-full icon-left ion-email degradadoGris icoUser">Contáctanos</a>
+          </div>
+          <div class="col col-5"></div>
+        </div>
+
+      
+        <div class="session">
+          <a class="cerrar" href="" title="" ng-click="cerrarSesion()">Cierra Sesión</a>
+          <a class="eliminar" href="" title="">Elimina tu cuenta</a>
+        </div>
+    <br>
+
+  </ion-scroll>
+
+  </ion-content>
+  <ion-footer class="foot" style="bottom:0px; position: absolute; z-index: 4">
+    <div class="conten-footer">
+      <a href="#/home" class="home-btn degradadoGris">
+               <i class="ion-ios-home" aria-hidden="true"></i>
+          </a>
+      <div class="task-btn degradadoGris">
+        <a href="#/task">
+          <p style="text-align: center">Tareas</p>
+        </a>
+      </div>
+      <div class="challenge-btn degradadoGris">
+        <a href="#/bond">
+          <p style="padding-top: 5px; font-size:20px;">Bonos</p>
+        </a>
+      </div>
+      <a class="profi-btn degradadoblueX " href="#/user" style="height: 50px; margin-top: 0px;"">
+               <i style="font-size: 35px;"  class="ion-person" aria-hidden="true"></i>
+           </a>
+
+    </div>
+  </ion-footer>
+</ion-view>

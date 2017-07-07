@@ -1,0 +1,212 @@
+.text-centered {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.blue-title {
+    color: $blue;
+    font-weight: 400;
+}
+.text-muted {
+    opacity: 0.5;
+}
+.margin-top-m {
+    margin-top: 10px !important;
+}
+.pull-right {
+    float: right;
+}
+
+ .popup-buttons .button{
+  border-radius: 80px !important;
+  color: #2ECC71;
+  font-weight: bold;
+}
+.btnPregunta{
+  background-color: white;
+  width: 25;
+  height: 25;
+  -moz-border-radius: 50%; 
+  -webkit-border-radius: 50%; 
+  border-radius: 50%;
+  margin-top: 18px;
+  text-align: center;
+  font-weight: bold;
+  color: #95A5A6;
+  padding-top: 5px;
+  font-size: 22px;
+}
+
+.degradadoGris{
+  background: rgba(149,165,166,1);
+  background: -moz-linear-gradient(left, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,165,166,1)), color-stop(0%, rgba(149,165,166,1)), color-stop(32%, rgba(149,165,166,1)), color-stop(100%, rgba(189,195,199,1)));
+  background: -webkit-linear-gradient(left, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
+  background: -o-linear-gradient(left, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
+  background: -ms-linear-gradient(left, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
+  background: linear-gradient(to right, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 0%, rgba(149,165,166,1) 32%, rgba(189,195,199,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95a5a6', endColorstr='#bdc3c7', GradientType=1 );
+  color: white !important;
+}
+
+.degradadoblueX{
+  background: rgba(41,128,185,1) !important;
+  background: -moz-linear-gradient(left, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 28%, rgba(52,152,219,1) 69%, rgba(52,152,219,1) 100%) !important;
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(41,128,185,1)), color-stop(28%, rgba(41,128,185,1)), color-stop(69%, rgba(52,152,219,1)), color-stop(100%, rgba(52,152,219,1)))!important;
+  background: -webkit-linear-gradient(left, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 28%, rgba(52,152,219,1) 69%, rgba(52,152,219,1) 100%) !important;
+  background: -o-linear-gradient(left, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 28%, rgba(52,152,219,1) 69%, rgba(52,152,219,1) 100%) !important;
+  background: -ms-linear-gradient(left, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 28%, rgba(52,152,219,1) 69%, rgba(52,152,219,1) 100%) !important;
+  background: linear-gradient(to right, rgba(41,128,185,1) 0%, rgba(41,128,185,1) 28%, rgba(52,152,219,1) 69%, rgba(52,152,219,1) 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2980b9', endColorstr='#3498db', GradientType=1 );
+  color: white !important;
+}
+.blueX{
+  background-color: red !important;
+}
+/*
+ *Number fonts
+ */
+@font-face {
+    font-family: 'Titillium';
+    src: url('../assets/fonts/Titillium/TTitillium-Regular.otf');
+    src: url('../assets/fonts/Titillium/Titillium-Regular.otf') format('opentype'),
+         url('../assets/fonts/Titillium/Titillium-Bold.otf') format('opentype'),
+         url('../assets/fonts/Titillium/Titillium-RegularItalic.otf') format('opentype'),
+         url('../assets/fonts/Titillium/Titillium-BoldItalic.ttf') format('opentype'),
+         url('../assets/fonts/Titillium/Titillium-SemiboldItalic') format('opentype');
+}
+
+
+$font-family-base: 'Titillium' !default;
+/*.num {*/
+  /*font-family: "Consolas";*/
+/*}*/
+
+/*
+ *Material icons
+ */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'), 
+       url('../assets/fonts/material-fonts.wff2') format('woff2'),
+       url('../assets/fonts/MaterialIcons-Regular.woff') format('woff'),
+       url('../assets/fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+
+  &.green {
+    background-color: $green;
+  }
+  &.blue {
+    background-color: $blue;
+  }
+  &.yellow {
+    background-color: $yellow;
+  }
+  &.red {
+    background-color: $red;
+  }
+}
+/*
+ *Loader android stuff
+ */
+
+.loader {
+  position: relative;
+  margin: 0px auto;
+  width: 100px;
+  &:before {
+    content:'';
+    display: block;
+    padding-top: 100%;
+  }
+  .circular {
+    animation: rotate 2s linear infinite;
+    height: 100%;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+  }
+
+  .path {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+    animation: 
+    dash 1.5s ease-in-out infinite,
+    color 6s ease-in-out infinite
+    ;
+    stroke-linecap: round;
+  }
+}
+
+@keyframes rotate{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash{
+  0%{
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50%{
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35px;
+  }
+  100%{
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124px;
+  }
+}
+@keyframes color{
+  100%, 0%{
+    stroke: $red;
+  }
+  40%{
+    stroke: $blue;
+  }
+  66%{
+    stroke: $green;
+  }
+  80%, 90%{
+    stroke: $yellow;
+  }
+}
+
+#fondoHead{
+  width: 100vw;
+  height: 180px;
+  background-image: url("../assets/img/head.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,32 @@
+<ion-view view-title="CompletePropile" hide-nav-bar="true">
+  <div id="fondoHead">
+    <div class="row head">
+      <h2>Selecciona 3 productos <br> que compres <br> recurrentemente</h2>
+    </div>
+  </div>
+
+  <ion-content style="margin-top: 140px;">
+    <label class="item item-input degradadoGris labelinput">
+      <i class = "icon ion-search"></i>
+      <input type="text" placeholder="Búsqueda" ng-model="busqueda" class="inputGris">
+  </label>
+  </ion-content>
+
+  <ion-content class="content">
+
+
+
+
+    <div class="lista" ng-if="productos" ng-repeat="producto in productos | filter: busqueda" ng-click="select(producto.id)"
+      ng-class="{blueX: !producto.estado, seleccionado: producto.estado}">
+      <div class="product">
+        <p class="text">{{producto.name}}</p>
+      </div>
+    </div>
+    <div class="lista" ng-if="!productos">
+      No hay servicios
+    </div>
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,64 @@
+
+
+.img-profile{
+	text-align: center;
+}
+
+.img-profile img{
+	border-radius: 50%;
+	background-color: transparent;
+	width: 200px;
+	height:200px;
+	border: solid 5px #FFF;
+}
+
+.profile .username{
+	text-align: center;
+	color: #FFF;
+	padding-top: 90px;
+}
+
+.profile .username h3{
+	color: #FFF;
+	font-weight: bold;
+	font-size: 35px;
+}
+.row2{
+	display: flex;
+}
+
+.content .item .text h3{
+
+	font-size: 20px;
+	text-align: center;
+}
+
+.content .item .text{
+	text-align: center;
+	width: 100%;
+	position: absolute;
+}
+
+.session a.cerrar{
+	text-decoration: none;
+	color: #2980B9;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+}
+.session a.eliminar{
+	text-decoration: none;
+	color: #2980B9;
+	font-size: 15px;
+	display: block;
+	margin-top: 15px;
+}
+.session{
+	margin-top: 20px;
+	text-align: center;
+}
+
+.icoUser::before{
+	font-size: 38px !important;
+	margin: 0;
+}

@@ -1,0 +1,191 @@
+.content {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 200px;
+}
+
+.lista {
+  width: 28%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  float: left;
+  height: 80px; //background-color: #3293d4;
+  text-align: center;
+  padding-top: 32px;
+  border-radius: 15px;
+  color: white !important;
+}
+
+.product {
+  color: white;
+  border-radius: 15px;
+  height: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.seleccionado {
+  background-color: #2ECC71;
+}
+.blueX{
+  background-color: rgba(41,128,185,1) !important;
+}
+
+.text {
+  font-size: 4.1vw;
+  font-weight: bold;
+}
+
+.labelinput {
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 30px;
+  margin: auto;
+  height: 40px;
+  border-style: none;
+}
+
+.item-input i {
+  font-size: 35px;
+  color: white !important;
+}
+
+.inputGris {
+  width: 80%;
+  text-align: center;
+  color: white !important;
+  font-size: x-large !important;
+  margin-top: 0vh !important;
+  margin-bottom: 0vh !important;
+}
+
+.head h2 {
+  margin: auto;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+
+
+.popup-body {
+  text-align: center;
+}
+
+.popup-buttons {
+  color: #bdc3c7;
+}
+
+.ion-star{
+	border-radius: 10%;
+
+}
+
+
+.popup-container {
+  background: rgba(57, 137, 190, 0.8);
+}
+
+.popup {
+  background-color: #2ecc71 !important;
+  border-radius: 25px !important;
+}
+
+.win {
+  font-size: 30px !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.pt_xp {
+  color: #2980B9;
+  font-size: 30px !important;
+  font-weight: bold !important;
+}
+
+.pt_sm {
+  color: #269B55;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.popup-head {
+  border-bottom: 0 !important;
+}
+
+#cerrar {
+  background-color: red !important;
+  color: #269b55 !important;
+}
+
+.ion-close-round {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #269b55;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.contenmodal {
+  display: flex;
+  height: 100px;
+}
+
+.contenmodal img {
+  width: 80%;
+  margin-left: 10%;
+  height: 110%;
+  z-index: 1;
+}
+
+.contentmodal i {
+  text-align: center;
+}
+
+.contenmodal #star_2 {
+  position: absolute;
+  top: 90px;
+  left: 125px;
+  z-index: 2;
+  color: #2980B9;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.contenmodal #star {
+  position: absolute;
+  top: 110px;
+  left: 55px;
+  z-index: 2;
+  color: #269B55;
+  font-weight: bold;
+}
+
+.contenmodal p.px{
+	position: absolute;
+	top:107px;
+	left: 179px;
+	z-index: 2;
+	color: #2980B9;
+	font-weight: bold;
+
+}
+
+.contenmodal p.sm{
+	position: absolute;
+	top:135px;
+	left: 77px;
+	z-index: 2;
+	color: #269B55;
+	font-weight: bold;
+}
+
+.popup-head {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.popup-body {
+  padding-top: 0px;
+}
