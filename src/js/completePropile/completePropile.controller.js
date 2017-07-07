@@ -11,7 +11,7 @@ class CompletePropileCtrl {
     };
 
     $scope.user = Session.getUser();
-    console.log($scope.user);
+    // console.log($scope.user);
     CompletePropileService.getProducts((result) => {
       $scope.productos = result;
       for (var i = 0; i < $scope.productos.length; i++) {
