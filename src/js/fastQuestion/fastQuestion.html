@@ -14,48 +14,11 @@
 			<input type="text" placeholder="Escribe tu respuesta" class="inputrespuesta text-center">
 		</label>
 
-    <div class="row degradadogris">
-      <div class="col col-80 col-offset-10 text-center preg">¿Vives con tus padres?</div>
-    </div>
-    <div class="row miresp">
-      <div class="col col-80 col-offset-10 text-center">
-        <div class="row btnsino">
-          <div class="col col-35 text-center">
-            <button class="button button-block degradadogris" ng-class="{degradadoblueX: seleccionadosi}" id="btntoogle" ng-click="seleccionar(true)">Si</button>
-          </div>
-          <div class="col col-35 col-offset-20 text-center">
-            <button class="button button-block degradadogris" ng-class="{degradadoblueX: seleccionadono}" ng-click="seleccionar(false)">No</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row degradadogris">
-      <div class="col col-80 col-offset-10 text-center preg">¿Cual es tu género?</div>
-    </div>
-
-
-    <ion-list>
-      <ion-radio ng-model="choice" ng-value="'A'">Masculino</ion-radio>
-      <ion-radio ng-model="choice" ng-value="'B'">Femenino</ion-radio>
-    </ion-list>
-
-
-    <div class="row degradadogris">
-      <div class="col col-80 col-offset-10 text-center preg">¿Cuál es tu estrato socio-económico?</div>
-    </div>
-    <label class="item item-input">
-			<input type="number" placeholder="Escribe tu respuesta" class="inputrespuesta text-center">
-		</label>
-    <div class="list">
-
-    </div>
-
     <div class="row degradadoblueX btnsfooter">
       <div class="col">
         <div class="row">
           <div class="col col-80 col-offset-10 text-center preg">
-            <button class="button button-block btnreg">
+            <button ng-click="abrirPopup()" class="button button-block btnreg">
 						Enviar
 						</button>
           </div>
