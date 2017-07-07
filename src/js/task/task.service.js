@@ -3,10 +3,9 @@ class TaskService {
     this.$http = $http;
 
     var url_api = CONFIG.API_URL;
-    console.log(url_api);
     var token = Session.getToken();
     var user = Session.getUser();
-    console.log(user);
+    // console.log(user);
 
     this.getTask = (success, error) => {
       $http({
