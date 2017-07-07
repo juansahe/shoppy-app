@@ -27,7 +27,7 @@ class lookPictureCtrl{
 				//se guarda nuevamente el usuario en localstorage
 				$rootScope.us = $scope.user;
 				$rootScope.widthX = $scope.user.xperience/1000*95+"%";
-          		$rootScope.widthS = $scope.user.shopper_points/1000*95+"%";
+          		$rootScope.widthS = $scope.user.shopper_points/10000*95+"%";
 				Session.setUser($scope.user);
 				//guardar array de tareas hechas en localstorage
 				$scope.tareas_hechas = Session.getTareas();

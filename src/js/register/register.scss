@@ -28,28 +28,40 @@
 
 .form-element input{
 	padding-left: 8px;
-	width: 80%;
-	margin-left: 10%;
+	width: 100%;
 	border-radius: 30px;
 	height: 40px;
 	text-align: center;
 	font-size: 20px;
 	color: white;
+
 }
+.form-element input.register{
+	text-align: left;
+	margin-left: 5px;
+}
+
 input::-webkit-input-placeholder {
   color: white;
   font-size: 22px;
+}
 
+input.register::-webkit-input-placeholder {
+  text-align: left;
 }
 input:-moz-placeholder {
   color: white; 
   font-size: 22px;
+  text-align: left;
 }
 input:-ms-input-placeholder { 
   color: white;
   font-size: 22px; 
 }
 
+input.register:-ms-input-placeholder{
+	text-align: left;
+}
 
 .terms{
 	text-align: left;

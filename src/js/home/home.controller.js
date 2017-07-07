@@ -4,7 +4,7 @@ class HomeCtrl {
     $scope.user = Session.getUser();
     $rootScope.us = $scope.user;
     $rootScope.widthX = $scope.user.xperience/1000*95+"%";
-    $rootScope.widthS = $scope.user.shopper_points/1000*95+"%";
+    $rootScope.widthS = $scope.user.shopper_points/10000*95+"%";
     HomeService.getPromotions((result) => {
       $scope.promociones = result;
       console.log($scope.promociones)

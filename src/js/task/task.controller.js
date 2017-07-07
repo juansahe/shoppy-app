@@ -8,7 +8,7 @@ class TaskCtrl {
 
     $rootScope.us = $scope.user;
     $rootScope.widthX = $scope.user.xperience/1000*95+"%";
-    $rootScope.widthS = $scope.user.shopper_points/1000*95+"%";
+    $rootScope.widthS = $scope.user.shopper_points/10000*95+"%";
     $scope.tareasHechas=Session.getTareas();
     TaskService.getTask((result) => {
       console.log(result);
