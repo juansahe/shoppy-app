@@ -1,63 +1,55 @@
 class TaskCtrl {
-  constructor(TaskService, $scope, $cordovaCamera, $ionicPopup, $rootScope, $location) {
+  constructor(TaskService, $scope, $cordovaCamera, $ionicPopup, $rootScope, $location, Session) {
 
     this.TaskService = TaskService;
-
+    $scope.user = Session.getUser();
+    document.getElementById("xperience").style.width = $scope.user.xperience/1000*95+"%";
+    document.getElementById("shopper").style.width = $scope.user.shopper_points/1000*95+"%";
+    $scope.tareasHechas=Session.getTareas();
     TaskService.getTask((result) => {
       console.log(result);
       $scope.task = result;
+      $scope.marcarTareas();
     }, (err) => {
       console.log(err);
     });
 
-    $scope.dirigirTarea = (tipo_tarea, id) => {
+    $scope.marcarTareas = function(){
+      for(var i=0; i<$scope.tareasHechas.length; i++){
+        for(var j=0; j<$scope.task.length; j++){
+          if($scope.tareasHechas[i]==$scope.task[j].pk){
+            $scope.task[j].hecha=true;
+            console.log("la tarea "+$scope.task[j].pk+" esta hecha");
+          }
+        }
+      }
+    }
 
-      /*switch (tipo_tarea) {
-        case "bro":
-
-          console.log(id);
-          for (var i = 0; i < $scope.task.length; i++) {
-            if ($scope.task[i].id === id) {
-              console.log($scope.task[i].imagen);
-              $rootScope.id = id;
-              $rootScope.imagen = $scope.task[i].imagen;
+    $scope.dirigirTarea = (tarea) =>{
+      //alert(tipo_tarea);
+      console.log(tarea);
+      if(!tarea.hecha){
+          var tipo_tarea = tarea.fields.name;
+          for(var i=0; i<$scope.task.length; i++){
+            if($scope.task[i].pk===tarea.pk){
+              //console.log($scope.task[i].fields.imagen);
+              $rootScope.tarea = tarea;
               break;
             }
           }
+        if(tipo_tarea=="Mira esta imagen"){
 
           $location.path('/lookPicture');
 
-          break;
+        }else if(tipo_tarea=="Pregunta rapida"){
+          $location.path('/fastQuestion');
+        } else if (tipo_tarea == "") {
 
-        case "":
+        } else if(tipo_tarea==""){
 
-          break;
-
-        default:
-          break;
-      }*/
-
-
-      if (tipo_tarea == "bro") {
-        console.log(id);
-        for (var i = 0; i < $scope.task.length; i++) {
-          if ($scope.task[i].id === id) {
-            console.log($scope.task[i].imagen);
-            $rootScope.id = id;
-            $rootScope.imagen = $scope.task[i].imagen;
-            break;
-          }
         }
-
-        $location.path('/lookPicture');
-
-      } else if (tipo_tarea == "") {
-
-      } else if (tipo_tarea == "") {
-
-      } else if (tipo_tarea == "") {
-
       }
+      
     }
 
     /*
@@ -75,7 +67,7 @@ class TaskCtrl {
       return $scope.shownGroup === group;
     };
 
-    function modal($scope, $ionicPopup) {
+  /*  function modal($scope, $ionicPopup) {
       // Custom popup
       const template = '<i style="color:#3293d4; font-size: 10em;" class="ion-star" aria-hidden="true"><br><h3 style="font-size:30px;">20pt</h3></i>';
 
@@ -91,7 +83,7 @@ class TaskCtrl {
           }
         }]
       });
-    }
+    }*/
 
     // this.mark_task($scope.task);
 

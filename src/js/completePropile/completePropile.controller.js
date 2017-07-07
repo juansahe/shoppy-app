@@ -1,8 +1,17 @@
 class CompletePropileCtrl {
-  constructor(CompletePropileService, $scope, $location, $ionicPopup) {
+  constructor(CompletePropileService, $scope, $location, $ionicPopup, Session) {
 
     this.CompletePropileService = CompletePropileService;
 
+    $scope.tarea={
+        fields:{
+          SM:20,
+          point_exp:200
+        }
+    };
+
+    $scope.user = Session.getUser();
+    console.log($scope.user);
     CompletePropileService.getProducts((result) => {
       $scope.productos = result;
       for (var i = 0; i < $scope.productos.length; i++) {
@@ -44,30 +53,35 @@ class CompletePropileCtrl {
     function enviarFavoritos(seleccionados) { //aqui se envia ids de productos seleccionados
       //alert(seleccionados);
       //mostrarPopup()
-      var error;
+      var error=true;
       for (var i = 0; i < seleccionados.length; i++) {
         var favorito = {
           "product": seleccionados[i],
-          "user": 1
+          "user": $scope.user.id
         }
+        console.log(favorito);
         CompletePropileService.postFavoritos(favorito, (result) => {
           //alert(result)
           error = false;
           console.log(result);
+          //se guarda nuevamente el usuario en localstorage
+
         }, (err) => {
           error = true;
           console.log(err);
         });
       }
 
-
-
       if (!error) {
-        mostrarPopup();
+        //guardar puntos en localstorage
+          //sumer xp y s y poner la tarea como realizada
+          
+          $scope.user.shopper_points= parseInt($scope.user.shopper_points)+parseInt($scope.tarea.fields.SM);
+          $scope.user.xperience = parseInt($scope.user.xperience)+parseInt($scope.tarea.fields.point_exp);
+          console.log($scope.user);
+          Session.setUser($scope.user);
+          mostrarPopup();
       }
-
-
-
 
     }
 
@@ -75,6 +89,7 @@ class CompletePropileCtrl {
       var alertPopup = $ionicPopup.alert({
         title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()"  aria-hidden="true"></i>',
         templateUrl: 'modalpoints.html',
+        scope: $scope,
         buttons: [{
           text: 'Listo'
         }]

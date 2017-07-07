@@ -110,3 +110,19 @@ font-size: 7vw;
   display: block !important;
 
 }
+
+.realizada{
+	border: solid 2px #2ECC71;
+	width: 25px;
+	height: 2px;
+	transform:rotate(-45deg);
+	margin-left: 9px;
+}
+.realizada2{
+	border: solid 2px #2ECC71;
+	width: 12px;
+	height: 2px;
+	transform:rotate(90deg);
+	margin-top: -6px;
+	margin-left: -10px;
+}

@@ -2,7 +2,10 @@ class BondsCtrl {
   constructor(BondsService, $scope, CONFIG, Session) {
 
     $scope.SITE_ADMIN = CONFIG.url;
-
+    $scope.user = Session.getUser();
+    document.getElementById("xperience").style.width = $scope.user.xperience/1000*95+"%";
+    document.getElementById("shopper").style.width = $scope.user.shopper_points/1000*95+"%";
+    
     this.BondsService = BondsService;
     var Usuario=Session.getUser();
 
@@ -36,13 +39,57 @@ class BondsCtrl {
       }
     }
 
-    $scope.cambiarBonoValor = (valor, valorIntercambioPesos) => {
+    $scope.cambiarBonoValor = (valor, valorIntercambioPesos, value, id) => {
+        console.log(id);
+        var i=0;
+        for(i=0; i<$scope.bonds.length; i++){
+            if($scope.bonds[i].id===id){
+              console.log("entro al if");
+              break;
+            }
+        }
+console.log(i);
+      $scope.value=value;
+      var elemento = document.getElementsByClassName($scope.value);
+      elemento[i].className = elemento[i].className.replace("bonoSimple", "bonoSeleccionado degradadoblueX");
+      if(value=="value1"){
+        var elemento2 = document.getElementsByClassName("value2");
+        elemento2[i].className = elemento2[i].className.replace("bonoSeleccionado", "bonoSimple");
+        elemento2[i].className = elemento2[i].className.replace("degradadoblueX", "");
+        var elemento3 = document.getElementsByClassName("value3");
+        elemento3[i].className = elemento3[i].className.replace("bonoSeleccionado", "bonoSimple");
+        elemento3[i].className = elemento3[i].className.replace("degradadoblueX", "");
+      }
+
+      if(value=="value2"){
+        var elemento2 = document.getElementsByClassName("value1");
+        elemento2[i].className = elemento2[i].className.replace("bonoSeleccionado", "bonoSimple");
+        elemento2[i].className = elemento2[i].className.replace("degradadoblueX", "");
+        var elemento3 = document.getElementsByClassName("value3");
+        elemento3[i].className = elemento3[i].className.replace("bonoSeleccionado", "bonoSimple");
+        elemento3[i].className = elemento3[i].className.replace("degradadoblueX", "");
+      }
+
+      if(value=="value3"){
+        var elemento2 = document.getElementsByClassName("value1");
+        elemento2[i].className = elemento2[i].className.replace("bonoSeleccionado", "bonoSimple");
+        elemento2[i].className = elemento2[i].className.replace("degradadoblueX", "");
+        var elemento3 = document.getElementsByClassName("value2");
+        elemento3[i].className = elemento3[i].className.replace("bonoSeleccionado", "bonoSimple");
+        elemento3[i].className = elemento3[i].className.replace("degradadoblueX", "");
+      }
       return valor*valorIntercambioPesos;
     }
 
     $scope.cambiarBono = (bonoId, valorS) => {
+<<<<<<< HEAD
       console.log("bono id:"+bonoId)
       console.log("valor:  "+valorS)
+=======
+
+      console.log("cambiar bono"+bonoId)
+      console.log("valor "+valorS)
+>>>>>>> 90714b7d82a4542755c36eb37b0b90f377be7997
       console.log(Usuario.id)
     }
 

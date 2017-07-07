@@ -17,8 +17,6 @@
 	margin-bottom: 10%;
 	margin-left: 10%;
 	margin-right: 10%;
-	position: absolute;
-	bottom: 0%;
 	width: 80%;
 }
 .button{
@@ -50,9 +48,11 @@
 }
 
 .imgSlideStart{
-	width: 100%;
 	height: 100%;
+	text-align: center;
+	margin: 0 auto;
 }
 .slideStart{
 	height: 48vh;
+	text-align: center;
 }

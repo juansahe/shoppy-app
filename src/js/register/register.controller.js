@@ -1,5 +1,5 @@
 class RegisterCtrl {
-  constructor(RegisterService, $scope, $location, $ionicLoading) {
+  constructor(RegisterService, $scope, $location, $ionicLoading, Session) {
 
 
     $scope.user = {};
@@ -7,11 +7,12 @@ class RegisterCtrl {
     $scope.terminos = false;
     this.RegisterService = RegisterService;
 
-    var user = JSON.parse(localStorage.getItem('user'));
+  /*  var user = JSON.parse(localStorage.getItem('user'));
+    console.log(user);
     if (user != null) {
-      console.log(user);
+      
       $location.path('/home');
-    }
+    }*/
 
     $scope.save = (ter) => {
       if (ter) {
@@ -23,7 +24,7 @@ class RegisterCtrl {
 
 
 
-                if (validate($scope.user.passwordRepit) && $scope.user.password == $scope.user.passwordRepit) {
+                if(validate($scope.user.passwordRepit) && $scope.user.password == $scope.user.passwordRepit) {
                   // si ya acepto los terminos
                   // console.log("entro a las validaciones");
 
@@ -34,7 +35,10 @@ class RegisterCtrl {
 
                   this.RegisterService.saveUser($scope.user, (result) => {
                     console.log(result)
-                    
+                    $scope.user.id=result.id;
+                    $scope.user.xperience=0;
+                    $scope.user.shopper_points = 0;
+
                     //se registro el usuario, luego se guarda en el localStorage
                     this.RegisterService.setUser(result.token, $scope.user);
                     $location.path('/completeprofile');

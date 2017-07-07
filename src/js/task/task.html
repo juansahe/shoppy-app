@@ -12,10 +12,10 @@
             </div>
         </div>
         <div class="barrapuntos">
-            <div class="barrapuntosconten">
+            <div id="xperience" class="barrapuntosconten">
                 
             </div>
-            <h6>200px</h6>
+            <h6>{{user.xperience}}xp</h6>
         </div>
     </div>
     <div class="sm">
@@ -28,10 +28,10 @@
             </div>
         </div>
         <div class="barrapuntos">
-            <div class="barrapuntosconten">
+            <div id="shopper" class="barrapuntosconten">
                 
             </div>
-            <h6>150sm</h6>
+            <h6>{{user.shopper_points}}s</h6>
         </div>
     </div>   
   </div><br><br>
@@ -39,26 +39,32 @@
       <h2>Completa tus tareas</h2>
   </div>
 </div>
-    <ion-content class="TaskComponent" style="margin-bottom: 50px;" scrollY="true">
-
+    <ion-content class="TaskComponent" style="margin-bottom: 50px;" overflow-scroll="true" >
+      <ion-scroll direction="xy" >
        <div ng-repeat="tarea in task">
          <ion-item class="item-stable degradadoGris tareaContent row" ng-class="{active: isGroupShown(tarea)}">
-           <div class="texto col col-50" ng-click="dirigirTarea(tarea.type_task, tarea.id)">
-               <p>{{tarea.name}}</p>
+           <div class="texto col col-50" ng-click="dirigirTarea(tarea)">
+               <p>{{tarea.fields.name}}</p>
            </div>
            <div class="btnPregunta" ng-click="toggleGroup(tarea)">
                ?
            </div>
            <div class="puntos">
-              <span>{{tarea.point_exp}}px</span>
+              <span>{{tarea.fields.point_exp}}px</span>
            </div>
            <div class="puntos" style="color:#269B55">
-               <span>{{tarea.SM}}sm</span>
+               <span>{{tarea.fields.SM}}sm</span>
            </div>
            <div class="completado">
                <div class="capa1">
                    <div class="capa2">
-                      
+                      <div ng-if="tarea.hecha">
+                        <div class="realizada">
+                          <div class="realizada2">
+                          
+                          </div>
+                        </div>
+                      </div>
                    </div>
                </div>
            </div>
@@ -81,7 +87,7 @@
          </ion-item>
          <br>
        </div>
-   
+      </ion-scroll>
     </ion-content>
     <ion-footer class="foot" style="bottom:0px; position: absolute; z-index: 4">
        <div class="conten-footer">

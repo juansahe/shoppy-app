@@ -13,10 +13,10 @@
         </div>
       </div>
       <div class="barrapuntos">
-        <div class="barrapuntosconten">
+        <div id="xperience" class="barrapuntosconten">
 
         </div>
-        <h6>200px</h6>
+        <h6>{{user.xperience}}xp</h6>
       </div>
     </div>
     <div class="sm">
@@ -29,14 +29,14 @@
         </div>
       </div>
       <div class="barrapuntos">
-        <div class="barrapuntosconten">
+        <div id="shopper" class="barrapuntosconten">
 
         </div>
-        <h6>150sm</h6>
+        <h6>{{user.shopper_points}}s</h6>
       </div>
     </div>
   </div>
-  <ion-content class="BondsComponent" style="margin-bottom: 50px;" scrollY="true">
+  <ion-content class="BondsComponent" style="margin-bottom: 50px;" overflow-scroll="true">
     <div class="row head titulobond">
       <h2>Redime tus SM <br> por bonos increíbles </h2>
     </div>
@@ -56,48 +56,49 @@
     </div>
 
     <!--container tienda-->
-    <div ng-if="!bonos" class="tiendas animate-if" id="tiendas">
-      <ion-item class="degradadoGris tamitem" ng-repeat="tienda in bonds">
-        <div class="imag">
-          <img ng-src="{{tienda.img}}" alt="">
-        </div>
-        <div class="contenidotienda">
-          <div class="condicionbono">
-            <p>Bono valido para compras de cualquier producto en tiendas físicas {{tienda.name}}</p>
+ 
+      <div ng-if="!bonos" class="tiendas animate-if" id="tiendas">
+        <ion-item class="degradadoGris tamitem" ng-repeat="tienda in bonds">
+          <div class="imag">
+            <img ng-src="{{tienda.img}}" alt="">
           </div>
-          <div class="bonos">
-            <div class="bono bonoSimple text-center" ng-click="tienda.valorIntercambio=cambiarBonoValor(tienda.value1, tienda.factorConversionShopy)">
-              <p>{{tienda.value1}}</p>
+          <div class="contenidotienda">
+            <div class="condicionbono">
+              <p>Bono valido para compras de cualquier producto en tiendas físicas {{tienda.name}}</p>
             </div>
-            <div class="bono bonoSimple text-center" ng-click="tienda.valorIntercambio=cambiarBonoValor(tienda.value2, tienda.factorConversionShopy)">
-              <p>{{tienda.value2}}</p>
-            </div>
-            <div class="bono bonoSeleccionado degradadoblueX text-center" ng-click="tienda.valorIntercambio=cambiarBonoValor(tienda.value3, tienda.factorConversionShopy)">
-              <p>{{tienda.value3}}</p>
-            </div>
-          </div>
-          <div class="btnstienda">
-            <div class="descr">
-              <div class="btnPregunta" style="margin-top: 5px; text-align: center; margin-left: 10px;">
-                ?
+            <div class="bonos">
+              <div class="value1 bono bonoSimple text-center" ng-click="tienda.valorIntercambio=cambiarBonoValor(tienda.value1, tienda.factorConversionShopy, 'value1', tienda.id)">
+                <p>{{tienda.value1}}</p>
+              </div>
+              <div class="value2 bono bonoSimple text-center" ng-click="tienda.valorIntercambio=cambiarBonoValor(tienda.value2, tienda.factorConversionShopy, 'value2', tienda.id)">
+                <p>{{tienda.value2}}</p>
+              </div>
+              <div class="value3 bono bonoSimple text-center" ng-click="tienda.valorIntercambio=cambiarBonoValor(tienda.value3, tienda.factorConversionShopy, 'value3', tienda.id)">
+                <p>{{tienda.value3}}</p>
               </div>
             </div>
-            <div class="btncambio">
-              <div class="btnc" ng-click="tienda.valorIntercambio && cambiarBono(tienda.id, tienda.valorIntercambio)">
-                <a href="" title="">Cámbialo por: <span ng-if="tienda.valorIntercambio" >{{tienda.valorIntercambio+'s'}}</span></a>
+            <div class="btnstienda">
+              <div class="descr">
+                <div class="btnPregunta" style="margin-top: 5px; text-align: center; margin-left: 10px;">
+                  ?
+                </div>
               </div>
-            </div>
-            <div class="btncompartir">
-              <div class="comparti">
-                <i class="icon ion-ios-upload-outline"></i>
+              <div class="btncambio">
+                <div class="btnc" ng-click="tienda.valorIntercambio && cambiarBono(tienda.id, tienda.valorIntercambio)">
+                  <a href="" title="">Cámbialo por: <span ng-if="tienda.valorIntercambio" >{{tienda.valorIntercambio+'s'}}</span></a>
+                </div>
+              </div>
+              <div class="btncompartir">
+                <div class="comparti">
+                  <i class="icon ion-ios-upload-outline"></i>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </ion-item>
-
-    </div>
-
+          <br><br><br>
+        </ion-item>
+      </div>
+  
     <!--Container tus bonos-->
     <div ng-if="bonos" class="tiendas animate-if" id="bonos">
       <ion-item class="degradadoblueX tamitem" ng-repeat="bono in bonds">
