@@ -41,8 +41,8 @@ class BondsCtrl {
     }
 
     $scope.cambiarBono = (bonoId, valorS) => {
-      console.log("cambiar bono"+bonoId)
-      console.log("valor "+valorS)
+      console.log("bono id:"+bonoId)
+      console.log("valor:  "+valorS)
       console.log(Usuario.id)
     }
 
