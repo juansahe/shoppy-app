@@ -124,7 +124,7 @@ class TaskCtrl {
     }
 
     function subirFactura(img) {
-      TaskService.subirFactura((result) => {
+      TaskService.subirFactura(img, (result) => {
         console.log(result);
       }, (err) => {
         console.log(err);
