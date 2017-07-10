@@ -11,10 +11,12 @@ class TaskService {
       $http({
         method: 'POST',
         url: url_api + "task/",
-        data: {'id': user.id},
+        data: {
+          'id': user.id
+        },
         headers: {
           'Content-Type': 'application/json',
-           Authorization: "Token " + token
+          Authorization: "Token " + token
         }
       }).then(function successCallback(response) {
         success(response.data);
@@ -22,6 +24,25 @@ class TaskService {
         error(response.data);
       });
     }
+
+    this.subirFactura = (img, success, error) => {
+      $http({
+        method: 'POST',
+        url: url_api + "factura/",
+        data: {
+          'id': user.id
+        },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: "Token " + token
+        }
+      }).then(function successCallback(response) {
+        success(response.data);
+      }, function errorCallback(response) {
+        error(response.data);
+      });
+    }
+
   }
 }
 

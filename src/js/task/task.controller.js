@@ -114,12 +114,21 @@ class TaskCtrl {
           var image = document.getElementById('myImage');
           image.src = "data:image/jpeg;base64," + imageData;
           alert(image.src)
+          subirFactura(image.src)
         }, function (err) {
           // error
           alert(err)
         });
 
       }, false);
+    }
+
+    function subirFactura(img) {
+      TaskService.subirFactura((result) => {
+        console.log(result);
+      }, (err) => {
+        console.log(err);
+      });
     }
 
 
