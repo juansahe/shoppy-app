@@ -32,30 +32,13 @@ class CompletePropileService {
         },
         data: favorito
       };
+      
       this.$http(config).then(function (res) {
         //console.log(res);
         success(res.data);
       }, function (err) {
         error(err);
       });
-
-      /*$http({
-	            url: url_api+"favorite/",
-	            method: "POST",
-	            data: seleccionados,
-	            headers : {
-						'Content-Type' : 'application/json',
-						Authorization: "Token "+token
-						}
-        	})
-        	.success(function (data, status, headers, config) {
-                
-                succes(data);
-            })
-            .error(function (data, status, headers, config) {
-
-                error(data);
-            });*/
     };
 
   }

@@ -10,9 +10,21 @@ class TaskCtrl {
     $rootScope.widthX = $scope.user.xperience / 1000 * 95 + "%";
     $rootScope.widthS = $scope.user.shopper_points / 10000 * 95 + "%";
     $scope.tareasHechas = Session.getTareas();
+
     TaskService.getTask((result) => {
       console.log(result);
-      $rootScope.task = result;
+      $rootScope.task = result.msg;
+
+      var tareasHechas = result.tareacompletada;
+
+      $scope.tareasHechas=[]
+
+      for(var i=0; i<tareasHechas.length; i++){
+        $scope.tareasHechas.push(tareasHechas[i].fields.tarea);
+      }
+
+      Session.setTarea($scope.tareasHechas);
+
       $scope.marcarTareas();
     }, (err) => {
       console.log(err);
@@ -43,19 +55,15 @@ class TaskCtrl {
         }
 
         switch (tipo_tarea) {
-          // case "Mira esta imagen":
-          //   $location.path('/lookPicture');
-          //   break;
+          case "Mira esta imagen":
+            $location.path('/lookPicture');
+            break;
 
           case "Pregunta rapida":
             $location.path('/fastQuestion');
             break;
 
           case "Subir factura":
-            tomarFoto();
-            break;
-
-          case "Mira esta imagen":
             tomarFoto();
             break;
 
