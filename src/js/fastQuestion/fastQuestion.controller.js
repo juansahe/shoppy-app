@@ -1,5 +1,5 @@
 class fastQuestionCtrl{
-	constructor($scope, $location, Session, $ionicPopup){
+	constructor($scope, $location, Session, $ionicPopup,$rootScope){
 		$scope.seleccionar = (flag)=>{
 			if(flag){
 				$scope.seleccionadosi=true;
@@ -10,9 +10,9 @@ class fastQuestionCtrl{
 			}
 			
 		}
-
+		$scope.ta = $rootScope.tarea;
 		$scope.abrirPopup = ()=>{
-			if($scope.flag){
+			
 				//sumer xp y s y poner la tarea como realizada
 				$scope.user = Session.getUser();
 				$scope.user.shopper_points= parseInt($scope.user.shopper_points)+parseInt($scope.ta.fields.SM);
@@ -27,15 +27,15 @@ class fastQuestionCtrl{
 				$scope.tareas_hechas = Session.getTareas();
 				if($scope.tareas_hechas!=null){
 					$scope.tareas_hechas.push($scope.ta.pk);
+					$scope.marcarTareas();
 				}else{
 					$scope.tareas_hechas=[$scope.ta.pk];
 				}
-				$scope.marcarTareas();
-
+				
 				Session.setTarea($scope.tareas_hechas);
 
 				$scope.pop();
-			}
+			
 		}
 
 		$scope.marcarTareas = function(){
