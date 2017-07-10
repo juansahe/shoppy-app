@@ -1,109 +1,119 @@
 <ion-view view-title="Task">
 
-<div id="fondoHead">
-<!--barra de puntos-->
-  <div class="puntos">
-    <div class="xp">
+  <div id="fondoHead">
+    <!--barra de puntos-->
+    <div class="puntos">
+      <div class="xp">
         <div class="capacirculo">
-            <div class="capacirculo2">
-                <div class="capacirculo3">
-                    <h2>1</h2>
-                </div>
+          <div class="capacirculo2">
+            <div class="capacirculo3">
+              <h2>1</h2>
             </div>
+          </div>
         </div>
         <div class="barrapuntos">
-            <div id="xperience" style="width: {{widthX}}" class="barrapuntosconten">
-                
-            </div>
-            <h6>{{us.xperience}}xp</h6>
+          <div id="xperience" style="width: {{widthX}}" class="barrapuntosconten">
+
+          </div>
+          <h6>{{us.xperience}}xp</h6>
         </div>
-    </div>
-    <div class="sm">
-        
+      </div>
+      <div class="sm">
+
         <div class="capacirculo">
-            <div class="capacirculo2">
-                <div class="capacirculo3">
-                   <img src="./assets/img/bolsa.png" alt="">
-                </div>
+          <div class="capacirculo2">
+            <div class="capacirculo3">
+              <img src="./assets/img/bolsa.png" alt="">
             </div>
+          </div>
         </div>
         <div class="barrapuntos">
-            <div id="shopper"  style="width: {{widthS}}" class="barrapuntosconten">
-                
-            </div>
-            <h6>{{us.shopper_points}}s</h6>
+          <div id="shopper" style="width: {{widthS}}" class="barrapuntosconten">
+
+          </div>
+          <h6>{{us.shopper_points}}s</h6>
         </div>
-    </div>   
-  </div><br><br>
-  <div class="row head">
+      </div>
+    </div><br><br>
+    <div class="row head">
       <h2>Completa tus tareas</h2>
+    </div>
   </div>
-</div>
-    <ion-content class="TaskComponent" style="margin-bottom: 50px;" overflow-scroll="true" >
-      <ion-scroll direction="xy" >
-       <div ng-repeat="tarea in task">
-         <ion-item class="item-stable degradadoGris tareaContent row" ng-class="{active: isGroupShown(tarea)}">
-           <div class="texto col col-50" ng-click="dirigirTarea(tarea)">
-               <p>{{tarea.fields.name}}</p>
-           </div>
-           <div class="btnPregunta" ng-click="toggleGroup(tarea)">
-               ?
-           </div>
-           <div class="puntos">
-              <span>{{tarea.fields.point_exp}}px</span>
-           </div>
-           <div class="puntos" style="color:#269B55">
-               <span>{{tarea.fields.SM}}sm</span>
-           </div>
-           <div class="completado">
-               <div class="capa1">
-                   <div class="capa2">
-                      <div ng-show="tarea.hecha">
-                        <div class="realizada">
-                          <div class="realizada2">
-                          
-                          </div>
-                        </div>
-                      </div>
-                   </div>
-               </div>
-           </div>
 
-         </ion-item>
+  <ion-content class="TaskComponent" style="margin-bottom: 50px;" overflow-scroll="true">
 
-         <ion-item class="item-accordion degradadoblueX descripcion" ng-show="isGroupShown(tarea)">
-         <div class="row">
-           <div class="col col-33 iconDesc">
-           <center><i class = "icon ion-person" style="font-size: 2em;"></i></center>
-               
-           </div>
-           <div class="col item-text-wrap">
-               Queremos conocerte un poco mejor. Queremos conocerte un poco mejor.
-           </div>
-          
-         </div>
-           
+    <img src="" alt="" id="myImage">
 
-         </ion-item>
-         <br>
-       </div>
-      </ion-scroll>
-    </ion-content>
-    <ion-footer class="foot" style="bottom:0px; position: absolute; z-index: 4">
-       <div class="conten-footer">
-           <a href="#/home" class="home-btn degradadoGris">
+
+    <ion-scroll direction="xy">
+      <div ng-repeat="tarea in task">
+        <ion-item class="item-stable degradadoGris tareaContent row" ng-class="{active: isGroupShown(tarea)}">
+          <div class="texto col col-50" ng-click="dirigirTarea(tarea)">
+            <p>{{tarea.fields.name}}</p>
+          </div>
+          <div class="btnPregunta" ng-click="toggleGroup(tarea)">
+            ?
+          </div>
+          <div class="puntos">
+            <span>{{tarea.fields.point_exp}}px</span>
+          </div>
+          <div class="puntos" style="color:#269B55">
+            <span>{{tarea.fields.SM}}sm</span>
+          </div>
+          <div class="completado">
+            <div class="capa1">
+              <div class="capa2">
+                <div ng-show="tarea.hecha">
+                  <div class="realizada">
+                    <div class="realizada2">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ion-item>
+
+        <ion-item class="item-accordion degradadoblueX descripcion" ng-show="isGroupShown(tarea)">
+          <div class="row">
+            <div class="col col-33 iconDesc">
+              <center><i class="icon ion-person" style="font-size: 2em;"></i></center>
+
+            </div>
+            <div class="col item-text-wrap">
+              Queremos conocerte un poco mejor. Queremos conocerte un poco mejor.
+            </div>
+
+          </div>
+
+
+        </ion-item>
+        <br>
+      </div>
+    </ion-scroll>
+  </ion-content>
+
+  <ion-footer class="foot" style="bottom:0px; position: absolute; z-index: 4">
+    <div class="conten-footer">
+      <a href="#/home" class="home-btn degradadoGris">
                <i class="ion-ios-home" aria-hidden="true"></i>
           </a>
-           <div class="task-btn degradadoblueX" style="height: 50px; margin-top: 0px; ">
-               <a href="#/task"><p style="text-align: center">Tareas</p></a>
-           </div>
-           <div class="challenge-btn degradadoGris" >
-               <a href="#/bond" ><p style="padding-top: 5px; font-size:20px;">Bonos</p></a>
-           </div>
-           <a class="profi-btn degradadoGris" href="#/user" >
+      <div class="task-btn degradadoblueX" style="height: 50px; margin-top: 0px; ">
+        <a href="#/task">
+          <p style="text-align: center">Tareas</p>
+        </a>
+      </div>
+      <div class="challenge-btn degradadoGris">
+        <a href="#/bond">
+          <p style="padding-top: 5px; font-size:20px;">Bonos</p>
+        </a>
+      </div>
+      <a class="profi-btn degradadoGris" href="#/user">
                <i  class="ion-person" aria-hidden="true"></i>
            </a>
-           
-       </div>
-   </ion-footer>
+
+    </div>
+  </ion-footer>
 </ion-view>
