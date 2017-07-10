@@ -1,38 +1,16 @@
 class TaskCtrl {
   constructor(TaskService, $scope, $cordovaCamera, $ionicPopup, $rootScope, $location, Session) {
 
-     document.addEventListener("deviceready", function () {
 
-    var options = {
-      quality: 50,
-      destinationType: Camera.DestinationType.DATA_URL,
-      sourceType: Camera.PictureSourceType.CAMERA,
-      allowEdit: true,
-      encodingType: Camera.EncodingType.JPEG,
-      targetWidth: 100,
-      targetHeight: 100,
-      popoverOptions: CameraPopoverOptions,
-      saveToPhotoAlbum: false,
-	  correctOrientation:true
-    };
-
-    $cordovaCamera.getPicture(options).then(function(imageData) {
-      var image = document.getElementById('myImage');
-      image.src = "data:image/jpeg;base64," + imageData;
-      console.log("cam")
-    }, function(err) {
-      // error
-    });
-
-   // $scope.$digest();
+    // $scope.$digest();
 
     this.TaskService = TaskService;
     $scope.user = Session.getUser();
 
     $rootScope.us = $scope.user;
-    $rootScope.widthX = $scope.user.xperience/1000*95+"%";
-    $rootScope.widthS = $scope.user.shopper_points/10000*95+"%";
-    $scope.tareasHechas=Session.getTareas();
+    $rootScope.widthX = $scope.user.xperience / 1000 * 95 + "%";
+    $rootScope.widthS = $scope.user.shopper_points / 10000 * 95 + "%";
+    $scope.tareasHechas = Session.getTareas();
     TaskService.getTask((result) => {
       console.log(result);
       $rootScope.task = result;
@@ -41,42 +19,64 @@ class TaskCtrl {
       console.log(err);
     });
 
-    $scope.marcarTareas = function(){
-      for(var i=0; i<$scope.tareasHechas.length; i++){
-        for(var j=0; j<$rootScope.task.length; j++){
-          if($scope.tareasHechas[i]==$rootScope.task[j].pk){
-            $rootScope.task[j].hecha=true;
-            console.log("la tarea "+$rootScope.task[j].pk+" esta hecha");
+    $scope.marcarTareas = function () {
+      for (var i = 0; i < $scope.tareasHechas.length; i++) {
+        for (var j = 0; j < $rootScope.task.length; j++) {
+          if ($scope.tareasHechas[i] == $rootScope.task[j].pk) {
+            $rootScope.task[j].hecha = true;
+            console.log("la tarea " + $rootScope.task[j].pk + " esta hecha");
           }
         }
       }
     }
 
-    $scope.dirigirTarea = (tarea) =>{
+    $scope.dirigirTarea = (tarea) => {
       //alert(tipo_tarea);
       console.log(tarea);
-      if(!tarea.hecha){
-          var tipo_tarea = tarea.fields.name;
-          for(var i=0; i<$rootScope.task.length; i++){
-            if($rootScope.task[i].pk===tarea.pk){
-              //console.log($scope.task[i].fields.imagen);
-              $rootScope.tarea = tarea;
-              break;
-            }
+      if (!tarea.hecha) {
+        var tipo_tarea = tarea.fields.name;
+        for (var i = 0; i < $rootScope.task.length; i++) {
+          if ($rootScope.task[i].pk === tarea.pk) {
+            //console.log($scope.task[i].fields.imagen);
+            $rootScope.tarea = tarea;
+            break;
           }
-        if(tipo_tarea=="Mira esta imagen"){
-
-          $location.path('/lookPicture');
-
-        }else if(tipo_tarea=="Pregunta rapida"){
-          $location.path('/fastQuestion');
-        } else if (tipo_tarea == "") {
-
-        } else if(tipo_tarea==""){
-
         }
+
+        switch (tipo_tarea) {
+          case "Mira esta imagen":
+            $location.path('/lookPicture');
+            break;
+
+          case "Pregunta rapida":
+            $location.path('/lookPicture');
+            break;
+
+          case "Mira esta imagen":
+            $location.path('/fastQuestion');
+            break;
+
+          case "Subir factura":
+            tomarFoto();
+            break;
+
+          default:
+            break;
+        }
+
+        /*if (tipo_tarea == "Mira esta imagen") {
+
+           $location.path('/lookPicture');
+
+         } else if (tipo_tarea == "Pregunta rapida") {
+           $location.path('/fastQuestion');
+         } else if (tipo_tarea == "") {
+
+         } else if (tipo_tarea == "") {
+
+         }*/
       }
-      
+
     }
 
     /*
@@ -94,23 +94,57 @@ class TaskCtrl {
       return $scope.shownGroup === group;
     };
 
-  /*  function modal($scope, $ionicPopup) {
-      // Custom popup
-      const template = '<i style="color:#3293d4; font-size: 10em;" class="ion-star" aria-hidden="true"><br><h3 style="font-size:30px;">20pt</h3></i>';
+    function tomarFoto() {
+      alert("tomar foto")
+      document.addEventListener("deviceready", function () {
+        var options = {
+          quality: 50,
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.CAMERA,
+          allowEdit: true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 100,
+          targetHeight: 100,
+          popoverOptions: CameraPopoverOptions,
+          saveToPhotoAlbum: false,
+          correctOrientation: true
+        };
 
-      var myPopup = $ionicPopup.alert({
-        title: 'Completaste tu perfil',
-        template: template,
-        scope: $scope,
-        buttons: [{
-          text: '<b>Continuar</b>',
-          type: 'button-positive',
-          onTap: function () {
-            //$location.path('/path');
-          }
-        }]
-      });
-    }*/
+        $cordovaCamera.getPicture(options).then(function (imageData) {
+          var image = document.getElementById('myImage');
+          image.src = "data:image/jpeg;base64," + imageData;
+          alert(image.src)
+        }, function (err) {
+          // error
+          alert(err)
+        });
+
+      }, false);
+    }
+
+
+
+
+
+
+
+    /*  function modal($scope, $ionicPopup) {
+        // Custom popup
+        const template = '<i style="color:#3293d4; font-size: 10em;" class="ion-star" aria-hidden="true"><br><h3 style="font-size:30px;">20pt</h3></i>';
+
+        var myPopup = $ionicPopup.alert({
+          title: 'Completaste tu perfil',
+          template: template,
+          scope: $scope,
+          buttons: [{
+            text: '<b>Continuar</b>',
+            type: 'button-positive',
+            onTap: function () {
+              //$location.path('/path');
+            }
+          }]
+        });
+      }*/
 
     // this.mark_task($scope.task);
 
@@ -125,51 +159,50 @@ class TaskCtrl {
           }
         }*/
 
-  }
 
-  /*mark_task(task) {
-    for (var i = 0; i < task.length; i++) {
-      if (task[i].complete === true) {
-        //document.getElementById(task[i].id).checked=true;
+    /*mark_task(task) {
+      for (var i = 0; i < task.length; i++) {
+        if (task[i].complete === true) {
+          //document.getElementById(task[i].id).checked=true;
+        }
       }
-    }
-  }*/
+    }*/
 
-  /*validar_tarea(tarea) {
-    if (tarea.complete) {
-      return true;
-    }
-    return false;
-  }*/
-  /*realizar_tarea(id, $cordovaCamera, $ionicPopup) {
-    console.log('tarea ' + id);
-    document.addEventListener("deviceready", function () {
+    /*validar_tarea(tarea) {
+      if (tarea.complete) {
+        return true;
+      }
+      return false;
+    }*/
+    /*realizar_tarea(id, $cordovaCamera, $ionicPopup) {
+      console.log('tarea ' + id);
+      document.addEventListener("deviceready", function () {
 
-      var options = {
-        quality: 50,
-        destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: Camera.PictureSourceType.CAMERA,
-        allowEdit: true,
-        encodingType: Camera.EncodingType.JPEG,
-        targetWidth: 100,
-        targetHeight: 100,
-        popoverOptions: CameraPopoverOptions,
-        saveToPhotoAlbum: false,
-        correctOrientation: true
-      };
+        var options = {
+          quality: 50,
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.CAMERA,
+          allowEdit: true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 100,
+          targetHeight: 100,
+          popoverOptions: CameraPopoverOptions,
+          saveToPhotoAlbum: false,
+          correctOrientation: true
+        };
 
-      $cordovaCamera.getPicture(options).then(function (imageData) {
-        var image = document.getElementById('myImage');
-        image.src = "data:image/jpeg;base64," + imageData;
-        this.modal($scope, $ionicPopup);
-      }, function (err) {
-        // error
-      });
+        $cordovaCamera.getPicture(options).then(function (imageData) {
+          var image = document.getElementById('myImage');
+          image.src = "data:image/jpeg;base64," + imageData;
+          this.modal($scope, $ionicPopup);
+        }, function (err) {
+          // error
+        });
 
-    }, false);
-  }*/
+      }, false);
+    }*/
 
-
+  }
 }
 
 angular.module('Grimorum.task').controller('TaskCtrl', TaskCtrl);

@@ -32,7 +32,7 @@ class LoginCtrl {
     /* handle errors on login */
     function errorLogin(response) {
       //alert(response);
-     // alert(response.status);
+      // alert(response.status);
       showMsg(response.data.non_field_errors[0]);
 
       $ionicPopup.hide();
