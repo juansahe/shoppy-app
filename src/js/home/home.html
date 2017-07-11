@@ -60,13 +60,11 @@
 
       <br>
       <ion-scroll direction="xy" >
-      <div class="row promo" ng-repeat="promocion in promociones">
-        <div class="col col-50 contentPromo">
-          <img class="imgPromo" src="http://ofertadescuentos.com/wp-content/uploads/2014/08/La-Comercial-Folleto-18-Agosto.jpg">
+      <div class="row promo">
+        <div class="col col-50 contentPromo" ng-repeat="promocion in promocionesSecundarias">
+          <img class="imgPromo" ng-src="{{promocion}}">
         </div>
-        <div class="col col-50 contentPromo">
-          <img class="imgPromo" src="https://s-media-cache-ak0.pinimg.com/736x/5a/90/0c/5a900c5bc91a61b4a3c06d678c2bf3b5.jpg">
-        </div>
+
       </div>
       <br><br><br>
       </ion-scroll>

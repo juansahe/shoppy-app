@@ -17,9 +17,9 @@ class TaskCtrl {
 
       var tareasHechas = result.tareacompletada;
 
-      $scope.tareasHechas=[]
+      $scope.tareasHechas = []
 
-      for(var i=0; i<tareasHechas.length; i++){
+      for (var i = 0; i < tareasHechas.length; i++) {
         $scope.tareasHechas.push(tareasHechas[i].fields.tarea);
       }
 
@@ -64,7 +64,7 @@ class TaskCtrl {
             break;
 
           case "Subir factura":
-            tomarFoto();
+            tomarFoto(tarea);
             break;
 
           default:
@@ -103,8 +103,8 @@ class TaskCtrl {
       return $scope.shownGroup === group;
     };
 
-    function tomarFoto() {
-      alert("tomar foto")
+    function tomarFoto(tarea) {
+      console.log(tarea)
       document.addEventListener("deviceready", function () {
         var options = {
           quality: 50,
@@ -123,6 +123,12 @@ class TaskCtrl {
           var image = document.getElementById('myImage');
           image.src = "data:image/jpeg;base64," + imageData;
           alert(image.src)
+          $scope.tareasHechas.push(tarea.pk);
+          Session.setTarea($scope.tareasHechas);
+          console.log($scope.tareasHechas)
+          $scope.marcarTareas();
+
+          mostrarPopup();
           // subirFactura(image.src)
         }, function (err) {
           // error
@@ -130,6 +136,20 @@ class TaskCtrl {
         });
 
       }, false);
+    }
+
+    function mostrarPopup() {
+      var alertPopup = $ionicPopup.alert({
+        title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()"  aria-hidden="true"></i>',
+        templateUrl: 'modalpoints.html',
+        scope: $scope,
+        buttons: [{
+          text: 'Listo'
+        }]
+      });
+      alertPopup.then(function (res) {
+        
+      });
     }
 
     function subirFactura(img) {
