@@ -39,7 +39,32 @@ class CompletePropileService {
         error(err);
       });
 
-      /*$http({
+      this.subirPtosUser = (user, success, error) => {
+        console.log(user)
+        // user={
+        //   userid:
+        // }
+
+        var config = {
+          url: url_api + "saveTareas/",
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: "Token " + token
+          },
+          data: user
+        };
+        this.$http(config).then(function (res) {
+          //console.log(res);
+          success(res.data);
+        }, function (err) {
+          error(err);
+        });
+
+
+        
+      }
+        /*$http({
 	            url: url_api+"favorite/",
 	            method: "POST",
 	            data: seleccionados,
@@ -56,9 +81,9 @@ class CompletePropileService {
 
                 error(data);
             });*/
-    };
+      };
 
+    }
   }
-}
 
-angular.module('Grimorum.completePropile').service('CompletePropileService', CompletePropileService)
+  angular.module('Grimorum.completePropile').service('CompletePropileService', CompletePropileService)

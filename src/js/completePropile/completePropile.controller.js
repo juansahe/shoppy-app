@@ -3,11 +3,11 @@ class CompletePropileCtrl {
 
     this.CompletePropileService = CompletePropileService;
 
-    $scope.tarea={
-        fields:{
-          SM:20,
-          point_exp:200
-        }
+    $scope.tarea = {
+      fields: {
+        SM: 20,
+        point_exp: 200
+      }
     };
 
     $scope.user = Session.getUser();
@@ -53,17 +53,17 @@ class CompletePropileCtrl {
     function enviarFavoritos(seleccionados) { //aqui se envia ids de productos seleccionados
       //alert(seleccionados);
       //mostrarPopup()
-      var error=null;
+      var error = null;
       for (var i = 0; i < seleccionados.length; i++) {
         var favorito = {
           "product": seleccionados[i],
           "user": $scope.user.id
         }
-        console.log(favorito);
+        // console.log(favorito);
         CompletePropileService.postFavoritos(favorito, (result) => {
           //alert(result)
           error = false;
-          console.log(result);
+          // console.log(result);
           //se guarda nuevamente el usuario en localstorage
 
         }, (err) => {
@@ -74,13 +74,35 @@ class CompletePropileCtrl {
 
       if (!error) {
         //guardar puntos en localstorage
-          //sumer xp y s y poner la tarea como realizada
-          
-          $scope.user.shopper_points= parseInt($scope.user.shopper_points)+parseInt($scope.tarea.fields.SM);
-          $scope.user.xperience = parseInt($scope.user.xperience)+parseInt($scope.tarea.fields.point_exp);
-          console.log($scope.user);
-          Session.setUser($scope.user);
-          mostrarPopup();
+        //sumer xp y s y poner la tarea como realizada
+
+        $scope.user.shopper_points = parseInt($scope.user.shopper_points) + parseInt($scope.tarea.fields.SM);
+        $scope.user.xperience = parseInt($scope.user.xperience) + parseInt($scope.tarea.fields.point_exp);
+
+
+
+
+        // console.log($scope.user);
+        Session.setUser($scope.user);
+        
+        var userPtos = {
+          userId: $scope.user.id,
+          shopper_points: $scope.tarea.fields.SM,
+          xperience: $scope.tarea.fields.point_exp
+        }
+
+        CompletePropileService.subirPtosUser(userPtos, (result) => {
+          console.log(result);
+          //se guarda nuevamente el usuario en localstorage
+
+        }, (err) => {
+          console.log(err);
+        });
+
+        mostrarPopup();
+
+
+
       }
 
     }

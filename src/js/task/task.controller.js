@@ -13,7 +13,7 @@ class TaskCtrl {
     $scope.tareasHechas = Session.getTareas();
     TaskService.getTask((result) => {
       console.log(result);
-      $rootScope.task = result;
+      $rootScope.task = result.msg;
       $scope.marcarTareas();
     }, (err) => {
       console.log(err);
