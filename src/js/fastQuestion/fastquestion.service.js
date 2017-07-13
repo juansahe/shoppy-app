@@ -5,7 +5,7 @@ class fastQuestionService {
 
     var url_api = CONFIG.API_URL;
     var user = Session.getUser();
-	var token = Session.getToken();
+    var token = Session.getToken();
 
 
     this.postTarea = (id_tarea, success, error) => {

@@ -1,5 +1,5 @@
 class fastQuestionCtrl {
-  constructor($scope, $location, Session, $ionicPopup, $rootScope) {
+  constructor(fastQuestionService, $scope, $location, Session, $ionicPopup, $rootScope) {
     $scope.seleccionar = (flag) => {
       if (flag) {
         $scope.seleccionadosi = true;
@@ -20,17 +20,17 @@ class fastQuestionCtrl {
       console.log($scope.user);
 
 
-      lookPictureService.postTarea($rootScope.tarea.pk, (result) => {
-        console.log(result);
-        if (result.level) {
-          $scope.user.level++;
-          mostrarPopupNivel();
-        }
-        //se guarda nuevamente el usuario en localstorage
-      }, (err) => {
-        error = true;
-        console.log(err);
-      });
+      // fastQuestionService.postTarea($rootScope.tarea.pk, (result) => {
+      //   console.log(result);
+      //   if (result.level) {
+      //     $scope.user.level++;
+      //     mostrarPopupNivel();
+      //   }
+      //   //se guarda nuevamente el usuario en localstorage
+      // }, (err) => {
+      //   error = true;
+      //   console.log(err);
+      // });
 
 
 

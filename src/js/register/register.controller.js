@@ -30,9 +30,12 @@ class RegisterCtrl {
                   // console.log("entro a las validaciones");
 
                   var str = $scope.user.bornday;
-                  // $scope.user.bornday = null;
-                  // var fecha = str.getFullYear() + "-" + (str.getMonth() + 1) + "-" + str.getDate();
-                  // $scope.user.bornday = fecha;
+                  $scope.user.bornday = null;
+                  var fecha = str.getFullYear() + "-" + (str.getMonth() + 1) + "-" + str.getDate();
+                  $scope.user.bornday = fecha;
+
+                  console.log($scope.user)
+
 
                   this.RegisterService.saveUser($scope.user, (result) => {
                     console.log(result)

@@ -68,6 +68,7 @@ class TaskCtrl {
             break;
 
           default:
+          // alert("no se ha implementado esta tarea")
             break;
         }
 
