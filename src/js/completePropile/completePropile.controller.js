@@ -1,5 +1,5 @@
 class CompletePropileCtrl {
-  constructor(CompletePropileService, $scope, $location, $ionicPopup, Session) {
+  constructor(CompletePropileService, $scope, $location, $ionicPopup, Session, $ionicLoading) {
 
     this.CompletePropileService = CompletePropileService;
 
@@ -59,11 +59,11 @@ class CompletePropileCtrl {
           "product": seleccionados[i],
           "user": $scope.user.id
         }
-        console.log(favorito);
+        // console.log(favorito);
         CompletePropileService.postFavoritos(favorito, (result) => {
           //alert(result)
           error = false;
-          console.log(result);
+          // console.log(result);
           //se guarda nuevamente el usuario en localstorage
 
         }, (err) => {
@@ -78,10 +78,16 @@ class CompletePropileCtrl {
 
         $scope.user.shopper_points = parseInt($scope.user.shopper_points) + parseInt($scope.tarea.fields.SM);
         $scope.user.xperience = parseInt($scope.user.xperience) + parseInt($scope.tarea.fields.point_exp);
-        console.log($scope.user);
+        // console.log($scope.user);
 
         CompletePropileService.postTarea(27, (result) => {
           console.log(result);
+
+          if (result.level) {
+            $scope.user.level++;
+            mostrarPopupNivel();
+          }
+
           //se guarda nuevamente el usuario en localstorage
         }, (err) => {
           error = true;
@@ -92,6 +98,28 @@ class CompletePropileCtrl {
         mostrarPopup();
       }
 
+    }
+
+    function showMsg(msg) {
+      $ionicLoading.show({
+        template: msg,
+        noBackdrop: false,
+        duration: 2000
+      });
+    }
+
+    function mostrarPopupNivel() {
+      var alertPopup = $ionicPopup.alert({
+        title: '<h2 class="win">Has subido de nivel!</h2> <i aria-hidden="true"></i>',
+        templateUrl: 'modalLevel.html',
+        scope: $scope,
+        buttons: [{
+          text: 'Listo'
+        }]
+      });
+      alertPopup.then(function (res) {
+
+      });
     }
 
     function mostrarPopup() {

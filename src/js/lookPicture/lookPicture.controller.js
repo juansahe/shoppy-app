@@ -38,11 +38,11 @@ class lookPictureCtrl {
         }
         $scope.marcarTareas();
 
-				enviarTarea($scope.ta.pk)
+        enviarTarea($scope.ta.pk)
 
         Session.setTarea($scope.tareas_hechas);
 
-        $scope.pop();
+        mostrarPopup()
       }
     }
 
@@ -51,10 +51,28 @@ class lookPictureCtrl {
 
       lookPictureService.postTarea(tarea_id, (result) => {
         console.log(result);
+        if (result.level) {
+          $scope.user.level++;
+          mostrarPopupNivel();
+        }
         //se guarda nuevamente el usuario en localstorage
       }, (err) => {
         error = true;
         console.log(err);
+      });
+    }
+
+    function mostrarPopupNivel() {
+      var alertPopup = $ionicPopup.alert({
+        title: '<h2 class="win">Has subido de nivel!</h2> <i aria-hidden="true"></i>',
+        templateUrl: 'modalLevel.html',
+        scope: $scope,
+        buttons: [{
+          text: 'Listo'
+        }]
+      });
+      alertPopup.then(function (res) {
+
       });
     }
 
@@ -71,7 +89,7 @@ class lookPictureCtrl {
       }
     }
 
-    $scope.pop = function mostrarPopup() {
+    function mostrarPopup() {
       var alertPopup = $ionicPopup.alert({
         title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()"  aria-hidden="true"></i>',
         templateUrl: 'modalpoints.html',
