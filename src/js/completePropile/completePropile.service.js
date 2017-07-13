@@ -33,7 +33,6 @@ class CompletePropileService {
         },
         data: favorito
       };
-
       this.$http(config).then(function (res) {
         //console.log(res);
         success(res.data);

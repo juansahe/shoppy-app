@@ -73,17 +73,15 @@ class TaskCtrl {
 
         /*if (tipo_tarea == "Mira esta imagen") {
 
-          $location.path('/lookPicture');
+           $location.path('/lookPicture');
 
-        } else if (tipo_tarea == "Pregunta rapida") {
-          $location.path('/fastQuestion');
-        } else if (tipo_tarea == "") {
+         } else if (tipo_tarea == "Pregunta rapida") {
+           $location.path('/fastQuestion');
+         } else if (tipo_tarea == "") {
 
-        } else if (tipo_tarea == "") {
+         } else if (tipo_tarea == "") {
 
-        }*/
-
-
+         }*/
       }
 
     }
