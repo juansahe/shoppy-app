@@ -3,11 +3,11 @@ class CompletePropileCtrl {
 
     this.CompletePropileService = CompletePropileService;
 
-    $scope.tarea={
-        fields:{
-          SM:20,
-          point_exp:200
-        }
+    $scope.tarea = {
+      fields: {
+        SM: 20,
+        point_exp: 200
+      }
     };
 
     $scope.user = Session.getUser();
@@ -53,7 +53,7 @@ class CompletePropileCtrl {
     function enviarFavoritos(seleccionados) { //aqui se envia ids de productos seleccionados
       //alert(seleccionados);
       //mostrarPopup()
-      var error=null;
+      var error = null;
       for (var i = 0; i < seleccionados.length; i++) {
         var favorito = {
           "product": seleccionados[i],
@@ -74,13 +74,22 @@ class CompletePropileCtrl {
 
       if (!error) {
         //guardar puntos en localstorage
-          //sumer xp y s y poner la tarea como realizada
-          
-          $scope.user.shopper_points= parseInt($scope.user.shopper_points)+parseInt($scope.tarea.fields.SM);
-          $scope.user.xperience = parseInt($scope.user.xperience)+parseInt($scope.tarea.fields.point_exp);
-          console.log($scope.user);
-          Session.setUser($scope.user);
-          mostrarPopup();
+        //sumer xp y s y poner la tarea como realizada
+
+        $scope.user.shopper_points = parseInt($scope.user.shopper_points) + parseInt($scope.tarea.fields.SM);
+        $scope.user.xperience = parseInt($scope.user.xperience) + parseInt($scope.tarea.fields.point_exp);
+        console.log($scope.user);
+
+        CompletePropileService.postTarea(27, (result) => {
+          console.log(result);
+          //se guarda nuevamente el usuario en localstorage
+        }, (err) => {
+          error = true;
+          console.log(err);
+        });
+
+        Session.setUser($scope.user);
+        mostrarPopup();
       }
 
     }
