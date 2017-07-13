@@ -4,6 +4,7 @@ class CompletePropileService {
 
     var url_api = CONFIG.API_URL;
     var token = Session.getToken();
+    var user = Session.getUser();
 
 
     this.getProducts = (success, error) => {
