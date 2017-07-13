@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Boirleplate Ionic-Gulp-ES6 
 
 # first time
@@ -25,7 +24,3 @@
     - gulp component --name "module"
 
 
-=======
-# shoppy
-grimorum shoppy
->>>>>>> b097bb2985daf330038ebf1d5e7a9c310a6971b0
