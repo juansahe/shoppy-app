@@ -4,6 +4,10 @@ class LoginCtrl {
     this.LoginService = LoginService;
     $scope.user = {};
 
+
+    /*La funcion login valida que los campos requeridos para iniciar sesión esten llenos, de
+    no ser asi, envia un mensaje al usuario pidiendo que llene los datos. Por otro lado, cuando
+    estan llenos llama una funcion de loginServices.js para recibir un token para el usuario logueado*/
     $scope.login = function (user) {
       console.log("sirve el boton");
       if (typeof user == 'undefined' || typeof user.username == 'undefined' || typeof user.password == 'undefined') {
@@ -13,7 +17,12 @@ class LoginCtrl {
       }
       LoginService.requestToken(user, successLogin, errorLogin);
     };
-    /* handle success login */
+
+    /* handle successLogin 
+    se activa cuando el token se genera de manera correcta
+    y llama la funcion login del servico loginServices.js 
+    donde se rea la sesión en local para el usuario
+    */
     function successLogin(response) {
       // alert(response.data.token)
       // alert(response.data.id)
@@ -29,22 +38,17 @@ class LoginCtrl {
 
     };
 
-    /* handle errors on login */
+    /* handle errors on login 
+    errorLogin
+    esta funcion se activa cuando no es posible crear un token para el usuario
+    y se muestra un mensaje en pantalla con el error
+    */
     function errorLogin(response) {
-      //alert(response);
-     // alert(response.status);
+
       showMsg(response.data.non_field_errors[0]);
 
       $ionicPopup.hide();
-      /* $scope.user.password = '';
-
-       if (response.data.error == 'Inactive') {
-         showMsg('User inactive');
-       } else if (response.data.error == 'invalid_credentials') {
-         showMsg('Invalid Credentials');
-       } else {
-         showMsg('Error login');
-       }*/
+     
     };
 
     function showMsg(msg) {

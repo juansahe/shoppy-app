@@ -16,7 +16,8 @@ class lookPictureCtrl {
       }
     }, 1000);
 
-
+    /**se ejecuta cuando se cumple el tiempo estimado de observar la imagen. Es decir, cuando
+    la tarea se completo*/
     $scope.abrirpopup = () => {
       if ($scope.flag) {
         //sumer xp y s y poner la tarea como realizada
@@ -46,7 +47,9 @@ class lookPictureCtrl {
       }
     }
 
-
+    /*
+      se llama el servicio de postTarea para guardar la tarea como realizada en el servidor
+    */
     function enviarTarea(tarea_id) {
 
       lookPictureService.postTarea(tarea_id, (result) => {
@@ -62,6 +65,7 @@ class lookPictureCtrl {
       });
     }
 
+    /*muestra al usuario cuando subio de nivel despues de realizar la tarea*/
     function mostrarPopupNivel() {
       var alertPopup = $ionicPopup.alert({
         title: '<h2 class="win">Has subido de nivel!</h2> <i aria-hidden="true"></i>',
@@ -76,7 +80,7 @@ class lookPictureCtrl {
       });
     }
 
-
+    /*marca la tarea cuando se realiza en la vista del usuario*/
     $scope.marcarTareas = function () {
       console.log("entro a marcar tareas");
       for (var i = 0; i < $scope.tareas_hechas.length; i++) {
@@ -89,6 +93,7 @@ class lookPictureCtrl {
       }
     }
 
+    /*muestra los puntos ganados por realizar una tarea*/
     function mostrarPopup() {
       var alertPopup = $ionicPopup.alert({
         title: '<h2 class="win">¡Ganaste!</h2> <i ng-click="showAlert()"  aria-hidden="true"></i>',

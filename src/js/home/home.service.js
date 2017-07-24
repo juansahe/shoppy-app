@@ -4,6 +4,10 @@ class HomeService {
     var url_api = CONFIG.API_URL;
     var token = Session.getToken();
 
+    /*
+      this.getPromotions
+      realiza peticion GET para mostrar las promociones guardadas en el servidor en la vista HOME
+    **/
     this.getPromotions = (success, error) => {
       $http({
         method: 'GET',

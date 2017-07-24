@@ -4,6 +4,8 @@ class LoginService {
 
     var url_api = CONFIG.API_URL;
 
+    /*requestToken
+    realiza peticion HTTP al API para el inicio de sesión y traer el token de usuario*/
     this.requestToken = (user, callback, error) => {
       var config = {
         url: url_api + "token/",
@@ -16,6 +18,10 @@ class LoginService {
       this.$http(config).then(callback, error);
     }
 
+    /*login
+    trae la sesión del usuario despues que el token fue creado
+    y luego, guarda los datos del usuario en localstorage cuando 
+    la peticion retorna success*/
     this.login = function (data, callback) {
       var token =data.token;
       var userId=data.id;
@@ -40,35 +46,6 @@ class LoginService {
       console.warn(res);
     };
 
-    this.getUser = (success, error) => {
-      var config = {
-        url: this.url_api + "users/1",
-        method: "GET",
-        headers: {
-          'Content-Type': 'application/json',
-          //Authorization: "Token " + token
-        }
-      };
-      this.$http(config).then(function (res) {
-        //console.log(res);
-        success(res.data);
-      }, function (err) {
-        error(err);
-      });
-
-      /*$http({
-        method: 'GET',
-        url: this.url_api + "users/22",
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      }).then(function successCallback(response) {
-        success(response.data);
-      }, function errorCallback(response) {
-        error(response.data);
-      });*/
-
-    }
 
   }
 }

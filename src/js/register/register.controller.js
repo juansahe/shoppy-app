@@ -14,6 +14,12 @@ class RegisterCtrl {
       $location.path('/home');
     }*/
 
+    /*
+      save
+      funcion para validar los datos del usuario antes de guardarlo en la DB
+      luego, cuando no hay ningun inconveniente envia los datos al servicio 
+      regoster.service.js para registrar el usuario
+    */
     $scope.save = (ter) => {
       console.log("entro a save");
       if (ter) {
@@ -36,12 +42,13 @@ class RegisterCtrl {
 
                   console.log($scope.user)
 
-
+                  //llamar a la funcion saveUser para registrar el usuario
                   this.RegisterService.saveUser($scope.user, (result) => {
                     console.log(result)
                     $scope.user.id=result.id;
                     $scope.user.xperience=0;
                     $scope.user.shopper_points = 0;
+                    $scope.user.level=1;
 
                     //se registro el usuario, luego se guarda en el localStorage
                     this.RegisterService.setUser(result.token, $scope.user);
@@ -112,6 +119,9 @@ class RegisterCtrl {
         });
       }
     }
+
+    /*validate
+    funcion para validar si un campo esta vacio o es incorrecto*/
 
     function validate(e) {
       if (e === null) {

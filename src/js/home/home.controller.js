@@ -1,10 +1,11 @@
 class HomeCtrl {
   constructor(HomeService, $scope, Session, $rootScope) {
-    this.HomeService = HomeService;
-    $scope.user = Session.getUser();
+    this.HomeService = HomeService; 
+    $scope.user = Session.getUser();  //cargar los datos del usuario
     $rootScope.us = $scope.user;
-    $rootScope.widthX = $scope.user.xperience/1000*95+"%";
-    $rootScope.widthS = $scope.user.shopper_points/10000*95+"%";
+    $rootScope.widthX = $scope.user.xperience/1000*95+"%"; //porcentaje de experiencia de usuario para mostrar en barra de puntos
+    $rootScope.widthS = $scope.user.shopper_points/10000*95+"%"; //porcentaje de shoppys de usuario para mostrar en barra de puntos
+    //cargar promociones desde el servicio getPromotions en home.service.js
     HomeService.getPromotions((result) => {
       $scope.promociones = result;
       console.log($scope.promociones)

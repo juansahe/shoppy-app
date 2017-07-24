@@ -1,9 +1,15 @@
 class Session {
 
+  /*se crean variables en localstorage para guardar 
+  información pertinente a la sesión del usuario*/
+
+
   constructor(CONFIG, $location) {
 
     this.token = null;
     this.user = null;
+
+    
 
     this.create = function (token, user) {
       window.localStorage.setItem('token', angular.toJson(token));

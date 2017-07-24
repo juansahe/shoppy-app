@@ -5,7 +5,10 @@ class BondsService {
     var token = Session.getToken();
 
     this.$http = $http;
-
+    /*
+    this.getBonds
+    realiza la petición HTTP al servidor para traer los bonos de cada tienda
+    */
     this.getBonds = (success, error) => {
       var config = {
         url: url_api + "bond/",
@@ -22,6 +25,10 @@ class BondsService {
 
     }
 
+    /*
+    this.getmybond
+    realiza la petición HTTP al servidor para traer los bonos de un usuario especifico
+    */
     this.getmybond = (user_id, success, error) => {
       var config = {
         url: url_api + "Mybond/",
@@ -40,6 +47,10 @@ class BondsService {
 
     }
 
+    /*
+    this.postBono
+    realiza la peticion POST para guardar el bono que desea adquirir el usuario en el servidor
+    */
     this.postBono = (bono, success, error) => {
       var config = {
         url: url_api+"redemptionBond/",

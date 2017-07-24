@@ -6,7 +6,11 @@ class CompletePropileService {
     var token = Session.getToken();
     var user = Session.getUser();
 
-
+    /**
+      this.getProducts
+      realiza la peticion al servidor para mostrar 
+      los productos guardados para agregarlos a favoritos
+    **/
     this.getProducts = (success, error) => {
 
       $http({
@@ -23,6 +27,12 @@ class CompletePropileService {
       });
     }
 
+
+    /*
+      this.postFavoritos
+      realiza la petición POST al servidor para guardar los productos 
+      favoritos de un usuario
+    **/
     this.postFavoritos = (favorito, success, error) => {
       var config = {
         url: url_api + "favorite/",
@@ -41,7 +51,11 @@ class CompletePropileService {
       });
     };
 
+    /**
+      this.postTarea
+      realiza la petición POST para guardar la tarea completada (completar perfil)
 
+    **/
     this.postTarea = (id_tarea, success, error) => {
 
       console.log(user)
@@ -71,8 +85,6 @@ class CompletePropileService {
 
 
     };
-
-
   }
 }
 

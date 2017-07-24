@@ -1,16 +1,19 @@
 class TaskCtrl {
   constructor(TaskService, $scope, $cordovaCamera, $ionicPopup, $rootScope, $location, Session) {
 
-    // $scope.$digest();
-
     this.TaskService = TaskService;
-    $scope.user = Session.getUser();
+    $scope.user = Session.getUser();//traer datos de la sesión del usuario
 
     $rootScope.us = $scope.user;
-    $rootScope.widthX = $scope.user.xperience / 1000 * 95 + "%";
-    $rootScope.widthS = $scope.user.shopper_points / 10000 * 95 + "%";
-    $scope.tareasHechas = Session.getTareas();
+    $rootScope.widthX = $scope.user.xperience / 1000 * 95 + "%";//porcentaje de experiencia de usuario en la barra de experiencia
+    $rootScope.widthS = $scope.user.shopper_points / 10000 * 95 + "%"; //ṕorcentaje de shoppy de usuario en la barra de shoppy
+    $scope.tareasHechas = Session.getTareas();//array con id de las tareas que ya se realizaron
 
+
+    /*
+      llama al servicio getTask para traer las tareas desde el servicio de tareas por nivel y produtos favoritos del usuario
+      para mostrar su información en la vista de tareas
+    */
     TaskService.getTask((result) => {
       console.log(result);
       $rootScope.task = result.msg;
@@ -30,6 +33,9 @@ class TaskCtrl {
       console.log(err);
     });
 
+
+    /*marca las tareas realizadas en la vista para que el usuario
+    pueda identificar que tareas ya realizo*/
     $scope.marcarTareas = function () {
       for (var i = 0; i < $scope.tareasHechas.length; i++) {
         for (var j = 0; j < $rootScope.task.length; j++) {
@@ -41,10 +47,14 @@ class TaskCtrl {
       }
     }
 
+    /*
+      dirigirTarea
+      esta función redirige la tarea dependiendo el tipo de tarea que sea. Es decir,
+      enviar al usuario a realizar la tarea en la vista correspondiente de cada tarea.
+    */
     $scope.dirigirTarea = (tarea) => {
-      //alert(tipo_tarea);
-      // console.log(tarea);
-      if (!tarea.hecha) {
+
+      if (!tarea.hecha) {//si la tarea no se ha realziado aun
         var tipo_tarea = tarea.fields.name;
         for (var i = 0; i < $rootScope.task.length; i++) {
           if ($rootScope.task[i].pk === tarea.pk) {
@@ -54,7 +64,7 @@ class TaskCtrl {
           }
         }
 
-        switch (tipo_tarea) {
+        switch (tipo_tarea) {//redirección de tarea dependiendo el tipo
           case "Mira esta imagen":
             $location.path('/lookPicture');
             break;
@@ -72,17 +82,6 @@ class TaskCtrl {
             break;
         }
 
-        /*if (tipo_tarea == "Mira esta imagen") {
-
-           $location.path('/lookPicture');
-
-         } else if (tipo_tarea == "Pregunta rapida") {
-           $location.path('/fastQuestion');
-         } else if (tipo_tarea == "") {
-
-         } else if (tipo_tarea == "") {
-
-         }*/
       }
 
     }
@@ -150,7 +149,7 @@ class TaskCtrl {
         
       });
     }
-
+    /*enviar al servicio subirFactura para completar tarea de subir factura*/
     function subirFactura(img) {
       TaskService.subirFactura(img, (result) => {
         console.log(result);
@@ -158,58 +157,7 @@ class TaskCtrl {
         console.log(err);
       });
     }
-
-
-
-    /*  function modal($scope, $ionicPopup) {
-        // Custom popup
-        const template = '<i style="color:#3293d4; font-size: 10em;" class="ion-star" aria-hidden="true"><br><h3 style="font-size:30px;">20pt</h3></i>';
-
-        var myPopup = $ionicPopup.alert({
-          title: 'Completaste tu perfil',
-          template: template,
-          scope: $scope,
-          buttons: [{
-            text: '<b>Continuar</b>',
-            type: 'button-positive',
-            onTap: function () {
-              //$location.path('/path');
-            }
-          }]
-        });
-      }*/
-
-    // this.mark_task($scope.task);
-
-    /*    $scope.hacertares = (id) => {
-
-          for (var i = 0; i < $scope.task.length; i++) {
-            if ($scope.task[i].id === id) {
-              if (!this.validar_tarea($scope.task[i])) {
-                this.realizar_tarea(id, $cordovaCamera, $ionicPopup);
-              }
-            }
-          }
-        }*/
-
   }
-
-  /*mark_task(task) {
-    for (var i = 0; i < task.length; i++) {
-      if (task[i].complete === true) {
-        //document.getElementById(task[i].id).checked=true;
-      }
-    }
-  }*/
-
-  /*validar_tarea(tarea) {
-    if (tarea.complete) {
-      return true;
-    }
-    return false;
-  }*/
-
-
 
 }
 

@@ -7,7 +7,10 @@ class lookPictureService {
     var user = Session.getUser();
     var token = Session.getToken();
 
-
+    /*
+    this.postTarea
+    realiza peticion POST para guardar tarea como realizada en el servidor
+    */
     this.postTarea = (id_tarea, success, error) => {
 
       console.log(user)

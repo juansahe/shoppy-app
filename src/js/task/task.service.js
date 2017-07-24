@@ -7,6 +7,11 @@ class TaskService {
     var user = Session.getUser();
     // console.log(user);
 
+
+    /*
+    Realiza peticion POST para traer la lista de tareas dependiendo el nivel del usuario
+    y los productos favoritos del mismo.
+      */
     this.getTask = (success, error) => {
       $http({
         method: 'POST',
@@ -25,6 +30,10 @@ class TaskService {
       });
     }
 
+
+    /*
+    realiza peticion post para guardar la tarea subir factura al realizarla
+    */
     this.subirFactura = (img, success, error) => {
       $http({
         method: 'POST',

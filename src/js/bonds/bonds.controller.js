@@ -1,13 +1,16 @@
 class BondsCtrl {
   constructor(BondsService, $scope, CONFIG, Session, $rootScope) {
 
-    $scope.SITE_ADMIN = CONFIG.url;
-    $scope.user = Session.getUser();
+    $scope.SITE_ADMIN = CONFIG.url; //url del api
+    $scope.user = Session.getUser(); //carga en una variable scope el usuario que esta guardado en localstorage
 
       $rootScope.us = $scope.user;
 
           $rootScope.widthX = $scope.user.xperience/1000*95+"%";
           $rootScope.widthS = $scope.user.shopper_points/10000*95+"%";
+
+          /*se llama la peticion get para cargar los bonos de cada tienda del servidor que esta 
+          en el servicio bonds.service.js*/
     BondsService.getBonds((result) => {
       $scope.bonds = result;
 
@@ -17,44 +20,33 @@ class BondsCtrl {
         $scope.bonds[i].factorConversionShopy = 0.2;
       }
 
-
-      // console.log($scope.bonds);
     }, (err) => {
       console.log(err);
     });
 
 
 
-
+    /*se llama la peticion get para cargar los bonos ya adquiridos por el usuario desde el servidor.
+    este servicio se hace desde el servicio bonds.service.js*/
     $scope.getmybond = () => {
       BondsService.getmybond({
           user_id: $scope.user.id
         },
         (result) => {
           $scope.mybonds = result.bonos;
-          // console.log($scope.mybonds);
         }, (err) => {
           console.log(err);
         });
     }
 
-    /*BondsService.getProviders((result) => {
-      $scope.providers = result;
-      //   console.log($scope.providers);
-    }, (err) => {
-      console.log(err);
-    });*/
-
+    /*activa la peticion de cargar los bonos de un usuario 
+    desde el servidor para mostrarlos en pantalla*/
     $scope.btnbonos = () => {
       $scope.getmybond();
-
-/*      if ($scope.bonos) {
-        console.log("cambiar a bonos" + $scope.bonos);
-      } else {
-        console.log("cambiar a tareas" + $scope.bonos);
-      }*/
     }
 
+    /*metodo para escoger el valor de un bono de una tienda. Es decir, marcar en color
+    azul solo el bono que se desea cambiar*/
     $scope.cambiarBonoValor = (valor, valorIntercambioPesos, value, id) => {
       // console.log(id);
       var i = 0;
@@ -97,6 +89,11 @@ class BondsCtrl {
       return valor * valorIntercambioPesos;
     }
 
+    /*
+    cambiarBono
+    valida que el bono que se deseea cambiar no supere los Shoppys que tiene el usuario. Luego,
+    envia el bono a cambiar al servicio BondsService.postBono para guardarlo en el servidor
+    */
     $scope.cambiarBono = (bono) => {
       // console.log(bono)
       var bond = {
@@ -124,11 +121,6 @@ class BondsCtrl {
       } else {
         alert("no tienes suficientes Shoppys")
       }
-
-
-
-
-
 
     }
 

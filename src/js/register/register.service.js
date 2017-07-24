@@ -5,7 +5,10 @@ class RegisterService {
     this.$http = $http;
 
     
-    
+    /*this.saveUser
+    Realiza una petición POST al servidor para 
+    registrar el usuario ingresado en el formulario
+    de registro*/
     this.saveUser = (user, success, error) => {
       
 
@@ -26,15 +29,18 @@ class RegisterService {
 
 
 
-
+    //guarda el usuario registrado en el local storage
     this.setUser = (token, user) => {
       Session.create(token, user)
       // window.localStorage.setItem('user', JSON.stringify(user));
     }
 
+    //mustra los datos del usuario que se guardo anteriormente en el localstorage
     this.getUser = () => {
       return JSON.parse(localStorage.getItem('user'));
     }
+
+    //muestra el token del usuario que se guardo anteriormente en el localstorage
     this.getToken = () => {
       return JSON.parse(localStorage.getItem('token'));
     }

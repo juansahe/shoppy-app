@@ -1,5 +1,5 @@
 class fastQuestionService {
-  constructor($scope, $http, CONFIG, Session) {
+  constructor($http, CONFIG, Session) {
 
     this.$http = $http;
 
@@ -7,10 +7,13 @@ class fastQuestionService {
     var user = Session.getUser();
     var token = Session.getToken();
 
-
+    /*
+      realiza petición POST para guardar la tarea realizada en el servidor
+    */
     this.postTarea = (id_tarea, success, error) => {
 
       console.log(user)
+      console.log(id_tarea);
 
       var tarea = {
         state: "Com",
@@ -29,7 +32,8 @@ class fastQuestionService {
       };
 
       this.$http(config).then(function (res) {
-        //console.log(res);
+        console.log("entro a success");
+        console.log(res);
         success(res.data);
       }, function (err) {
         error(err);

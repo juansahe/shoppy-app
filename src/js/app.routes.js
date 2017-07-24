@@ -38,12 +38,6 @@ angular.module('Grimorum')
         controller: 'CompletePropileCtrl'
       })
 
-      .state('path', {
-        url: '/path',
-        templateUrl: 'js/path/path.html',
-        controller: 'PathCtrl'
-      })
-
       .state('home', {
         url: '/home',
         templateUrl: 'js/home/home.html',

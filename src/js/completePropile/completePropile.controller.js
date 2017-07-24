@@ -1,18 +1,20 @@
 class CompletePropileCtrl {
   constructor(CompletePropileService, $scope, $location, $ionicPopup, Session, $ionicLoading) {
 
-    this.CompletePropileService = CompletePropileService;
+    this.CompletePropileService = CompletePropileService;//llamado del servicio completar perfil
 
-    $scope.tarea = {
+    $scope.tarea = { /**puntos para tarea completar perfil**/
       fields: {
         SM: 20,
         point_exp: 200
       }
     };
 
-    $scope.user = Session.getUser();
+    $scope.user = Session.getUser();//traer el usuario que inicio sesión desde el localstorage
     // console.log($scope.user);
     CompletePropileService.getProducts((result) => {
+      /**traer del servicio completarPropile el get de productos para agregar a favoritos, es decir,
+      todos los productos guardados en la base de datos**/
       $scope.productos = result;
       for (var i = 0; i < $scope.productos.length; i++) {
         $scope.productos[i].estado = false;
@@ -24,6 +26,9 @@ class CompletePropileCtrl {
 
 
     var contador = 0;
+    /************
+    funcion para seleccionar los productos favoritos de un usuario
+    ************/
     $scope.select = (id) => {
       for (var i = 0; i < $scope.productos.length; i++) { //selecciona producto
         if ($scope.productos[i].id == id) {
@@ -42,7 +47,7 @@ class CompletePropileCtrl {
         for (var i = 0; i < $scope.productos.length; i++) {
           if ($scope.productos[i].estado) {
             //console.log($scope.productos[i].nombre);
-            seleccionados.push($scope.productos[i].id)
+            seleccionados.push($scope.productos[i].id)//agregar un producto al array de seleccionados
           }
         }
 
@@ -50,7 +55,7 @@ class CompletePropileCtrl {
       }
     }
 
-    function enviarFavoritos(seleccionados) { //aqui se envia ids de productos seleccionados
+    function enviarFavoritos(seleccionados) { //aqui se envia ids de productos seleccionados al servicio
       //alert(seleccionados);
       //mostrarPopup()
       var error = null;
@@ -99,7 +104,7 @@ class CompletePropileCtrl {
       }
 
     }
-
+    //cargar mensaje en la vista
     function showMsg(msg) {
       $ionicLoading.show({
         template: msg,
@@ -108,6 +113,7 @@ class CompletePropileCtrl {
       });
     }
 
+    
     function mostrarPopupNivel() {
       var alertPopup = $ionicPopup.alert({
         title: '<h2 class="win">Has subido de nivel!</h2> <i aria-hidden="true"></i>',
